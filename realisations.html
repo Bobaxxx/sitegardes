@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Réalisations - Pascal Gardes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        html {
+            overflow-x: hidden;
+        }
+        * {
+            max-width: 100%;
+        }
+        html, body {
+            max-width: 100vw;
+        }
+        .header-scrolled {
+            background-color: #ffffff;
+            color: #000000;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .header-scrolled a,
+        .header-scrolled h2,
+        .header-scrolled .material-symbols-outlined,
+        .header-scrolled #mobileMenuBtn {
+            color: #000000;
+        }
+        .header-scrolled img {
+            filter: invert(1) brightness(0);
+        }
+        #lightbox.active {
+            display: flex !important;
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        body.menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+        .mobile-menu {
+            touch-action: auto;
+        }
+        /* Assurer que le bouton menu est visible */
+        #mobileMenuBtn {
+            z-index: 51;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+        }
+        .animate-on-scroll.visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        /* Animation hover nav */
+        nav a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .header-scrolled nav a::after {
+            background: black;
+        }
+        /* Animation hover sur les images */
+        .project-item {
+            transition: transform 0.3s ease;
+        }
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+        /* Animation boutons CTA */
+        a[href*="contact"],
+        button[type="submit"] {
+            transition: all 0.3s ease;
+        }
+        a[href*="contact"]:hover,
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-display">
+<div class="relative min-h-screen flex flex-col">
+<header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300" id="header">
+<div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+<a class="flex items-center gap-2 md:gap-3" href="index.html">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 md:h-10 w-auto"/>
+<h2 class="text-white text-base md:text-xl font-bold">PASCAL GARDES</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white text-sm tracking-wider" href="index.html">ACCUEIL</a>
+<a class="text-white text-sm tracking-wider" href="services.html">SERVICES</a>
+<a class="text-white text-sm font-bold border-b border-white tracking-wider" href="realisations.html">RÉALISATIONS</a>
+<a class="text-white text-sm tracking-wider" href="contact.html">CONTACT</a>
+</nav>
+<div class="hidden md:block">
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html">Demander un devis</a>
+</div>
+<button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<!-- Menu mobile -->
+<div class="mobile-menu fixed inset-0 bg-black z-[60] md:hidden overflow-hidden" id="mobileMenu">
+<div class="flex flex-col h-full overflow-hidden">
+<div class="flex items-center justify-between p-6 border-b border-neutral-800 flex-shrink-0">
+<div class="flex items-center gap-2">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 w-auto"/>
+<h2 class="text-white text-lg font-bold">PASCAL GARDES</h2>
+</div>
+<button class="text-white" id="closeMobileMenu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-6 flex-grow justify-center">
+<a class="text-white text-lg uppercase tracking-wider" href="index.html">Accueil</a>
+<a class="text-white text-lg uppercase tracking-wider" href="services.html">Services</a>
+<a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2" href="realisations.html">Réalisations</a>
+<a class="text-white text-lg uppercase tracking-wider" href="contact.html">Contact</a>
+</nav>
+<div class="p-6 flex-shrink-0">
+<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html">Demander un devis</a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="relative h-[60vh] min-h-[400px] bg-black flex items-center justify-center">
+<img alt="Interior with modern metal staircase" class="absolute inset-0 w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsk726XMyqlMBI-vk87ilFhK08NfdA8IKgU1whE7DBOJ0QHejE5SU5K09ZWGGX4PZ552OKfrJwCh0jSWO0-_uS8SjJhd56zkrDc6KQpUZ2DBOJTSQ2PXQZq0D6Z4nXji-XPf0jnLJ7hT3mFeoTmfdYTLtHxmNqM5U_r3E_WssqYu69Gjk-3mYLEe1bnobSxd9mAMS6O6bT9-7JW8LsLTRiyAeLBzxhN1zDoqnRozxc9gfY46rB3VFXI39zqlVpQRhj6F3s7Myahik"/>
+<div class="relative text-center text-white px-6">
+<h1 class="text-3xl sm:text-4xl md:text-7xl font-bold uppercase tracking-wide md:tracking-widest">Nos Réalisations</h1>
+<p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Découvrez une sélection de nos projets, témoins de notre savoir-faire et de notre passion pour le métal.</p>
+</div>
+</div>
+<div class="bg-white py-10 sticky top-[72px] z-40 border-b border-neutral-200">
+<div class="container mx-auto px-6">
+<div class="flex flex-wrap items-center justify-center gap-2 md:gap-4">
+<button class="bg-black text-white text-sm font-medium uppercase tracking-wider py-2 px-5">Tous</button>
+<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Escaliers</button>
+<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Portails</button>
+<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Garde-corps</button>
+<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Autres</button>
+</div>
+</div>
+</div>
+<div class="bg-white">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Escalier Design Intérieur"
+     data-category="Escalier"
+     data-description="Escalier moderne avec structure en acier noir et marches en bois massif. Design épuré et contemporain pour un intérieur lumineux."
+     data-materials="Acier thermolaqué noir, Chêne massif"
+     data-location="Lyon, Résidence privée"
+     data-year="2024"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDsk726XMyqlMBI-vk87ilFhK08NfdA8IKgU1whE7DBOJ0QHejE5SU5K09ZWGGX4PZ552OKfrJwCh0jSWO0-_uS8SjJhd56zkrDc6KQpUZ2DBOJTSQ2PXQZq0D6Z4nXji-XPf0jnLJ7hT3mFeoTmfdYTLtHxmNqM5U_r3E_WssqYu69Gjk-3mYLEe1bnobSxd9mAMS6O6bT9-7JW8LsLTRiyAeLBzxhN1zDoqnRozxc9gfY46rB3VFXI39zqlVpQRhj6F3s7Myahik">
+<img alt="Modern metal staircase" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsk726XMyqlMBI-vk87ilFhK08NfdA8IKgU1whE7DBOJ0QHejE5SU5K09ZWGGX4PZ552OKfrJwCh0jSWO0-_uS8SjJhd56zkrDc6KQpUZ2DBOJTSQ2PXQZq0D6Z4nXji-XPf0jnLJ7hT3mFeoTmfdYTLtHxmNqM5U_r3E_WssqYu69Gjk-3mYLEe1bnobSxd9mAMS6O6bT9-7JW8LsLTRiyAeLBzxhN1zDoqnRozxc9gfY46rB3VFXI39zqlVpQRhj6F3s7Myahik"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Portail Fer Forgé Classique"
+     data-category="Portail"
+     data-description="Portail en fer forgé avec ornements traditionnels. Travail artisanal minutieux et finitions soignées pour une entrée élégante."
+     data-materials="Fer forgé, Peinture anticorrosion"
+     data-location="Villefranche-sur-Saône, Propriété"
+     data-year="2023"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDKjatrec5BgFb_SlEuTYo9PlEUHA92hDkhAoOoZrW81LxcDxaH4F7UkR3MxHin_xvawG00rWtZLTO3i_PAjCp87Y7vEbS4NRaY6J9DGoQu5h29vJ1p5eatc0KTFKtX5Ut21qGZf1WMxIjbThlIhUqTh3D5LEf6u1W5nz-It43YYy6jHXCb6eSuuqhH0zmqzqg2hBwoiZiQF3795uaUIXlATMHoRw5KyRVXO9fseLnouhXVV_aMc0nIS0Qw1qrwHOwNqOA0sRJap-o">
+<img alt="Wrought iron gate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKjatrec5BgFb_SlEuTYo9PlEUHA92hDkhAoOoZrW81LxcDxaH4F7UkR3MxHin_xvawG00rWtZLTO3i_PAjCp87Y7vEbS4NRaY6J9DGoQu5h29vJ1p5eatc0KTFKtX5Ut21qGZf1WMxIjbThlIhUqTh3D5LEf6u1W5nz-It43YYy6jHXCb6eSuuqhH0zmqzqg2hBwoiZiQF3795uaUIXlATMHoRw5KyRVXO9fseLnouhXVV_aMc0nIS0Qw1qrwHOwNqOA0sRJap-o"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Garde-corps Terrasse Moderne"
+     data-category="Garde-corps"
+     data-description="Garde-corps contemporain avec panneaux de verre et montants en acier inoxydable. Vue dégagée et sécurité optimale."
+     data-materials="Acier inoxydable 316L, Verre feuilleté 12mm"
+     data-location="Écully, Maison contemporaine"
+     data-year="2024"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAfWZcBLpVW87iN339iiF3D9bLb1T0mHkXpI-nho4yGrXL2hZvzNZP4gCheoyqJHPKUVjpBg69tHkx5SWPoLP9k5bI2z29w1b3k-T2mDScPsR2S3laaTUaz8qCWKUIy6SwPu4zKdBy22TaZGIig8d1AF7NJBMGSkaU6N_8KJDHIpqgb-tHO_fMs-Tt6ll3lG87njjvUCdjjF6rZmtzG_Sy2dv4ufHpQ6tDag_hNKwRz2rdxX8P8iq3JFGWl2FnLt_Un-KMLZzyWsRs">
+<img alt="Glass railing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfWZcBLpVW87iN339iiF3D9bLb1T0mHkXpI-nho4yGrXL2hZvzNZP4gCheoyqJHPKUVjpBg69tHkx5SWPoLP9k5bI2z29w1b3k-T2mDScPsR2S3laaTUaz8qCWKUIy6SwPu4zKdBy22TaZGIig8d1AF7NJBMGSkaU6N_8KJDHIpqgb-tHO_fMs-Tt6ll3lG87njjvUCdjjF6rZmtzG_Sy2dv4ufHpQ6tDag_hNKwRz2rdxX8P8iq3JFGWl2FnLt_Un-KMLZzyWsRs"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Panneau Décoratif Mural"
+     data-category="Autre"
+     data-description="Création artistique en métal pour décoration murale. Motifs géométriques modernes réalisés sur mesure."
+     data-materials="Acier découpé laser, Finition brossée"
+     data-location="Lyon, Appartement"
+     data-year="2023"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6Sf97GHr-fX-RSlXncNCHZ9EMx0PkP1TPiwnhMhaWsHBmrsjkSk04igpyjvOdV6RFRpHZcCV98JUx2uHk9RT1ojcrhHjHNJNs7hl9uSSjIIFzQ_6JVEcjI29qYnRy_ajwKqZfdByB_C_hNe5W7U0DXIDVrpqguE53JVJAj1B9-YsaDN5onzA9YA5Mo4P6GD_pnWXqTzTycIeifmm8HuY-qwyCN_afcOvQ812SU6OGCVBlvizbgi_bNSUvbZdgvMi9SlwQKVnI8E">
+<img alt="Decorative metal panel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6Sf97GHr-fX-RSlXncNCHZ9EMx0PkP1TPiwnhMhaWsHBmrsjkSk04igpyjvOdV6RFRpHZcCV98JUx2uHk9RT1ojcrhHjHNJNs7hl9uSSjIIFzQ_6JVEcjI29qYnRy_ajwKqZfdByB_C_hNe5W7U0DXIDVrpqguE53JVJAj1B9-YsaDN5onzA9YA5Mo4P6GD_pnWXqTzTycIeifmm8HuY-qwyCN_afcOvQ812SU6OGCVBlvizbgi_bNSUvbZdgvMi9SlwQKVnI8E"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Escalier Industriel Intérieur"
+     data-category="Escalier"
+     data-description="Escalier style industriel avec structure apparente en acier brut. Esthétique urbaine et robuste pour un loft moderne."
+     data-materials="Acier brut patiné, Marches métalliques"
+     data-location="Lyon, Loft"
+     data-year="2023"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuB9wV-D7gKXCxzJ97wB7QOu75PWSo5SYLA2MjbxYpanDcp2wdqMGMfqZAHuiWbe0Geh9-u3kwmC36zpQ0dfB-uN4924Y04qIGHebjq9lofFTAv064cA1TiCEVQoEAm-zQ7jYSQAPS2N0Bs2jTq8zw1nqHFnX3LKK3klRF3UGu_IUJJk7BmJF1IpkAxWc7j-04tD9t9MnI1SU3q-B6CynTUY_p1tvyrzCKa5h-qa-ku16aHKNaxtQGnzgp-NpGwaBGB-LV1DZw55tSU">
+<img alt="Industrial staircase" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9wV-D7gKXCxzJ97wB7QOu75PWSo5SYLA2MjbxYpanDcp2wdqMGMfqZAHuiWbe0Geh9-u3kwmC36zpQ0dfB-uN4924Y04qIGHebjq9lofFTAv064cA1TiCEVQoEAm-zQ7jYSQAPS2N0Bs2jTq8zw1nqHFnX3LKK3klRF3UGu_IUJJk7BmJF1IpkAxWc7j-04tD9t9MnI1SU3q-B6CynTUY_p1tvyrzCKa5h-qa-ku16aHKNaxtQGnzgp-NpGwaBGB-LV1DZw55tSU"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Portail Coulissant Motorisé"
+     data-category="Portail"
+     data-description="Portail coulissant automatique en métal noir. Système motorisé avec télécommande et sécurité optimale."
+     data-materials="Acier thermolaqué noir mat, Motorisation BFT"
+     data-location="Caluire, Villa"
+     data-year="2024"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCpq9K-POFVMcatrHTfumG6g7_pHAgLn7tX7jPrgNnT8oRNCYr4wMuWTiV5gwR6RSytNczOzwhUlxIxo2vj9ccmCMrpq_2Qn0CG0ObqXdfS5HyOliajGyYuymaoTolmGZNYYYpwmK-pehSycD01Q03OGb3LHoITu-we44tEXusrjjFc4nvJZX_qGXzaiCtf2LXoizyBBl81tKl6wpn2pmzzYaBVR8l3JDKgq4mu9DddyelScR3KDbdn8DoBoU55tZWYMZ8LQscwz00">
+<img alt="Motorized sliding gate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpq9K-POFVMcatrHTfumG6g7_pHAgLn7tX7jPrgNnT8oRNCYr4wMuWTiV5gwR6RSytNczOzwhUlxIxo2vj9ccmCMrpq_2Qn0CG0ObqXdfS5HyOliajGyYuymaoTolmGZNYYYpwmK-pehSycD01Q03OGb3LHoITu-we44tEXusrjjFc4nvJZX_qGXzaiCtf2LXoizyBBl81tKl6wpn2pmzzYaBVR8l3JDKgq4mu9DddyelScR3KDbdn8DoBoU55tZWYMZ8LQscwz00"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Garde-corps Balcon Acier"
+     data-category="Garde-corps"
+     data-description="Garde-corps en acier noir pour balcon avec vue sur jardin. Design épuré avec barreaux verticaux."
+     data-materials="Acier thermolaqué noir, Main courante inox"
+     data-location="Tassin-la-Demi-Lune, Maison"
+     data-year="2024"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCFtEsdM2VaFTLH_7W2DJQf0g8KKWN-fk7En7cGh9d9_KmMyiGB7wirXHK8ONR9XuNOxEXqK1xNdDC4MDIoTaUEFc4Smjp-U_Ns36UgxLTcGIAB884xanBKTwQMHjTRuKMMmX-xcZ0mRCsHfUm_2Nw82sSXLyL8mbqN7ZZ0aCVw1c1QQUYl0TvFGAoUeDmV5C83z_BwQllHK7fBmOFvCUXl9tJiPxO3Ro6C5hTWI_O5BtaEiNEk1GsZP0oYicnn07yVIZDTGNKTSDY">
+<img alt="Steel balcony railing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFtEsdM2VaFTLH_7W2DJQf0g8KKWN-fk7En7cGh9d9_KmMyiGB7wirXHK8ONR9XuNOxEXqK1xNdDC4MDIoTaUEFc4Smjp-U_Ns36UgxLTcGIAB884xanBKTwQMHjTRuKMMmX-xcZ0mRCsHfUm_2Nw82sSXLyL8mbqN7ZZ0aCVw1c1QQUYl0TvFGAoUeDmV5C83z_BwQllHK7fBmOFvCUXl9tJiPxO3Ro6C5hTWI_O5BtaEiNEk1GsZP0oYicnn07yVIZDTGNKTSDY"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Mobilier Métallique Sur Mesure"
+     data-category="Autre"
+     data-description="Pied de table design en métal soudé. Création unique alliant esthétique et solidité."
+     data-materials="Acier brut soudé, Finition vernis mat"
+     data-location="Lyon, Restaurant"
+     data-year="2023"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCrLvowyWqJwJntffYvxVPZN7G2lzBCp5f6L7FkvaFvsx8_2MoLy41J4x4pmLoo2tES6dlfxHm3hqAHGMC286NA5YF2rn9Y6PQzgus07vtfH2y3bsikiCerSc4W56l5TDYXahsNPCxsLMwgOvj4CnS3uD1lBbqASPnIam_y-q4JpqlXs6750X5-3ckxtx2JQr4BuG0eXVZrO25TrzrNLETlXg3HA_XJWr9rcWy0FalLhD1xXp_rT47IKUO0GTKo7uARfLKPbe5TsmQ">
+<img alt="Custom metal furniture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrLvowyWqJwJntffYvxVPZN7G2lzBCp5f6L7FkvaFvsx8_2MoLy41J4x4pmLoo2tES6dlfxHm3hqAHGMC286NA5YF2rn9Y6PQzgus07vtfH2y3bsikiCerSc4W56l5TDYXahsNPCxsLMwgOvj4CnS3uD1lBbqASPnIam_y-q4JpqlXs6750X5-3ckxtx2JQr4BuG0eXVZrO25TrzrNLETlXg3HA_XJWr9rcWy0FalLhD1xXp_rT47IKUO0GTKo7uARfLKPbe5TsmQ"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item"
+     data-title="Escalier Hélicoïdal Extérieur"
+     data-category="Escalier"
+     data-description="Escalier en colimaçon extérieur en acier galvanisé. Résistant aux intempéries et design compact."
+     data-materials="Acier galvanisé à chaud, Marches caillebotis"
+     data-location="Vienne, Bâtiment industriel"
+     data-year="2023"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQsVf9oQoKWhjvseYXddAkVaRp3TWvSdTEPz6ASQD2xj_stQgGg6ZYilhQOG7P-0UZJS0H58UiVJMDI0GPXpdDeyVTs_BJD7Z01YbOmQZs7bUmrrVtuqGVKLt1_9geDPTuGoILJb1pXWsSJ_ZCa4UXzH0B79lBZAf34obPGtq8CfApqLkfLQHkPwhR_qLBBesWQwHc3yM-ZSEn3kPWJLRKL36aKAS7nL-gkLeyFe7Fc2VonHG8Qy5YECbXu_BOW5ngEjOq5Zgo9s">
+<img alt="Helical outdoor staircase" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQsVf9oQoKWhjvseYXddAkVaRp3TWvSdTEPz6ASQD2xj_stQgGg6ZYilhQOG7P-0UZJS0H58UiVJMDI0GPXpdDeyVTs_BJD7Z01YbOmQZs7bUmrrVtuqGVKLt1_9geDPTuGoILJb1pXWsSJ_ZCa4UXzH0B79lBZAf34obPGtq8CfApqLkfLQHkPwhR_qLBBesWQwHc3yM-ZSEn3kPWJLRKL36aKAS7nL-gkLeyFe7Fc2VonHG8Qy5YECbXu_BOW5ngEjOq5Zgo9s"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Portail 2 Vantaux Traditionnel"
+     data-category="Portail"
+     data-description="Portail battant double vantaux avec éléments décoratifs forgés. Style classique et intemporel."
+     data-materials="Fer forgé, Peinture thermolaquée gris anthracite"
+     data-location="Saint-Priest, Propriété"
+     data-year="2024"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDg2__gp-k0BPGwKQ3j79Hjct__derIFBQooKrwpOvYMltmsEfDCT0bHD6t9hARuH4OY59fKmTqFYLhZzEnonZaci94KOekzfnuKzLcbDPwRBsV8RPqVDdKqjU41IDnt-iJDdC4i78XDDC68UOiwDpPotxdSr3Et0Fm1D64B4xUiI2DOgE1N8BzwdqNsehDwlfX3ktB8Lfg9mgXkFNHtds4pLdB14AJ9F-7QpZJZyTJONhM46pcBBT3w8hUEIrGwL3HJHOA9kUMzkE">
+<img alt="Double swing gate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg2__gp-k0BPGwKQ3j79Hjct__derIFBQooKrwpOvYMltmsEfDCT0bHD6t9hARuH4OY59fKmTqFYLhZzEnonZaci94KOekzfnuKzLcbDPwRBsV8RPqVDdKqjU41IDnt-iJDdC4i78XDDC68UOiwDpPotxdSr3Et0Fm1D64B4xUiI2DOgE1N8BzwdqNsehDwlfX3ktB8Lfg9mgXkFNHtds4pLdB14AJ9F-7QpZJZyTJONhM46pcBBT3w8hUEIrGwL3HJHOA9kUMzkE"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Garde-corps Inox et Verre"
+     data-category="Garde-corps"
+     data-description="Rambarde de balcon en inox avec verre feuilleté. Transparence maximale et design contemporain."
+     data-materials="Inox 316L poli miroir, Verre feuilleté securit"
+     data-location="Meyzieu, Appartement"
+     data-year="2024"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCM4KAGVb-WC4BKKB7lU9BB5SEmxEpKg-T_vDf2jne5whZ2Q20mlcrHk-I05R5ewBHMSshMhd65yv2UoYD9bggq_ktFSAmGkrHyduh7R34ONpejnGYlmpzlPKBj6FHnIwXoe2eFef4lICrD7GS7lvr_KEuiYPF7kcjaf0sEjVVi6uN8mAHpxavV-dh2aNDdB0XCeeith9GoL2GnmfLH1ExRT5m3vIvaAZefms1r0UQ5Fs1E6_t5QrAx4Q4T4FkXh1co9_wcCAvvs8E">
+<img alt="Stainless steel glass railing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM4KAGVb-WC4BKKB7lU9BB5SEmxEpKg-T_vDf2jne5whZ2Q20mlcrHk-I05R5ewBHMSshMhd65yv2UoYD9bggq_ktFSAmGkrHyduh7R34ONpejnGYlmpzlPKBj6FHnIwXoe2eFef4lICrD7GS7lvr_KEuiYPF7kcjaf0sEjVVi6uN8mAHpxavV-dh2aNDdB0XCeeith9GoL2GnmfLH1ExRT5m3vIvaAZefms1r0UQ5Fs1E6_t5QrAx4Q4T4FkXh1co9_wcCAvvs8E"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Pergola Métal Design"
+     data-category="Autre"
+     data-description="Structure métallique pour pergola avec toiture amovible. Espace extérieur élégant et fonctionnel."
+     data-materials="Acier galvanisé, Tubes carrés 80x80"
+     data-location="Dardilly, Jardin"
+     data-year="2023"
+     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDr7dn2DTXYKsVyMF7Gg_GadAWfby0DJo8YPtvNb623FuDe04aSHqN9QX9vSvgo5hX4IffjlGRRd8rifRkI-sDEVepHz3tBsdlrix73G-FYham_iZz4uFEZHD8HK2A8xLx7JdvCC7dWl_Zvs5zHoQz7S2PexavHuU9Ut4wMVbx0nShIzLvo2vvKL4Y0cdDD-HYRaVw3EosJusjcNe-xTkb5lqApsqv2bootNYV5KcTGls0oniNVCgaEYJeIlJQ_dntNAD_zc3w_XVE">
+<img alt="Metal pergola structure" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr7dn2DTXYKsVyMF7Gg_GadAWfby0DJo8YPtvNb623FuDe04aSHqN9QX9vSvgo5hX4IffjlGRRd8rifRkI-sDEVepHz3tBsdlrix73G-FYham_iZz4uFEZHD8HK2A8xLx7JdvCC7dWl_Zvs5zHoQz7S2PexavHuU9Ut4wMVbx0nShIzLvo2vvKL4Y0cdDD-HYRaVw3EosJusjcNe-xTkb5lqApsqv2bootNYV5KcTGls0oniNVCgaEYJeIlJQ_dntNAD_zc3w_XVE"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<section class="bg-gradient-to-br from-neutral-900 via-neutral-800 to-black text-white py-20">
+<div class="container mx-auto px-6">
+<div class="text-center max-w-4xl mx-auto animate-on-scroll">
+<div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-2xl mb-6">
+<svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+</div>
+<h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-4">Suivez-nous sur Instagram</h2>
+<p class="text-lg text-neutral-300 font-light mb-8 leading-relaxed">Découvrez encore plus de nos réalisations, de photos d'atelier et de projets en cours sur notre compte Instagram <strong>@gpserrurerie</strong></p>
+<a class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white text-sm font-bold uppercase tracking-widest py-4 px-8 rounded-lg hover:scale-105 transition-transform duration-300" href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+Voir notre Instagram
+</a>
+<p class="mt-6 text-sm text-neutral-400 font-light">Plus de 100 photos de nos créations métalliques</p>
+</div>
+</div>
+</section>
+<footer class="bg-black text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Pascal Gardes</h3>
+<p class="mt-2 text-sm text-neutral-400 font-light">Savoir-faire et passion du métal au service de vos projets.</p>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Navigation</h3>
+<ul class="mt-2 space-y-1">
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="index.html">Accueil</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="services.html">Services</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="realisations.html">Réalisations</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Suivez-nous</h3>
+<div class="flex justify-center md:justify-start gap-4 mt-2">
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2.25c-2.454 0-2.756.01-3.71.054a5.003 5.003 0 00-1.748.333 3.018 3.018 0 00-1.15.748 3.018 3.018 0 00-.748 1.15 5.003 5.003 0 00-.333 1.748C2.26 7.494 2.25 7.796 2.25 12s.01 4.506.054 5.46a5.003 5.003 0 00.333 1.748 3.018 3.018 0 00.748 1.15 3.018 3.018 0 001.15.748 5.003 5.003 0 001.748.333C7.494 21.74 7.796 21.75 12 21.75s4.506-.01 5.46-.054a5.003 5.003 0 001.748-.333 3.018 3.018 0 001.15-.748 3.018 3.018 0 00.748-1.15 5.003 5.003 0 00.333-1.748c.044-.954.054-1.256.054-5.46s-.01-4.506-.054-5.46a5.003 5.003 0 00-.333-1.748 3.018 3.018 0 00-.748-1.15 3.018 3.018 0 00-1.15-.748 5.003 5.003 0 00-1.748-.333C16.506 2.26 16.204 2.25 12 2.25zm0 1.5c2.424 0 2.712.01 3.654.052a3.503 3.503 0 011.22.232 1.518 1.518 0 01.58.58 3.503 3.503 0 01.232 1.22c.042.942.052 1.23.052 3.654s-.01 2.712-.052 3.654a3.503 3.503 0 01-.232 1.22 1.518 1.518 0 01-.58.58 3.503 3.503 0 01-1.22.232c-.942.042-1.23.052-3.654.052s-2.712-.01-3.654-.052a3.503 3.503 0 01-1.22-.232 1.518 1.518 0 01-.58-.58 3.503 3.503 0 01-.232-1.22c-.042-.942-.052-1.23-.052-3.654s.01-2.712.052-3.654a3.503 3.503 0 01.232-1.22 1.518 1.518 0 01.58-.58 3.503 3.503 0 011.22-.232C9.288 3.76 9.576 3.75 12 3.75zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm5.625-7.875a.938.938 0 100-1.875.938.938 0 000 1.875z" fill-rule="evenodd"></path></svg></a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.facebook.com/gpserrurerie/?locale=fr_FR" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19.5 0h-15A4.5 4.5 0 000 4.5v15A4.5 4.5 0 004.5 24h15a4.5 4.5 0 004.5-4.5v-15A4.5 4.5 0 0019.5 0zM8.25 19.5h-3v-9h3v9zM6.75 8.625a1.875 1.875 0 110-3.75 1.875 1.875 0 010 3.75zM19.5 19.5h-3v-4.312c0-1.02-.018-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.256V19.5h-3v-9h2.869v1.312h.04c.397-.75 1.369-1.537 2.83-1.537 3.03 0 3.588 1.993 3.588 4.582V19.5z" fill-rule="evenodd"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
+<p>© 2024 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="#">Mentions légales</a></p>
+</div>
+</div>
+</footer>
+</div>
+
+<!-- Lightbox avec description -->
+<div class="fixed inset-0 bg-black bg-opacity-95 z-50 items-start lg:items-center justify-start lg:justify-center hidden overflow-y-auto" id="lightbox">
+<button class="fixed top-4 right-4 md:top-6 md:right-6 text-white hover:text-neutral-300 z-[70] bg-black bg-opacity-70 rounded-full p-2" id="closeLightbox">
+<span class="material-symbols-outlined text-3xl md:text-5xl">close</span>
+</button>
+<div class="w-full min-h-full lg:min-h-0 py-16 md:py-20 lg:py-6">
+<div class="container mx-auto px-4 md:px-6">
+<div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
+<!-- Image -->
+<div class="flex items-center justify-center lg:sticky lg:top-6 lg:self-start">
+<img alt="Project image" class="w-full max-h-[50vh] lg:max-h-[80vh] object-contain" id="lightboxImage"/>
+</div>
+<!-- Informations -->
+<div class="text-white flex flex-col p-4 md:p-6 lg:p-8 pb-20 lg:pb-8">
+<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide lg:tracking-wider mb-3 md:mb-4" id="lightboxTitle">Titre du projet</h2>
+<p class="text-sm md:text-base lg:text-lg text-neutral-300 font-light mb-4 md:mb-6 leading-relaxed" id="lightboxDescription">Description du projet</p>
+<div class="space-y-3 md:space-y-4 border-t border-neutral-700 pt-4 md:pt-6">
+<div>
+<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Catégorie</h3>
+<p class="text-sm md:text-base lg:text-lg font-medium" id="lightboxCategory">Catégorie</p>
+</div>
+<div>
+<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Matériaux</h3>
+<p class="text-sm md:text-base lg:text-lg font-light" id="lightboxMaterials">Matériaux</p>
+</div>
+<div>
+<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Localisation</h3>
+<p class="text-sm md:text-base lg:text-lg font-light" id="lightboxLocation">Localisation</p>
+</div>
+<div>
+<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Année</h3>
+<p class="text-sm md:text-base lg:text-lg font-light" id="lightboxYear">2024</p>
+</div>
+</div>
+<div class="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-neutral-700">
+<a class="block text-center bg-white text-black text-xs md:text-sm font-bold uppercase tracking-widest py-3 px-6 md:px-8 hover:bg-neutral-200 transition-colors" href="contact.html">Demander un devis</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        let scrollPosition = 0;
+
+        function openMenu() {
+            scrollPosition = window.pageYOffset;
+            mobileMenu.classList.add('active');
+            document.body.classList.add('menu-open');
+            document.body.style.top = `-${scrollPosition}px`;
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeMobileMenu.addEventListener('click', closeMenu);
+
+        // Fermer le menu en cliquant sur un lien
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Animations au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            scrollObserver.observe(el);
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        projectItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Get data from clicked item
+                const title = item.dataset.title;
+                const description = item.dataset.description;
+                const category = item.dataset.category;
+                const materials = item.dataset.materials;
+                const location = item.dataset.location;
+                const year = item.dataset.year;
+                const image = item.dataset.image;
+                
+                // Update lightbox content
+                document.getElementById('lightboxTitle').textContent = title;
+                document.getElementById('lightboxDescription').textContent = description;
+                document.getElementById('lightboxCategory').textContent = category;
+                document.getElementById('lightboxMaterials').textContent = materials;
+                document.getElementById('lightboxLocation').textContent = location;
+                document.getElementById('lightboxYear').textContent = year;
+                document.getElementById('lightboxImage').src = image;
+                
+                // Show lightbox
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+
+</body></html>

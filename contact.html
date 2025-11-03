@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - Pascal Gardes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        html {
+            overflow-x: hidden;
+        }
+        * {
+            max-width: 100%;
+        }
+        html, body {
+            max-width: 100vw;
+        }
+        .header-scrolled {
+            background-color: #ffffff;
+            color: #000000;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .header-scrolled a,
+        .header-scrolled h2,
+        .header-scrolled .material-symbols-outlined,
+        .header-scrolled #mobileMenuBtn {
+            color: #000000;
+        }
+        .header-scrolled img {
+            filter: invert(1) brightness(0);
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        body.menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+        .mobile-menu {
+            touch-action: auto;
+        }
+        /* Assurer que le bouton menu est visible */
+        #mobileMenuBtn {
+            z-index: 51;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+        }
+        .animate-on-scroll.visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        /* Animation hover nav */
+        nav a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .header-scrolled nav a::after {
+            background: black;
+        }
+        /* Animation boutons CTA */
+        a[href*="contact"],
+        button[type="submit"] {
+            transition: all 0.3s ease;
+        }
+        a[href*="contact"]:hover,
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        /* Animation inputs focus */
+        input:focus, select:focus, textarea:focus {
+            transform: scale(1.01);
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-display">
+<div class="relative min-h-screen flex flex-col">
+<header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300" id="header">
+<div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+<a class="flex items-center gap-2 md:gap-3" href="index.html">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 md:h-10 w-auto"/>
+<h2 class="text-white text-base md:text-xl font-bold">PASCAL GARDES</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white text-sm tracking-wider" href="index.html">ACCUEIL</a>
+<a class="text-white text-sm tracking-wider" href="services.html">SERVICES</a>
+<a class="text-white text-sm tracking-wider" href="realisations.html">RÉALISATIONS</a>
+<a class="text-white text-sm font-bold border-b border-white tracking-wider" href="contact.html">CONTACT</a>
+</nav>
+<div class="hidden md:block">
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html">Demander un devis</a>
+</div>
+<button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<!-- Menu mobile -->
+<div class="mobile-menu fixed inset-0 bg-black z-[60] md:hidden overflow-hidden" id="mobileMenu">
+<div class="flex flex-col h-full overflow-hidden">
+<div class="flex items-center justify-between p-6 border-b border-neutral-800 flex-shrink-0">
+<div class="flex items-center gap-2">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 w-auto"/>
+<h2 class="text-white text-lg font-bold">PASCAL GARDES</h2>
+</div>
+<button class="text-white" id="closeMobileMenu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-6 flex-grow justify-center">
+<a class="text-white text-lg uppercase tracking-wider" href="index.html">Accueil</a>
+<a class="text-white text-lg uppercase tracking-wider" href="services.html">Services</a>
+<a class="text-white text-lg uppercase tracking-wider" href="realisations.html">Réalisations</a>
+<a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2" href="contact.html">Contact</a>
+</nav>
+<div class="p-6 flex-shrink-0">
+<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html">Demander un devis</a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="relative h-[60vh] min-h-[400px] bg-black flex items-center justify-center">
+<img alt="Atelier de forge avec outils de métallerie" class="absolute inset-0 w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9wV-D7gKXCxzJ97wB7QOu75PWSo5SYLA2MjbxYpanDcp2wdqMGMfqZAHuiWbe0Geh9-u3kwmC36zpQ0dfB-uN4924Y04qIGHebjq9lofFTAv064cA1TiCEVQoEAm-zQ7jYSQAPS2N0Bs2jTq8zw1nqHFnX3LKK3klRF3UGu_IUJJk7BmJF1IpkAxWc7j-04tD9t9MnI1SU3q-B6CynTUY_p1tvyrzCKa5h-qa-ku16aHKNaxtQGnzgp-NpGwaBGB-LV1DZw55tSU"/>
+<div class="relative text-center text-white px-6">
+<h1 class="text-3xl sm:text-4xl md:text-7xl font-bold uppercase tracking-wide md:tracking-widest">Contactez-nous</h1>
+<p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Une question ? Un projet ? N'hésitez pas à nous contacter, nous serons ravis d'échanger avec vous.</p>
+</div>
+</div>
+<div class="bg-white py-20">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="animate-on-scroll">
+<h2 class="text-3xl font-bold uppercase tracking-wider mb-6">Envoyez-nous un message</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium uppercase tracking-wider mb-2" for="nom">Nom *</label>
+<input class="w-full px-4 py-3 border border-neutral-300 focus:border-black focus:outline-none transition-colors" id="nom" name="nom" required="" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium uppercase tracking-wider mb-2" for="prenom">Prénom *</label>
+<input class="w-full px-4 py-3 border border-neutral-300 focus:border-black focus:outline-none transition-colors" id="prenom" name="prenom" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium uppercase tracking-wider mb-2" for="email">Email *</label>
+<input class="w-full px-4 py-3 border border-neutral-300 focus:border-black focus:outline-none transition-colors" id="email" name="email" required="" type="email"/>
+</div>
+<div>
+<label class="block text-sm font-medium uppercase tracking-wider mb-2" for="telephone">Téléphone</label>
+<input class="w-full px-4 py-3 border border-neutral-300 focus:border-black focus:outline-none transition-colors" id="telephone" name="telephone" type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium uppercase tracking-wider mb-2" for="sujet">Sujet *</label>
+<select class="w-full px-4 py-3 border border-neutral-300 focus:border-black focus:outline-none transition-colors" id="sujet" name="sujet" required="">
+<option value="">Sélectionnez un sujet</option>
+<option value="escalier">Escalier métallique</option>
+<option value="portail">Portail / Portillon</option>
+<option value="garde-corps">Garde-corps / Rampe</option>
+<option value="autre">Autre structure métallique</option>
+<option value="renseignement">Demande de renseignement</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium uppercase tracking-wider mb-2" for="message">Message *</label>
+<textarea class="w-full px-4 py-3 border border-neutral-300 focus:border-black focus:outline-none transition-colors resize-none" id="message" name="message" required="" rows="6"></textarea>
+</div>
+<div>
+<button class="w-full bg-black text-white text-sm font-bold uppercase tracking-widest py-4 px-6 hover:bg-neutral-800 transition-colors" type="submit">Envoyer le message</button>
+</div>
+</form>
+</div>
+<div class="animate-on-scroll">
+<h2 class="text-3xl font-bold uppercase tracking-wider mb-6">Nos coordonnées</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-3xl">location_on</span>
+<div>
+<h3 class="text-lg font-bold uppercase tracking-wider mb-2">Adresse</h3>
+<p class="text-neutral-600 font-light">Z.A. de la Loubeyre<br/>43260 LANTRIAC</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-3xl">call</span>
+<div>
+<h3 class="text-lg font-bold uppercase tracking-wider mb-2">Téléphone</h3>
+<p class="text-neutral-600 font-light">04.71.05.19.75</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-3xl">fax</span>
+<div>
+<h3 class="text-lg font-bold uppercase tracking-wider mb-2">Fax</h3>
+<p class="text-neutral-600 font-light">04.71.05.19.75</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-3xl">mail</span>
+<div>
+<h3 class="text-lg font-bold uppercase tracking-wider mb-2">Email</h3>
+<p class="text-neutral-600 font-light">gpserrurerie@outlook.fr</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-3xl">schedule</span>
+<div>
+<h3 class="text-lg font-bold uppercase tracking-wider mb-2">Horaires</h3>
+<p class="text-neutral-600 font-light">
+Lundi - Vendredi : 8h00 - 18h00<br/>
+Samedi : 9h00 - 12h00<br/>
+Dimanche : Fermé
+</p>
+</div>
+</div>
+</div>
+<div class="mt-10 p-8 bg-neutral-100">
+<h3 class="text-xl font-bold uppercase tracking-wider mb-4">Zone d'intervention</h3>
+<p class="text-neutral-600 font-light leading-relaxed">Nous intervenons principalement en Haute-Loire (43) et dans les départements limitrophes de l'Auvergne-Rhône-Alpes. Pour tout projet en dehors de cette zone, n'hésitez pas à nous consulter.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-neutral-100 py-16">
+<div class="container mx-auto px-6">
+<div class="bg-white border border-neutral-300 h-[400px] flex items-center justify-center">
+<div class="text-center text-neutral-500">
+<span class="material-symbols-outlined text-6xl mb-4">map</span>
+<p class="font-light">Carte Google Maps</p>
+<p class="text-sm font-light mt-2">Intégration à venir</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-black text-white py-16">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-4">Besoin d'un devis ?</h2>
+<p class="text-lg text-neutral-300 font-light mb-8 max-w-2xl mx-auto">Nous vous proposons un devis gratuit et personnalisé pour tous vos projets de métallerie.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-8 hover:bg-neutral-200 transition-colors" href="#formulaire">Demander un devis</a>
+<a class="inline-block bg-transparent border-2 border-white text-white text-sm font-bold uppercase tracking-widest py-3 px-8 hover:bg-white hover:text-black transition-colors" href="realisations.html">Voir nos réalisations</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-black text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Pascal Gardes</h3>
+<p class="mt-2 text-sm text-neutral-400 font-light">Savoir-faire et passion du métal au service de vos projets.</p>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Navigation</h3>
+<ul class="mt-2 space-y-1">
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="index.html">Accueil</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="services.html">Services</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="realisations.html">Réalisations</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Suivez-nous</h3>
+<div class="flex justify-center md:justify-start gap-4 mt-2">
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2.25c-2.454 0-2.756.01-3.71.054a5.003 5.003 0 00-1.748.333 3.018 3.018 0 00-1.15.748 3.018 3.018 0 00-.748 1.15 5.003 5.003 0 00-.333 1.748C2.26 7.494 2.25 7.796 2.25 12s.01 4.506.054 5.46a5.003 5.003 0 00.333 1.748 3.018 3.018 0 00.748 1.15 3.018 3.018 0 001.15.748 5.003 5.003 0 001.748.333C7.494 21.74 7.796 21.75 12 21.75s4.506-.01 5.46-.054a5.003 5.003 0 001.748-.333 3.018 3.018 0 001.15-.748 3.018 3.018 0 00.748-1.15 5.003 5.003 0 00.333-1.748c.044-.954.054-1.256.054-5.46s-.01-4.506-.054-5.46a5.003 5.003 0 00-.333-1.748 3.018 3.018 0 00-.748-1.15 3.018 3.018 0 00-1.15-.748 5.003 5.003 0 00-1.748-.333C16.506 2.26 16.204 2.25 12 2.25zm0 1.5c2.424 0 2.712.01 3.654.052a3.503 3.503 0 011.22.232 1.518 1.518 0 01.58.58 3.503 3.503 0 01.232 1.22c.042.942.052 1.23.052 3.654s-.01 2.712-.052 3.654a3.503 3.503 0 01-.232 1.22 1.518 1.518 0 01-.58.58 3.503 3.503 0 01-1.22.232c-.942.042-1.23.052-3.654.052s-2.712-.01-3.654-.052a3.503 3.503 0 01-1.22-.232 1.518 1.518 0 01-.58-.58 3.503 3.503 0 01-.232-1.22c-.042-.942-.052-1.23-.052-3.654s.01-2.712.052-3.654a3.503 3.503 0 01.232-1.22 1.518 1.518 0 01.58-.58 3.503 3.503 0 011.22-.232C9.288 3.76 9.576 3.75 12 3.75zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm5.625-7.875a.938.938 0 100-1.875.938.938 0 000 1.875z" fill-rule="evenodd"></path></svg></a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.facebook.com/gpserrurerie/?locale=fr_FR" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19.5 0h-15A4.5 4.5 0 000 4.5v15A4.5 4.5 0 004.5 24h15a4.5 4.5 0 004.5-4.5v-15A4.5 4.5 0 0019.5 0zM8.25 19.5h-3v-9h3v9zM6.75 8.625a1.875 1.875 0 110-3.75 1.875 1.875 0 010 3.75zM19.5 19.5h-3v-4.312c0-1.02-.018-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.256V19.5h-3v-9h2.869v1.312h.04c.397-.75 1.369-1.537 2.83-1.537 3.03 0 3.588 1.993 3.588 4.582V19.5z" fill-rule="evenodd"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
+<p>© 2024 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="#">Mentions légales</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        let scrollPosition = 0;
+
+        function openMenu() {
+            scrollPosition = window.pageYOffset;
+            mobileMenu.classList.add('active');
+            document.body.classList.add('menu-open');
+            document.body.style.top = `-${scrollPosition}px`;
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeMobileMenu.addEventListener('click', closeMenu);
+
+        // Fermer le menu en cliquant sur un lien
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Animations au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+
+</body></html>

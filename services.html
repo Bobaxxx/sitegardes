@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Services - Pascal Gardes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        html {
+            overflow-x: hidden;
+        }
+        * {
+            max-width: 100%;
+        }
+        html, body {
+            max-width: 100vw;
+        }
+        .header-scrolled {
+            background-color: #ffffff;
+            color: #000000;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .header-scrolled a,
+        .header-scrolled h2,
+        .header-scrolled .material-symbols-outlined,
+        .header-scrolled #mobileMenuBtn {
+            color: #000000;
+        }
+        .header-scrolled img {
+            filter: invert(1) brightness(0);
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        body.menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+        .mobile-menu {
+            touch-action: auto;
+        }
+        /* Assurer que le bouton menu est visible */
+        #mobileMenuBtn {
+            z-index: 51;
+        }
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-on-scroll {
+            opacity: 0;
+        }
+        .animate-on-scroll.visible {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        /* Animation hover nav */
+        nav a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .header-scrolled nav a::after {
+            background: black;
+        }
+        /* Animation boutons CTA */
+        a[href*="contact"],
+        button[type="submit"] {
+            transition: all 0.3s ease;
+        }
+        a[href*="contact"]:hover,
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-display">
+<div class="relative min-h-screen flex flex-col">
+<header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300" id="header">
+<div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+<a class="flex items-center gap-2 md:gap-3" href="index.html">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 md:h-10 w-auto"/>
+<h2 class="text-white text-base md:text-xl font-bold">PASCAL GARDES</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white text-sm tracking-wider" href="index.html">ACCUEIL</a>
+<a class="text-white text-sm font-bold border-b border-white tracking-wider" href="services.html">SERVICES</a>
+<a class="text-white text-sm tracking-wider" href="realisations.html">RÉALISATIONS</a>
+<a class="text-white text-sm tracking-wider" href="contact.html">CONTACT</a>
+</nav>
+<div class="hidden md:block">
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html">Demander un devis</a>
+</div>
+<button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<!-- Menu mobile -->
+<div class="mobile-menu fixed inset-0 bg-black z-[60] md:hidden overflow-hidden" id="mobileMenu">
+<div class="flex flex-col h-full overflow-hidden">
+<div class="flex items-center justify-between p-6 border-b border-neutral-800 flex-shrink-0">
+<div class="flex items-center gap-2">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 w-auto"/>
+<h2 class="text-white text-lg font-bold">PASCAL GARDES</h2>
+</div>
+<button class="text-white" id="closeMobileMenu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-6 flex-grow justify-center">
+<a class="text-white text-lg uppercase tracking-wider" href="index.html">Accueil</a>
+<a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2" href="services.html">Services</a>
+<a class="text-white text-lg uppercase tracking-wider" href="realisations.html">Réalisations</a>
+<a class="text-white text-lg uppercase tracking-wider" href="contact.html">Contact</a>
+</nav>
+<div class="p-6 flex-shrink-0">
+<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html">Demander un devis</a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="relative h-[60vh] min-h-[400px] bg-black flex items-center justify-center">
+<img alt="Vue d'ensemble d'un atelier de métallerie" class="absolute inset-0 w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpq9K-POFVMcatrHTfumG6g7_pHAgLn7tX7jPrgNnT8oRNCYr4wMuWTiV5gwR6RSytNczOzwhUlxIxo2vj9ccmCMrpq_2Qn0CG0ObqXdfS5HyOliajGyYuymaoTolmGZNYYYpwmK-pehSycD01Q03OGb3LHoITu-we44tEXusrjjFc4nvJZX_qGXzaiCtf2LXoizyBBl81tKl6wpn2pmzzYaBVR8l3JDKgq4mu9DddyelScR3KDbdn8DoBoU55tZWYMZ8LQscwz00"/>
+<div class="relative text-center text-white px-6">
+<h1 class="text-3xl sm:text-4xl md:text-7xl font-bold uppercase tracking-wide md:tracking-widest">Nos Services</h1>
+<p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Des solutions complètes en métallerie pour tous vos projets, du design à l'installation.</p>
+</div>
+</div>
+<div class="bg-white py-20">
+<div class="container mx-auto px-6">
+<div class="space-y-20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
+<div class="order-2 md:order-1">
+<h2 class="text-4xl font-bold uppercase tracking-wider mb-4">Escaliers Métalliques</h2>
+<p class="text-neutral-600 font-light mb-6 leading-relaxed">Conception et fabrication d'escaliers sur mesure adaptés à vos espaces. Qu'il s'agisse d'un escalier droit, quart tournant, hélicoïdal ou suspendu, nous réalisons des structures alliant robustesse et design contemporain.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Escaliers droits, quart tournant, deux-quarts tournant</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Escaliers hélicoïdaux et en colimaçon</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Escaliers suspendus et structures contemporaines</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Combinaisons métal/bois/verre selon vos envies</span>
+</li>
+</ul>
+<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-800 transition-colors" href="realisations.html">Voir nos réalisations</a>
+</div>
+<div class="order-1 md:order-2 relative h-[400px]">
+<img alt="Escalier métallique moderne avec marches en bois" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsk726XMyqlMBI-vk87ilFhK08NfdA8IKgU1whE7DBOJ0QHejE5SU5K09ZWGGX4PZ552OKfrJwCh0jSWO0-_uS8SjJhd56zkrDc6KQpUZ2DBOJTSQ2PXQZq0D6Z4nXji-XPf0jnLJ7hT3mFeoTmfdYTLtHxmNqM5U_r3E_WssqYu69Gjk-3mYLEe1bnobSxd9mAMS6O6bT9-7JW8LsLTRiyAeLBzxhN1zDoqnRozxc9gfY46rB3VFXI39zqlVpQRhj6F3s7Myahik"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
+<div class="relative h-[400px]">
+<img alt="Portail métallique moderne avec motorisation" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpq9K-POFVMcatrHTfumG6g7_pHAgLn7tX7jPrgNnT8oRNCYr4wMuWTiV5gwR6RSytNczOzwhUlxIxo2vj9ccmCMrpq_2Qn0CG0ObqXdfS5HyOliajGyYuymaoTolmGZNYYYpwmK-pehSycD01Q03OGb3LHoITu-we44tEXusrjjFc4nvJZX_qGXzaiCtf2LXoizyBBl81tKl6wpn2pmzzYaBVR8l3JDKgq4mu9DddyelScR3KDbdn8DoBoU55tZWYMZ8LQscwz00"/>
+</div>
+<div>
+<h2 class="text-4xl font-bold uppercase tracking-wider mb-4">Portails & Portillons</h2>
+<p class="text-neutral-600 font-light mb-6 leading-relaxed">Sécurisez et embellissez l'entrée de votre propriété avec nos portails et portillons sur mesure. Design moderne ou traditionnel, manuel ou automatisé, nous adaptons chaque création à votre environnement.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Portails battants et coulissants</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Motorisation et automatisation</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Portillons assortis à votre portail</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Finitions variées : peinture, galvanisation, thermolaquage</span>
+</li>
+</ul>
+<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-800 transition-colors" href="realisations.html">Voir nos réalisations</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
+<div class="order-2 md:order-1">
+<h2 class="text-4xl font-bold uppercase tracking-wider mb-4">Garde-corps & Rampes</h2>
+<p class="text-neutral-600 font-light mb-6 leading-relaxed">Sécurisez vos balcons, terrasses et escaliers avec nos garde-corps design. Conformes aux normes de sécurité, nos créations allient protection et esthétisme pour sublimer vos espaces.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Garde-corps pour balcons et terrasses</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Rampes d'escalier intérieures et extérieures</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Options vitrées pour plus de luminosité</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Conformes aux normes NF et DTU en vigueur</span>
+</li>
+</ul>
+<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-800 transition-colors" href="realisations.html">Voir nos réalisations</a>
+</div>
+<div class="order-1 md:order-2 relative h-[400px]">
+<img alt="Garde-corps design avec panneaux de verre" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfWZcBLpVW87iN339iiF3D9bLb1T0mHkXpI-nho4yGrXL2hZvzNZP4gCheoyqJHPKUVjpBg69tHkx5SWPoLP9k5bI2z29w1b3k-T2mDScPsR2S3laaTUaz8qCWKUIy6SwPu4zKdBy22TaZGIig8d1AF7NJBMGSkaU6N_8KJDHIpqgb-tHO_fMs-Tt6ll3lG87njjvUCdjjF6rZmtzG_Sy2dv4ufHpQ6tDag_hNKwRz2rdxX8P8iq3JFGWl2FnLt_Un-KMLZzyWsRs"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
+<div class="relative h-[400px]">
+<img alt="Structure métallique pour pergola" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr7dn2DTXYKsVyMF7Gg_GadAWfby0DJo8YPtvNb623FuDe04aSHqN9QX9vSvgo5hX4IffjlGRRd8rifRkI-sDEVepHz3tBsdlrix73G-FYham_iZz4uFEZHD8HK2A8xLx7JdvCC7dWl_Zvs5zHoQz7S2PexavHuU9Ut4wMVbx0nShIzLvo2vvKL4Y0cdDD-HYRaVw3EosJusjcNe-xTkb5lqApsqv2bootNYV5KcTGls0oniNVCgaEYJeIlJQ_dntNAD_zc3w_XVE"/>
+</div>
+<div>
+<h2 class="text-4xl font-bold uppercase tracking-wider mb-4">Structures & Créations</h2>
+<p class="text-neutral-600 font-light mb-6 leading-relaxed">Au-delà de nos services principaux, nous réalisons tout type de structures métalliques sur mesure : pergolas, verrières, mobilier, éléments décoratifs et bien plus encore.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Pergolas et structures d'extérieur</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Verrières d'intérieur style industriel</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Mobilier métallique sur mesure</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Éléments décoratifs et métallerie d'art</span>
+</li>
+</ul>
+<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-800 transition-colors" href="realisations.html">Voir nos réalisations</a>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
+<div class="order-2 md:order-1">
+<h2 class="text-4xl font-bold uppercase tracking-wider mb-4">Pergolas & Mobilier</h2>
+<p class="text-neutral-600 font-light mb-6 leading-relaxed">Créez des espaces extérieurs uniques avec nos pergolas sur mesure et sublimez vos intérieurs avec du mobilier métallique design. Tables, pieds de table, étagères, bancs... Chaque pièce est unique.</p>
+<ul class="space-y-3 mb-6">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Pergolas métalliques avec toiture fixe ou amovible</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Tables et pieds de table en métal design</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Mobilier sur mesure : bancs, étagères, consoles</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-xl mt-1">check_circle</span>
+<span class="text-neutral-700 font-light">Combinaisons métal/bois pour un rendu unique</span>
+</li>
+</ul>
+<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-800 transition-colors" href="realisations.html">Voir nos réalisations</a>
+</div>
+<div class="order-1 md:order-2 relative h-[400px]">
+<img alt="Mobilier métallique design et pergola" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrLvowyWqJwJntffYvxVPZN7G2lzBCp5f6L7FkvaFvsx8_2MoLy41J4x4pmLoo2tES6dlfxHm3hqAHGMC286NA5YF2rn9Y6PQzgus07vtfH2y3bsikiCerSc4W56l5TDYXahsNPCxsLMwgOvj4CnS3uD1lBbqASPnIam_y-q4JpqlXs6750X5-3ckxtx2JQr4BuG0eXVZrO25TrzrNLETlXg3HA_XJWr9rcWy0FalLhD1xXp_rT47IKUO0GTKo7uARfLKPbe5TsmQ"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-black text-white py-20">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12 animate-on-scroll">
+<h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-6">Notre Processus</h2>
+<p class="text-lg text-neutral-300 font-light max-w-3xl mx-auto">De l'idée à la réalisation, nous vous accompagnons à chaque étape de votre projet.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="text-center animate-on-scroll">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-white text-black rounded-full text-2xl font-bold mb-4">1</div>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Étude</h3>
+<p class="text-neutral-300 font-light">Analyse de vos besoins et prise de mesures sur site.</p>
+</div>
+<div class="text-center animate-on-scroll">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-white text-black rounded-full text-2xl font-bold mb-4">2</div>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Conception</h3>
+<p class="text-neutral-300 font-light">Création de plans techniques et devis détaillé.</p>
+</div>
+<div class="text-center animate-on-scroll">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-white text-black rounded-full text-2xl font-bold mb-4">3</div>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Fabrication</h3>
+<p class="text-neutral-300 font-light">Réalisation en atelier avec des matériaux premium.</p>
+</div>
+<div class="text-center animate-on-scroll">
+<div class="inline-flex items-center justify-center w-16 h-16 bg-white text-black rounded-full text-2xl font-bold mb-4">4</div>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Installation</h3>
+<p class="text-neutral-300 font-light">Pose professionnelle et finitions soignées.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white py-20">
+<div class="container mx-auto px-6 text-center">
+<h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-6">Un projet en tête ?</h2>
+<p class="text-lg text-neutral-600 font-light mb-8 max-w-2xl mx-auto">Discutons de votre projet et trouvons ensemble la solution idéale.</p>
+<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-neutral-800 transition-colors" href="contact.html">Nous contacter</a>
+</div>
+</div>
+</main>
+<footer class="bg-black text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Pascal Gardes</h3>
+<p class="mt-2 text-sm text-neutral-400 font-light">Savoir-faire et passion du métal au service de vos projets.</p>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Navigation</h3>
+<ul class="mt-2 space-y-1">
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="index.html">Accueil</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="services.html">Services</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="realisations.html">Réalisations</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Suivez-nous</h3>
+<div class="flex justify-center md:justify-start gap-4 mt-2">
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2.25c-2.454 0-2.756.01-3.71.054a5.003 5.003 0 00-1.748.333 3.018 3.018 0 00-1.15.748 3.018 3.018 0 00-.748 1.15 5.003 5.003 0 00-.333 1.748C2.26 7.494 2.25 7.796 2.25 12s.01 4.506.054 5.46a5.003 5.003 0 00.333 1.748 3.018 3.018 0 00.748 1.15 3.018 3.018 0 001.15.748 5.003 5.003 0 001.748.333C7.494 21.74 7.796 21.75 12 21.75s4.506-.01 5.46-.054a5.003 5.003 0 001.748-.333 3.018 3.018 0 001.15-.748 3.018 3.018 0 00.748-1.15 5.003 5.003 0 00.333-1.748c.044-.954.054-1.256.054-5.46s-.01-4.506-.054-5.46a5.003 5.003 0 00-.333-1.748 3.018 3.018 0 00-.748-1.15 3.018 3.018 0 00-1.15-.748 5.003 5.003 0 00-1.748-.333C16.506 2.26 16.204 2.25 12 2.25zm0 1.5c2.424 0 2.712.01 3.654.052a3.503 3.503 0 011.22.232 1.518 1.518 0 01.58.58 3.503 3.503 0 01.232 1.22c.042.942.052 1.23.052 3.654s-.01 2.712-.052 3.654a3.503 3.503 0 01-.232 1.22 1.518 1.518 0 01-.58.58 3.503 3.503 0 01-1.22.232c-.942.042-1.23.052-3.654.052s-2.712-.01-3.654-.052a3.503 3.503 0 01-1.22-.232 1.518 1.518 0 01-.58-.58 3.503 3.503 0 01-.232-1.22c-.042-.942-.052-1.23-.052-3.654s.01-2.712.052-3.654a3.503 3.503 0 01.232-1.22 1.518 1.518 0 01.58-.58 3.503 3.503 0 011.22-.232C9.288 3.76 9.576 3.75 12 3.75zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm5.625-7.875a.938.938 0 100-1.875.938.938 0 000 1.875z" fill-rule="evenodd"></path></svg></a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.facebook.com/gpserrurerie/?locale=fr_FR" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19.5 0h-15A4.5 4.5 0 000 4.5v15A4.5 4.5 0 004.5 24h15a4.5 4.5 0 004.5-4.5v-15A4.5 4.5 0 0019.5 0zM8.25 19.5h-3v-9h3v9zM6.75 8.625a1.875 1.875 0 110-3.75 1.875 1.875 0 010 3.75zM19.5 19.5h-3v-4.312c0-1.02-.018-2.33-1.42-2.33-1.42 0-1.64 1.11-1.64 2.256V19.5h-3v-9h2.869v1.312h.04c.397-.75 1.369-1.537 2.83-1.537 3.03 0 3.588 1.993 3.588 4.582V19.5z" fill-rule="evenodd"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
+<p>© 2024 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="#">Mentions légales</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Menu mobile
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        let scrollPosition = 0;
+
+        function openMenu() {
+            scrollPosition = window.pageYOffset;
+            mobileMenu.classList.add('active');
+            document.body.classList.add('menu-open');
+            document.body.style.top = `-${scrollPosition}px`;
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeMobileMenu.addEventListener('click', closeMenu);
+
+        // Fermer le menu en cliquant sur un lien
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Animations au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+
+</body></html>
