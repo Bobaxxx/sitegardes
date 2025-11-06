@@ -34,6 +34,10 @@
         html, body {
             max-width: 100vw;
         }
+        html {
+            scroll-padding-top: 100px;
+            scroll-behavior: smooth;
+        }
         .header-scrolled {
             background-color: #ffffff;
             color: #000000;
@@ -138,7 +142,7 @@
 <a class="text-white text-sm font-bold border-b border-white tracking-wider" href="contact.html">CONTACT</a>
 </nav>
 <div class="hidden md:block">
-<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html">Demander un devis</a>
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="#formulaire">Demander un devis</a>
 </div>
 <button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
 <span class="material-symbols-outlined text-3xl">menu</span>
@@ -163,7 +167,7 @@
 <a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2" href="contact.html">Contact</a>
 </nav>
 <div class="p-6 flex-shrink-0">
-<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html">Demander un devis</a>
+<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="#formulaire">Demander un devis</a>
 </div>
 </div>
 </div>
@@ -176,7 +180,7 @@
 <p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Une question ? Un projet ? N'hésitez pas à nous contacter, nous serons ravis d'échanger avec vous.</p>
 </div>
 </div>
-<div class="bg-white py-20">
+<div class="bg-white py-20" id="formulaire">
 <div class="container mx-auto px-6">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 <div class="animate-on-scroll">
@@ -381,6 +385,44 @@ Dimanche : Fermé
 
         document.querySelectorAll('.animate-on-scroll').forEach((el) => {
             observer.observe(el);
+        });
+
+        // Gestion du scroll vers le formulaire avec offset pour le header fixe
+        if (window.location.hash === '#formulaire') {
+            setTimeout(() => {
+                const formulaire = document.getElementById('formulaire');
+                if (formulaire) {
+                    const headerOffset = 100;
+                    const elementPosition = formulaire.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+
+        // Gérer les clics sur les liens internes vers #formulaire
+        document.querySelectorAll('a[href="#formulaire"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const formulaire = document.getElementById('formulaire');
+                if (formulaire) {
+                    const headerOffset = 100;
+                    const elementPosition = formulaire.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Mettre à jour l'URL
+                    window.history.pushState(null, null, '#formulaire');
+                }
+            });
         });
     </script>
 

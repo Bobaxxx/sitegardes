@@ -34,6 +34,10 @@
         html, body {
             max-width: 100vw;
         }
+        html {
+            scroll-padding-top: 100px;
+            scroll-behavior: smooth;
+        }
         .header-scrolled {
             background-color: #ffffff;
             color: #000000;
@@ -144,7 +148,7 @@
 <a class="text-white text-sm tracking-wider" href="contact.html">CONTACT</a>
 </nav>
 <div class="hidden md:block">
-<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html">Demander un devis</a>
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html#formulaire">Demander un devis</a>
 </div>
 <button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
 <span class="material-symbols-outlined text-3xl">menu</span>
@@ -169,7 +173,7 @@
 <a class="text-white text-lg uppercase tracking-wider" href="contact.html">Contact</a>
 </nav>
 <div class="p-6 flex-shrink-0">
-<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html">Demander un devis</a>
+<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html#formulaire">Demander un devis</a>
 </div>
 </div>
 </div>
@@ -185,11 +189,11 @@
 <div class="bg-white py-10 sticky top-[72px] z-40 border-b border-neutral-200">
 <div class="container mx-auto px-6">
 <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4">
-<button class="bg-black text-white text-sm font-medium uppercase tracking-wider py-2 px-5">Tous</button>
-<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Escaliers</button>
-<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Portails</button>
-<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Garde-corps</button>
-<button class="bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors">Autres</button>
+<button class="filter-btn bg-black text-white text-sm font-medium uppercase tracking-wider py-2 px-5 transition-colors" data-filter="all">Tous</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Escalier">Escaliers</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Portail">Portails</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Garde-corps">Garde-corps</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Autre">Pergolas & Mobilier</button>
 </div>
 </div>
 </div>
@@ -448,7 +452,7 @@ Voir notre Instagram
 </div>
 </div>
 <div class="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-neutral-700">
-<a class="block text-center bg-white text-black text-xs md:text-sm font-bold uppercase tracking-widest py-3 px-6 md:px-8 hover:bg-neutral-200 transition-colors" href="contact.html">Demander un devis</a>
+<a class="block text-center bg-white text-black text-xs md:text-sm font-bold uppercase tracking-widest py-3 px-6 md:px-8 hover:bg-neutral-200 transition-colors" href="contact.html#formulaire">Demander un devis</a>
 </div>
 </div>
 </div>
@@ -567,6 +571,41 @@ Voir notre Instagram
                 lightbox.classList.remove('active');
                 document.body.style.overflow = '';
             }
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const allProjects = document.querySelectorAll('.project-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active button style
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-black', 'text-white');
+                    btn.classList.add('bg-transparent', 'text-black', 'border', 'border-neutral-300');
+                });
+                button.classList.remove('bg-transparent', 'text-black', 'border', 'border-neutral-300');
+                button.classList.add('bg-black', 'text-white');
+                
+                // Get filter value
+                const filterValue = button.dataset.filter;
+                
+                // Filter projects
+                allProjects.forEach(project => {
+                    const projectCategory = project.dataset.category;
+                    
+                    if (filterValue === 'all' || projectCategory === filterValue) {
+                        project.style.display = 'block';
+                        // Re-trigger animation
+                        project.classList.remove('visible');
+                        setTimeout(() => {
+                            project.classList.add('visible');
+                        }, 50);
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
         });
     </script>
 
