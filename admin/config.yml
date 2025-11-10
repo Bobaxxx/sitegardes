@@ -1,0 +1,85 @@
+backend:
+  name: git-gateway
+  branch: master
+
+# URL de votre site Netlify
+site_url: https://stunning-piroshki-89545f.netlify.app
+
+media_folder: "images/realisations"
+public_folder: "images/realisations"
+
+# Langue de l'interface
+locale: 'fr'
+
+collections:
+  # ============================================
+  # GESTION DES RÉALISATIONS (PHOTOS)
+  # ============================================
+  - name: "realisations"
+    label: "📸 Réalisations"
+    label_singular: "Réalisation"
+    folder: "content/realisations"
+    create: true
+    delete: true
+    slug: "{{year}}-{{category}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "📝 Titre du projet", name: "title", widget: "string", hint: "Ex: Escalier moderne résidence Dupont"}
+      - label: "📂 Catégorie"
+        name: "category"
+        widget: "select"
+        options: 
+          - {label: "🪜 Escaliers", value: "Escalier"}
+          - {label: "🚪 Portails", value: "Portail"}
+          - {label: "🛡️ Garde-corps", value: "Garde-corps"}
+          - {label: "🌉 Passerelles/Terrasses", value: "Passerelle"}
+          - {label: "🏡 Pergolas", value: "Pergola"}
+          - {label: "🪟 Verrières", value: "Verrière"}
+          - {label: "✨ Autres prestations", value: "Autre"}
+      - {label: "📄 Description", name: "description", widget: "text", hint: "Description détaillée du projet"}
+      - {label: "🔧 Matériaux utilisés", name: "materials", widget: "string", hint: "Ex: Acier thermolaqué noir, Chêne massif"}
+      - {label: "📍 Localisation", name: "location", widget: "string", default: "Lantriac, Haute-Loire"}
+      - {label: "📅 Année", name: "year", widget: "string", default: "2024"}
+      - {label: "🖼️ Photo", name: "image", widget: "image", hint: "Glissez-déposez votre photo ici"}
+      - {label: "✅ Publié", name: "published", widget: "boolean", default: true}
+      - {label: "🔢 Ordre d'affichage", name: "order", widget: "number", default: 0, value_type: "int", min: 0}
+
+  # ============================================
+  # PARAMÈTRES DU SITE
+  # ============================================
+  - name: "settings"
+    label: "⚙️ Paramètres"
+    files:
+      - label: "Informations générales"
+        name: "general"
+        file: "content/settings.json"
+        fields:
+          - {label: "Nom de l'entreprise", name: "company_name", widget: "string", default: "Pascal Gardes"}
+          - {label: "Slogan", name: "tagline", widget: "string", default: "Serrurerie Métallerie"}
+          
+      - label: "Contact"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - {label: "📞 Téléphone", name: "phone", widget: "string"}
+          - {label: "📧 Email", name: "email", widget: "string"}
+          - {label: "📍 Adresse", name: "address", widget: "string"}
+          - {label: "Code Postal", name: "postal_code", widget: "string"}
+          - {label: "Ville", name: "city", widget: "string"}
+          - {label: "🕐 Horaires", name: "hours", widget: "text"}
+          - label: "📍 Coordonnées GPS"
+            name: "coordinates"
+            widget: "object"
+            fields:
+              - {label: "Latitude", name: "lat", widget: "number", value_type: "float"}
+              - {label: "Longitude", name: "lng", widget: "number", value_type: "float"}
+          
+      - label: "Réseaux sociaux"
+        name: "social"
+        file: "content/social.json"
+        fields:
+          - {label: "📸 Instagram", name: "instagram", widget: "string"}
+          - {label: "📘 Facebook", name: "facebook", widget: "string"}
