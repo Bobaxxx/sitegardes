@@ -139,6 +139,47 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
+        /* Bande défilante continue */
+        .scroll-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        .scroll-track {
+            display: flex;
+            gap: 2rem;
+            width: fit-content;
+            will-change: transform;
+        }
+        .scroll-item {
+            flex-shrink: 0;
+            width: 350px;
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid #e5e5e5;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .scroll-item:hover {
+            border-color: black;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .scroll-item {
+                width: 240px;
+                padding: 1.5rem;
+            }
+            .scroll-item h3 {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            .scroll-item p {
+                font-size: 0.875rem;
+            }
+            .scroll-item .material-symbols-outlined {
+                font-size: 3rem;
+                margin-bottom: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body class="bg-white text-black font-display">
@@ -207,21 +248,43 @@ Pascal Gardes
 <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider">Notre Savoir-Faire</h2>
 <p class="mt-4 text-lg text-neutral-600 font-light max-w-2xl mx-auto">Des années d'expérience et une passion pour le métal nous permettent de réaliser vos projets les plus ambitieux.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="text-center p-8 border border-neutral-200 hover:border-black hover:shadow-lg transition-all duration-300 animate-on-scroll">
+<div class="scroll-container">
+<div class="scroll-track">
+<div class="scroll-item">
 <span class="material-symbols-outlined text-6xl mb-4">stairs</span>
 <h3 class="text-xl font-bold uppercase tracking-wider mb-3">Escaliers</h3>
 <p class="text-neutral-600 font-light">Escaliers sur mesure en métal : droits, hélicoïdaux, quart tournant. Design moderne ou classique selon vos envies.</p>
 </div>
-<div class="text-center p-8 border border-neutral-200 hover:border-black hover:shadow-lg transition-all duration-300 animate-on-scroll">
+<div class="scroll-item">
 <span class="material-symbols-outlined text-6xl mb-4">door_front</span>
 <h3 class="text-xl font-bold uppercase tracking-wider mb-3">Portails</h3>
 <p class="text-neutral-600 font-light">Portails battants ou coulissants, manuels ou motorisés. Création sur mesure adaptée à votre propriété.</p>
 </div>
-<div class="text-center p-8 border border-neutral-200 hover:border-black hover:shadow-lg transition-all duration-300 animate-on-scroll">
+<div class="scroll-item">
 <span class="material-symbols-outlined text-6xl mb-4">balcony</span>
 <h3 class="text-xl font-bold uppercase tracking-wider mb-3">Garde-corps</h3>
 <p class="text-neutral-600 font-light">Garde-corps pour balcons, terrasses et escaliers. Sécurité et esthétique pour vos espaces.</p>
+</div>
+<div class="scroll-item">
+<span class="material-symbols-outlined text-6xl mb-4">deck</span>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Passerelles</h3>
+<p class="text-neutral-600 font-light">Passerelles et terrasses en structure métallique sur mesure. Solutions techniques et esthétiques pour vos projets.</p>
+</div>
+<div class="scroll-item">
+<span class="material-symbols-outlined text-6xl mb-4">pergola</span>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Pergolas</h3>
+<p class="text-neutral-600 font-light">Pergolas sur mesure en acier ou aluminium. Créez un espace extérieur élégant et fonctionnel.</p>
+</div>
+<div class="scroll-item">
+<span class="material-symbols-outlined text-6xl mb-4">door_sliding</span>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Verrières</h3>
+<p class="text-neutral-600 font-light">Verrières d'intérieur sur mesure. Style atelier pour séparer vos espaces avec élégance et luminosité.</p>
+</div>
+<div class="scroll-item">
+<span class="material-symbols-outlined text-6xl mb-4">construction</span>
+<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Autres créations</h3>
+<p class="text-neutral-600 font-light">Mobilier métallique, structures sur mesure et tous types de créations en métallerie selon vos besoins.</p>
+</div>
 </div>
 </div>
 </div>
@@ -365,6 +428,38 @@ Pascal Gardes
         document.querySelectorAll('.animate-on-scroll').forEach((el) => {
             observer.observe(el);
         });
+
+        // Défilement infini continu
+        const scrollTrack = document.querySelector('.scroll-track');
+        const scrollItems = document.querySelectorAll('.scroll-item');
+        
+        if (scrollTrack && scrollItems.length > 0) {
+            let scrollPosition = 0;
+            const scrollSpeed = 2.5; // Pixels par frame (augmente pour aller plus vite)
+            
+            function infiniteScroll() {
+                scrollPosition += scrollSpeed;
+                scrollTrack.style.transform = `translateX(-${scrollPosition}px)`;
+                
+                // Obtenir la largeur du premier item + gap
+                const firstItem = scrollItems[0];
+                const itemWidth = firstItem.offsetWidth + 32; // 32px = 2rem gap
+                
+                // Si on a défilé d'une largeur d'item complète
+                if (scrollPosition >= itemWidth) {
+                    // Prendre le premier élément et le mettre à la fin
+                    scrollTrack.appendChild(scrollTrack.firstElementChild);
+                    // Réajuster la position pour éviter le saut visuel
+                    scrollPosition -= itemWidth;
+                    scrollTrack.style.transform = `translateX(-${scrollPosition}px)`;
+                }
+                
+                requestAnimationFrame(infiniteScroll);
+            }
+            
+            // Démarrer l'animation
+            infiniteScroll();
+        }
     </script>
 
     <script>
