@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Bobaxxx/sitegardes
   branch: master
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 # URL de votre site Netlify
 site_url: https://stunning-piroshki-89545f.netlify.app
