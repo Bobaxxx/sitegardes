@@ -12,17 +12,6 @@
       "order": 0
     },
     {
-      "title": "Autre - IMG_0093",
-      "category": "Autre",
-      "description": "Création sur mesure en métallerie.",
-      "materials": "Acier",
-      "location": "Lantriac, Haute-Loire",
-      "year": "2024",
-      "image": "images/realisations/autres/IMG_0093.jpeg",
-      "published": true,
-      "order": 0
-    },
-    {
       "title": "Autre - IMG_0101",
       "category": "Autre",
       "description": "Création sur mesure en métallerie.",
@@ -1077,7 +1066,30 @@
       "image": "images/realisations/verrieres/IMG_6540.jpeg",
       "published": true,
       "order": 0
+    },
+    {
+      "title": "IMG_4380.jpeg",
+      "category": "Pergola",
+      "description": "Aberrant frangin",
+      "materials": "Acier",
+      "location": "coucou ",
+      "year": "2025",
+      "published": true,
+      "order": 1,
+      "image": "https://raw.githubusercontent.com/Bobaxxx/sitegardes/master/images/realisations/1762793075206-IMG_4380.jpeg"
+    },
+    {
+      "materials": "Acier",
+      "published": true,
+      "order": 7,
+      "location": "Lantriac, Haute-Loire",
+      "title": "Autre - IMG_0093",
+      "image": "images/realisations/autres/IMG_0093.jpeg",
+      "description": "Création sur mesure en métallerie.",
+      "year": "2024",
+      "category": "Autre"
     }
   ],
-  "count": 98
+  "updated_at": "2025-11-10T16:45:03.289Z",
+  "count": 99
 }
