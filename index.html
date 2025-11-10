@@ -5,6 +5,7 @@
 <meta name="description" content="Pascal Gardes, serrurerie métallerie à Lantriac (Haute-Loire 43). Fabrication sur mesure d'escaliers métalliques, portails, garde-corps, pergolas et structures métalliques. Devis gratuit."/>
 <meta name="keywords" content="serrurerie, métallerie, escaliers métalliques, portails, garde-corps, Lantriac, Haute-Loire, 43, Le Puy-en-Velay, sur mesure, ferronnier, artisan métallier"/>
 <title>Pascal Gardes - Serrurerie Métallerie à Lantriac (43) | Escaliers, Portails, Garde-corps</title>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <!-- Open Graph pour réseaux sociaux -->
 <meta property="og:title" content="Pascal Gardes - Serrurerie Métallerie à Lantriac (Haute-Loire)"/>
 <meta property="og:description" content="Fabrication sur mesure d'escaliers métalliques, portails, garde-corps, pergolas et structures métalliques à Lantriac. Devis gratuit."/>
@@ -364,6 +365,18 @@ Pascal Gardes
         document.querySelectorAll('.animate-on-scroll').forEach((el) => {
             observer.observe(el);
         });
+    </script>
+
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
     </script>
 
 </body></html>
