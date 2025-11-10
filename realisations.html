@@ -180,7 +180,7 @@
 </header>
 <main class="flex-grow">
 <div class="relative h-[60vh] min-h-[400px] bg-black flex items-center justify-center">
-<img alt="Interior with modern metal staircase" class="absolute inset-0 w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsk726XMyqlMBI-vk87ilFhK08NfdA8IKgU1whE7DBOJ0QHejE5SU5K09ZWGGX4PZ552OKfrJwCh0jSWO0-_uS8SjJhd56zkrDc6KQpUZ2DBOJTSQ2PXQZq0D6Z4nXji-XPf0jnLJ7hT3mFeoTmfdYTLtHxmNqM5U_r3E_WssqYu69Gjk-3mYLEe1bnobSxd9mAMS6O6bT9-7JW8LsLTRiyAeLBzxhN1zDoqnRozxc9gfY46rB3VFXI39zqlVpQRhj6F3s7Myahik"/>
+<img alt="Interior with modern metal staircase" class="absolute inset-0 w-full h-full object-cover opacity-30" src="images/realisations/passerelles-terrasses/IMG_0042.jpeg"/>
 <div class="relative text-center text-white px-6">
 <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold uppercase tracking-wide md:tracking-widest">Nos Réalisations</h1>
 <p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Découvrez une sélection de nos projets, témoins de notre savoir-faire et de notre passion pour le métal.</p>
@@ -193,180 +193,1398 @@
 <button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Escalier">Escaliers</button>
 <button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Portail">Portails</button>
 <button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Garde-corps">Garde-corps</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Autre">Pergolas & Mobilier</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Passerelle">Passerelles/Terrasses</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Pergola">Pergolas</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Verrière">Verrières</button>
+<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Autre">Autres prestations</button>
+</div>
+</div>
+</div>
+<!-- Description de la catégorie -->
+<div class="bg-neutral-50 py-8 hidden" id="categoryDescription">
+<div class="container mx-auto px-6">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-4" id="categoryTitle"></h2>
+<div class="text-neutral-600 font-light leading-relaxed space-y-3" id="categoryText"></div>
 </div>
 </div>
 </div>
 <div class="bg-white">
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Escalier Design Intérieur"
-     data-category="Escalier"
-     data-description="Escalier moderne avec structure en acier noir et marches en bois massif. Design épuré et contemporain pour un intérieur lumineux."
-     data-materials="Acier thermolaqué noir, Chêne massif"
-     data-location="Lyon, Résidence privée"
-     data-year="2024"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDsk726XMyqlMBI-vk87ilFhK08NfdA8IKgU1whE7DBOJ0QHejE5SU5K09ZWGGX4PZ552OKfrJwCh0jSWO0-_uS8SjJhd56zkrDc6KQpUZ2DBOJTSQ2PXQZq0D6Z4nXji-XPf0jnLJ7hT3mFeoTmfdYTLtHxmNqM5U_r3E_WssqYu69Gjk-3mYLEe1bnobSxd9mAMS6O6bT9-7JW8LsLTRiyAeLBzxhN1zDoqnRozxc9gfY46rB3VFXI39zqlVpQRhj6F3s7Myahik">
-<img alt="Modern metal staircase" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsk726XMyqlMBI-vk87ilFhK08NfdA8IKgU1whE7DBOJ0QHejE5SU5K09ZWGGX4PZ552OKfrJwCh0jSWO0-_uS8SjJhd56zkrDc6KQpUZ2DBOJTSQ2PXQZq0D6Z4nXji-XPf0jnLJ7hT3mFeoTmfdYTLtHxmNqM5U_r3E_WssqYu69Gjk-3mYLEe1bnobSxd9mAMS6O6bT9-7JW8LsLTRiyAeLBzxhN1zDoqnRozxc9gfY46rB3VFXI39zqlVpQRhj6F3s7Myahik"/>
-<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
-</div>
-</div>
 
 <div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Portail Fer Forgé Classique"
+     data-title="Réalisation Pascal Gardes"
      data-category="Portail"
-     data-description="Portail en fer forgé avec ornements traditionnels. Travail artisanal minutieux et finitions soignées pour une entrée élégante."
-     data-materials="Fer forgé, Peinture anticorrosion"
-     data-location="Villefranche-sur-Saône, Propriété"
-     data-year="2023"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDKjatrec5BgFb_SlEuTYo9PlEUHA92hDkhAoOoZrW81LxcDxaH4F7UkR3MxHin_xvawG00rWtZLTO3i_PAjCp87Y7vEbS4NRaY6J9DGoQu5h29vJ1p5eatc0KTFKtX5Ut21qGZf1WMxIjbThlIhUqTh3D5LEf6u1W5nz-It43YYy6jHXCb6eSuuqhH0zmqzqg2hBwoiZiQF3795uaUIXlATMHoRw5KyRVXO9fseLnouhXVV_aMc0nIS0Qw1qrwHOwNqOA0sRJap-o">
-<img alt="Wrought iron gate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKjatrec5BgFb_SlEuTYo9PlEUHA92hDkhAoOoZrW81LxcDxaH4F7UkR3MxHin_xvawG00rWtZLTO3i_PAjCp87Y7vEbS4NRaY6J9DGoQu5h29vJ1p5eatc0KTFKtX5Ut21qGZf1WMxIjbThlIhUqTh3D5LEf6u1W5nz-It43YYy6jHXCb6eSuuqhH0zmqzqg2hBwoiZiQF3795uaUIXlATMHoRw5KyRVXO9fseLnouhXVV_aMc0nIS0Qw1qrwHOwNqOA0sRJap-o"/>
-<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
-</div>
-</div>
-
-<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Garde-corps Terrasse Moderne"
-     data-category="Garde-corps"
-     data-description="Garde-corps contemporain avec panneaux de verre et montants en acier inoxydable. Vue dégagée et sécurité optimale."
-     data-materials="Acier inoxydable 316L, Verre feuilleté 12mm"
-     data-location="Écully, Maison contemporaine"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
      data-year="2024"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAfWZcBLpVW87iN339iiF3D9bLb1T0mHkXpI-nho4yGrXL2hZvzNZP4gCheoyqJHPKUVjpBg69tHkx5SWPoLP9k5bI2z29w1b3k-T2mDScPsR2S3laaTUaz8qCWKUIy6SwPu4zKdBy22TaZGIig8d1AF7NJBMGSkaU6N_8KJDHIpqgb-tHO_fMs-Tt6ll3lG87njjvUCdjjF6rZmtzG_Sy2dv4ufHpQ6tDag_hNKwRz2rdxX8P8iq3JFGWl2FnLt_Un-KMLZzyWsRs">
-<img alt="Glass railing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfWZcBLpVW87iN339iiF3D9bLb1T0mHkXpI-nho4yGrXL2hZvzNZP4gCheoyqJHPKUVjpBg69tHkx5SWPoLP9k5bI2z29w1b3k-T2mDScPsR2S3laaTUaz8qCWKUIy6SwPu4zKdBy22TaZGIig8d1AF7NJBMGSkaU6N_8KJDHIpqgb-tHO_fMs-Tt6ll3lG87njjvUCdjjF6rZmtzG_Sy2dv4ufHpQ6tDag_hNKwRz2rdxX8P8iq3JFGWl2FnLt_Un-KMLZzyWsRs"/>
+     data-image="images/realisations/portails/IMG_4347.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_4347.jpeg"/>
 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
 </div>
 </div>
 
 <div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Panneau Décoratif Mural"
-     data-category="Autre"
-     data-description="Création artistique en métal pour décoration murale. Motifs géométriques modernes réalisés sur mesure."
-     data-materials="Acier découpé laser, Finition brossée"
-     data-location="Lyon, Appartement"
-     data-year="2023"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6Sf97GHr-fX-RSlXncNCHZ9EMx0PkP1TPiwnhMhaWsHBmrsjkSk04igpyjvOdV6RFRpHZcCV98JUx2uHk9RT1ojcrhHjHNJNs7hl9uSSjIIFzQ_6JVEcjI29qYnRy_ajwKqZfdByB_C_hNe5W7U0DXIDVrpqguE53JVJAj1B9-YsaDN5onzA9YA5Mo4P6GD_pnWXqTzTycIeifmm8HuY-qwyCN_afcOvQ812SU6OGCVBlvizbgi_bNSUvbZdgvMi9SlwQKVnI8E">
-<img alt="Decorative metal panel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6Sf97GHr-fX-RSlXncNCHZ9EMx0PkP1TPiwnhMhaWsHBmrsjkSk04igpyjvOdV6RFRpHZcCV98JUx2uHk9RT1ojcrhHjHNJNs7hl9uSSjIIFzQ_6JVEcjI29qYnRy_ajwKqZfdByB_C_hNe5W7U0DXIDVrpqguE53JVJAj1B9-YsaDN5onzA9YA5Mo4P6GD_pnWXqTzTycIeifmm8HuY-qwyCN_afcOvQ812SU6OGCVBlvizbgi_bNSUvbZdgvMi9SlwQKVnI8E"/>
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_2406.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_2406.jpeg"/>
 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
 </div>
 </div>
 
 <div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Escalier Industriel Intérieur"
+     data-title="Réalisation Pascal Gardes"
      data-category="Escalier"
-     data-description="Escalier style industriel avec structure apparente en acier brut. Esthétique urbaine et robuste pour un loft moderne."
-     data-materials="Acier brut patiné, Marches métalliques"
-     data-location="Lyon, Loft"
-     data-year="2023"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuB9wV-D7gKXCxzJ97wB7QOu75PWSo5SYLA2MjbxYpanDcp2wdqMGMfqZAHuiWbe0Geh9-u3kwmC36zpQ0dfB-uN4924Y04qIGHebjq9lofFTAv064cA1TiCEVQoEAm-zQ7jYSQAPS2N0Bs2jTq8zw1nqHFnX3LKK3klRF3UGu_IUJJk7BmJF1IpkAxWc7j-04tD9t9MnI1SU3q-B6CynTUY_p1tvyrzCKa5h-qa-ku16aHKNaxtQGnzgp-NpGwaBGB-LV1DZw55tSU">
-<img alt="Industrial staircase" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9wV-D7gKXCxzJ97wB7QOu75PWSo5SYLA2MjbxYpanDcp2wdqMGMfqZAHuiWbe0Geh9-u3kwmC36zpQ0dfB-uN4924Y04qIGHebjq9lofFTAv064cA1TiCEVQoEAm-zQ7jYSQAPS2N0Bs2jTq8zw1nqHFnX3LKK3klRF3UGu_IUJJk7BmJF1IpkAxWc7j-04tD9t9MnI1SU3q-B6CynTUY_p1tvyrzCKa5h-qa-ku16aHKNaxtQGnzgp-NpGwaBGB-LV1DZw55tSU"/>
-<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
-</div>
-</div>
-
-<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Portail Coulissant Motorisé"
-     data-category="Portail"
-     data-description="Portail coulissant automatique en métal noir. Système motorisé avec télécommande et sécurité optimale."
-     data-materials="Acier thermolaqué noir mat, Motorisation BFT"
-     data-location="Caluire, Villa"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
      data-year="2024"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCpq9K-POFVMcatrHTfumG6g7_pHAgLn7tX7jPrgNnT8oRNCYr4wMuWTiV5gwR6RSytNczOzwhUlxIxo2vj9ccmCMrpq_2Qn0CG0ObqXdfS5HyOliajGyYuymaoTolmGZNYYYpwmK-pehSycD01Q03OGb3LHoITu-we44tEXusrjjFc4nvJZX_qGXzaiCtf2LXoizyBBl81tKl6wpn2pmzzYaBVR8l3JDKgq4mu9DddyelScR3KDbdn8DoBoU55tZWYMZ8LQscwz00">
-<img alt="Motorized sliding gate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpq9K-POFVMcatrHTfumG6g7_pHAgLn7tX7jPrgNnT8oRNCYr4wMuWTiV5gwR6RSytNczOzwhUlxIxo2vj9ccmCMrpq_2Qn0CG0ObqXdfS5HyOliajGyYuymaoTolmGZNYYYpwmK-pehSycD01Q03OGb3LHoITu-we44tEXusrjjFc4nvJZX_qGXzaiCtf2LXoizyBBl81tKl6wpn2pmzzYaBVR8l3JDKgq4mu9DddyelScR3KDbdn8DoBoU55tZWYMZ8LQscwz00"/>
+     data-image="images/realisations/escaliers/IMG_6385.JPG">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_6385.JPG"/>
 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
 </div>
 </div>
 
 <div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Garde-corps Balcon Acier"
-     data-category="Garde-corps"
-     data-description="Garde-corps en acier noir pour balcon avec vue sur jardin. Design épuré avec barreaux verticaux."
-     data-materials="Acier thermolaqué noir, Main courante inox"
-     data-location="Tassin-la-Demi-Lune, Maison"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
      data-year="2024"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCFtEsdM2VaFTLH_7W2DJQf0g8KKWN-fk7En7cGh9d9_KmMyiGB7wirXHK8ONR9XuNOxEXqK1xNdDC4MDIoTaUEFc4Smjp-U_Ns36UgxLTcGIAB884xanBKTwQMHjTRuKMMmX-xcZ0mRCsHfUm_2Nw82sSXLyL8mbqN7ZZ0aCVw1c1QQUYl0TvFGAoUeDmV5C83z_BwQllHK7fBmOFvCUXl9tJiPxO3Ro6C5hTWI_O5BtaEiNEk1GsZP0oYicnn07yVIZDTGNKTSDY">
-<img alt="Steel balcony railing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFtEsdM2VaFTLH_7W2DJQf0g8KKWN-fk7En7cGh9d9_KmMyiGB7wirXHK8ONR9XuNOxEXqK1xNdDC4MDIoTaUEFc4Smjp-U_Ns36UgxLTcGIAB884xanBKTwQMHjTRuKMMmX-xcZ0mRCsHfUm_2Nw82sSXLyL8mbqN7ZZ0aCVw1c1QQUYl0TvFGAoUeDmV5C83z_BwQllHK7fBmOFvCUXl9tJiPxO3Ro6C5hTWI_O5BtaEiNEk1GsZP0oYicnn07yVIZDTGNKTSDY"/>
+     data-image="images/realisations/pergolas/IMG_5260.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_5260.jpeg"/>
 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
 </div>
 </div>
 
 <div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Mobilier Métallique Sur Mesure"
-     data-category="Autre"
-     data-description="Pied de table design en métal soudé. Création unique alliant esthétique et solidité."
-     data-materials="Acier brut soudé, Finition vernis mat"
-     data-location="Lyon, Restaurant"
-     data-year="2023"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCrLvowyWqJwJntffYvxVPZN7G2lzBCp5f6L7FkvaFvsx8_2MoLy41J4x4pmLoo2tES6dlfxHm3hqAHGMC286NA5YF2rn9Y6PQzgus07vtfH2y3bsikiCerSc4W56l5TDYXahsNPCxsLMwgOvj4CnS3uD1lBbqASPnIam_y-q4JpqlXs6750X5-3ckxtx2JQr4BuG0eXVZrO25TrzrNLETlXg3HA_XJWr9rcWy0FalLhD1xXp_rT47IKUO0GTKo7uARfLKPbe5TsmQ">
-<img alt="Custom metal furniture" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrLvowyWqJwJntffYvxVPZN7G2lzBCp5f6L7FkvaFvsx8_2MoLy41J4x4pmLoo2tES6dlfxHm3hqAHGMC286NA5YF2rn9Y6PQzgus07vtfH2y3bsikiCerSc4W56l5TDYXahsNPCxsLMwgOvj4CnS3uD1lBbqASPnIam_y-q4JpqlXs6750X5-3ckxtx2JQr4BuG0eXVZrO25TrzrNLETlXg3HA_XJWr9rcWy0FalLhD1xXp_rT47IKUO0GTKo7uARfLKPbe5TsmQ"/>
-<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
-</div>
-</div>
-
-<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item"
-     data-title="Escalier Hélicoïdal Extérieur"
+     data-title="Réalisation Pascal Gardes"
      data-category="Escalier"
-     data-description="Escalier en colimaçon extérieur en acier galvanisé. Résistant aux intempéries et design compact."
-     data-materials="Acier galvanisé à chaud, Marches caillebotis"
-     data-location="Vienne, Bâtiment industriel"
-     data-year="2023"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQsVf9oQoKWhjvseYXddAkVaRp3TWvSdTEPz6ASQD2xj_stQgGg6ZYilhQOG7P-0UZJS0H58UiVJMDI0GPXpdDeyVTs_BJD7Z01YbOmQZs7bUmrrVtuqGVKLt1_9geDPTuGoILJb1pXWsSJ_ZCa4UXzH0B79lBZAf34obPGtq8CfApqLkfLQHkPwhR_qLBBesWQwHc3yM-ZSEn3kPWJLRKL36aKAS7nL-gkLeyFe7Fc2VonHG8Qy5YECbXu_BOW5ngEjOq5Zgo9s">
-<img alt="Helical outdoor staircase" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdQsVf9oQoKWhjvseYXddAkVaRp3TWvSdTEPz6ASQD2xj_stQgGg6ZYilhQOG7P-0UZJS0H58UiVJMDI0GPXpdDeyVTs_BJD7Z01YbOmQZs7bUmrrVtuqGVKLt1_9geDPTuGoILJb1pXWsSJ_ZCa4UXzH0B79lBZAf34obPGtq8CfApqLkfLQHkPwhR_qLBBesWQwHc3yM-ZSEn3kPWJLRKL36aKAS7nL-gkLeyFe7Fc2VonHG8Qy5YECbXu_BOW5ngEjOq5Zgo9s"/>
-<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
-<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
-</div>
-</div>
-
-<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Portail 2 Vantaux Traditionnel"
-     data-category="Portail"
-     data-description="Portail battant double vantaux avec éléments décoratifs forgés. Style classique et intemporel."
-     data-materials="Fer forgé, Peinture thermolaquée gris anthracite"
-     data-location="Saint-Priest, Propriété"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
      data-year="2024"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDg2__gp-k0BPGwKQ3j79Hjct__derIFBQooKrwpOvYMltmsEfDCT0bHD6t9hARuH4OY59fKmTqFYLhZzEnonZaci94KOekzfnuKzLcbDPwRBsV8RPqVDdKqjU41IDnt-iJDdC4i78XDDC68UOiwDpPotxdSr3Et0Fm1D64B4xUiI2DOgE1N8BzwdqNsehDwlfX3ktB8Lfg9mgXkFNHtds4pLdB14AJ9F-7QpZJZyTJONhM46pcBBT3w8hUEIrGwL3HJHOA9kUMzkE">
-<img alt="Double swing gate" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg2__gp-k0BPGwKQ3j79Hjct__derIFBQooKrwpOvYMltmsEfDCT0bHD6t9hARuH4OY59fKmTqFYLhZzEnonZaci94KOekzfnuKzLcbDPwRBsV8RPqVDdKqjU41IDnt-iJDdC4i78XDDC68UOiwDpPotxdSr3Et0Fm1D64B4xUiI2DOgE1N8BzwdqNsehDwlfX3ktB8Lfg9mgXkFNHtds4pLdB14AJ9F-7QpZJZyTJONhM46pcBBT3w8hUEIrGwL3HJHOA9kUMzkE"/>
+     data-image="images/realisations/escaliers/IMG_1747.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_1747.jpeg"/>
 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
 </div>
 </div>
 
 <div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Garde-corps Inox et Verre"
-     data-category="Garde-corps"
-     data-description="Rambarde de balcon en inox avec verre feuilleté. Transparence maximale et design contemporain."
-     data-materials="Inox 316L poli miroir, Verre feuilleté securit"
-     data-location="Meyzieu, Appartement"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
      data-year="2024"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCM4KAGVb-WC4BKKB7lU9BB5SEmxEpKg-T_vDf2jne5whZ2Q20mlcrHk-I05R5ewBHMSshMhd65yv2UoYD9bggq_ktFSAmGkrHyduh7R34ONpejnGYlmpzlPKBj6FHnIwXoe2eFef4lICrD7GS7lvr_KEuiYPF7kcjaf0sEjVVi6uN8mAHpxavV-dh2aNDdB0XCeeith9GoL2GnmfLH1ExRT5m3vIvaAZefms1r0UQ5Fs1E6_t5QrAx4Q4T4FkXh1co9_wcCAvvs8E">
-<img alt="Stainless steel glass railing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM4KAGVb-WC4BKKB7lU9BB5SEmxEpKg-T_vDf2jne5whZ2Q20mlcrHk-I05R5ewBHMSshMhd65yv2UoYD9bggq_ktFSAmGkrHyduh7R34ONpejnGYlmpzlPKBj6FHnIwXoe2eFef4lICrD7GS7lvr_KEuiYPF7kcjaf0sEjVVi6uN8mAHpxavV-dh2aNDdB0XCeeith9GoL2GnmfLH1ExRT5m3vIvaAZefms1r0UQ5Fs1E6_t5QrAx4Q4T4FkXh1co9_wcCAvvs8E"/>
+     data-image="images/realisations/escaliers/IMG_0724.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_0724.jpeg"/>
 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
 </div>
 </div>
 
 <div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
-     data-title="Pergola Métal Design"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_1955.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_1955.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
      data-category="Autre"
-     data-description="Structure métallique pour pergola avec toiture amovible. Espace extérieur élégant et fonctionnel."
-     data-materials="Acier galvanisé, Tubes carrés 80x80"
-     data-location="Dardilly, Jardin"
-     data-year="2023"
-     data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDr7dn2DTXYKsVyMF7Gg_GadAWfby0DJo8YPtvNb623FuDe04aSHqN9QX9vSvgo5hX4IffjlGRRd8rifRkI-sDEVepHz3tBsdlrix73G-FYham_iZz4uFEZHD8HK2A8xLx7JdvCC7dWl_Zvs5zHoQz7S2PexavHuU9Ut4wMVbx0nShIzLvo2vvKL4Y0cdDD-HYRaVw3EosJusjcNe-xTkb5lqApsqv2bootNYV5KcTGls0oniNVCgaEYJeIlJQ_dntNAD_zc3w_XVE">
-<img alt="Metal pergola structure" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr7dn2DTXYKsVyMF7Gg_GadAWfby0DJo8YPtvNb623FuDe04aSHqN9QX9vSvgo5hX4IffjlGRRd8rifRkI-sDEVepHz3tBsdlrix73G-FYham_iZz4uFEZHD8HK2A8xLx7JdvCC7dWl_Zvs5zHoQz7S2PexavHuU9Ut4wMVbx0nShIzLvo2vvKL4Y0cdDD-HYRaVw3EosJusjcNe-xTkb5lqApsqv2bootNYV5KcTGls0oniNVCgaEYJeIlJQ_dntNAD_zc3w_XVE"/>
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_9741.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_9741.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_5931.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_5931.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0127.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0127.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_7122.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_7122.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_2356.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_2356.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_0112.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_0112.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_0072.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_0072.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_7954.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_7954.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_9785.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_9785.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_4581.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_4581.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_1745.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_1745.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_5194.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_5194.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_7244.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_7244.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_1523.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_1523.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_3034.JPG">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_3034.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_2062.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_2062.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_0049 (1).jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_0049 (1).jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_0763.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_0763.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_0078.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_0078.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_1959.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_1959.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_1255.JPG">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_1255.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_9748.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_9748.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_5123.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_5123.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/A78EB9B9-E01C-496D-A815-DB4DBC64A684.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/A78EB9B9-E01C-496D-A815-DB4DBC64A684.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_3365.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_3365.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_0923.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_0923.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_1822.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_1822.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_0021.JPG">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_0021.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_7277.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_7277.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_1350.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_1350.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_1438.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_1438.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_3163.JPG">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_3163.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_9027.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_9027.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_0392.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_0392.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_0774.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_0774.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_0106.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_0106.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_4148.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_4148.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_8593.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_8593.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_6389.JPG">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_6389.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_0042.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_0042.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_1814.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_1814.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_0763.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_0763.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_3092.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_3092.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_0454.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_0454.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_0298.JPG">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_0298.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_1816.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_1816.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_1529.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_1529.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/EF9E60ED-08BB-4904-8B3A-90F0D4706BA7.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/EF9E60ED-08BB-4904-8B3A-90F0D4706BA7.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_1376.JPG">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_1376.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_8208.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_8208.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_3722.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_3722.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_2240.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_2240.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0101.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0101.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_2843.JPG">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_2843.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_0306.JPG">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_0306.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_1295.JPG">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_1295.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_0652.JPG">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_0652.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_6540.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_6540.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_9808.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_9808.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0894.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0894.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_0049.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_0049.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_1745.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_1745.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_3464.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_3464.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_2037.JPG">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_2037.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_0182.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_0182.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_2226.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_2226.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_7212.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_7212.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0118.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0118.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_3100.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_3100.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_2227.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_2227.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_4680.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_4680.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0472.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0472.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_0183.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_0183.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0093.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0093.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_1655.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_1655.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_8489.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_8489.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_5195.jpeg">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_5195.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_0059.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_0059.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_3410.JPG">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_3410.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Pergola"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/pergolas/IMG_3710.JPG">
+<img alt="Pergola" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/pergolas/IMG_3710.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0471.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0471.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_0803.JPG">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_0803.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0998.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0998.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_0161.JPG">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_0161.JPG"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Passerelle"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/passerelles-terrasses/IMG_1442.jpeg">
+<img alt="Passerelle" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/passerelles-terrasses/IMG_1442.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Portail"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/portails/IMG_0830.jpeg">
+<img alt="Portail" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/portails/IMG_0830.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Verrière"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/verrieres/IMG_3395.jpeg">
+<img alt="Verrière" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/verrieres/IMG_3395.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Autre"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/autres/IMG_0002.jpeg">
+<img alt="Autre" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/autres/IMG_0002.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Escalier"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/escaliers/IMG_7727.jpeg">
+<img alt="Escalier" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/escaliers/IMG_7727.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_1764.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_1764.jpeg"/>
+<div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+</div>
+</div>
+
+<div class="group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll"
+     data-title="Réalisation Pascal Gardes"
+     data-category="Garde-corps"
+     data-description="Réalisation sur mesure en métallerie."
+     data-materials="Acier, finitions sur mesure"
+     data-location="Lantriac, Haute-Loire"
+     data-year="2024"
+     data-image="images/realisations/garde-corps/IMG_1324.jpeg">
+<img alt="Garde-corps" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/realisations/garde-corps/IMG_1324.jpeg"/>
 <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
 </div>
 </div>
 </div>
+</div></div>
 </div>
 </main>
 <section class="bg-gradient-to-br from-neutral-900 via-neutral-800 to-black text-white py-20">
@@ -576,6 +1794,52 @@ Voir notre Instagram
         // Filter functionality
         const filterButtons = document.querySelectorAll('.filter-btn');
         const allProjects = document.querySelectorAll('.project-item');
+        const categoryDescription = document.getElementById('categoryDescription');
+        const categoryTitle = document.getElementById('categoryTitle');
+        const categoryText = document.getElementById('categoryText');
+        
+        // Descriptions pour chaque catégorie
+        const descriptions = {
+            'Escalier': {
+                title: 'Escaliers',
+                text: `<p>Réalisation sur mesure de tous types d'escaliers, intérieurs comme extérieurs, entièrement personnalisables selon vos envies.</p>
+                       <p>Optez pour une structure métallique associée à des marches en acier, verre, bois (plusieurs essences disponibles avec vitrification possible), pierre, caillebotis ou marches caisson.</p>
+                       <p>Finitions au choix: thermolaqué, galvanisé, aspect brut (brut, verni ou ciré) ou peinture selon le nuancier RAL.</p>`
+            },
+            'Portail': {
+                title: 'Portails',
+                text: `<p>Réalisation sur mesure de portails deux vantaux, coulissants ou autoportés, adaptés à vos besoins et à votre style.</p>
+                       <p>Disponible en fer forgé, tôle découpée au laser, barreaudage ou autre conception personnalisée.</p>
+                       <p>Finition au choix : thermolaqué, galvanisé ou peinture cabine selon le nuancier RAL.</p>`
+            },
+            'Garde-corps': {
+                title: 'Garde-corps',
+                text: `<p>Réalisation sur mesure de tous types de garde-corps, intérieurs comme extérieurs, alliant sécurité et esthétique.</p>
+                       <p>Disponibles en acier, acier corten, inox ou aluminium, nos modèles se déclinent dans différents designs : verre, câbles, tôle, barreaudage ou motifs découpés au laser.</p>
+                       <p>Finitions au choix : aspect brut (brut, verni ou ciré), peinture selon le nuancier RAL, galvanisé ou thermolaqué.</p>`
+            },
+            'Passerelle': {
+                title: 'Passerelles / Terrasses',
+                text: `<p>Réalisation sur mesure de passerelles et terrasses en structure métallique, alliant robustesse et design.</p>
+                       <p>Possibilité de remplissage en lames de bois, caillebotis, dalles ou verre, selon vos besoins et vos envies esthétiques.</p>`
+            },
+            'Pergola': {
+                title: 'Pergolas',
+                text: `<p>Réalisation sur mesure de pergolas, abris ou extensions, en acier ou aluminium, selon vos besoins.</p>
+                       <p>Différents designs possibles : toiture en polycarbonate, panneaux sandwich ou autre configuration personnalisée.</p>
+                       <p>Finitions au choix : thermolaqué ou peinture cabine, avec la couleur RAL de votre choix.</p>`
+            },
+            'Verrière': {
+                title: 'Verrières',
+                text: `<p>Réalisation sur mesure de verrières assemblées avec joints et vis non apparents pour un rendu soigné et contemporain.</p>
+                       <p>Possibilité d'intégration avec sous-bassement en tôle, sur cloison en plaque de plâtre ou tout autre support selon le projet.</p>`
+            },
+            'Autre': {
+                title: 'Autres prestations',
+                text: `<p>Réalisation sur mesure de divers éléments de décoration et d'aménagement: pieds de table, tables basses, bacs à fleurs, luminaires ou habillages muraux intérieurs.</p>
+                       <p>Chaque création est personnalisable selon vos envies et le style de votre espace.</p>`
+            }
+        };
         
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -589,6 +1853,15 @@ Voir notre Instagram
                 
                 // Get filter value
                 const filterValue = button.dataset.filter;
+                
+                // Afficher la description de la catégorie
+                if (filterValue !== 'all' && descriptions[filterValue]) {
+                    categoryTitle.textContent = descriptions[filterValue].title;
+                    categoryText.innerHTML = descriptions[filterValue].text;
+                    categoryDescription.classList.remove('hidden');
+                } else {
+                    categoryDescription.classList.add('hidden');
+                }
                 
                 // Filter projects
                 allProjects.forEach(project => {
