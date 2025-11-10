@@ -27,6 +27,32 @@ collections:
     slug: "{{year}}-{{category}}-{{slug}}"
     extension: "json"
     format: "json"
+    # Affichage dans la liste : catégorie + nom de fichier image
+    summary: "{{category}} - 📷 {{fields.image}}"
+    # Tri par catégorie puis par ordre
+    sortable_fields: ['category', 'order', 'year']
+    view_filters:
+      - label: "Escaliers"
+        field: category
+        pattern: "Escalier"
+      - label: "Portails"
+        field: category
+        pattern: "Portail"
+      - label: "Garde-corps"
+        field: category
+        pattern: "Garde-corps"
+      - label: "Passerelles/Terrasses"
+        field: category
+        pattern: "Passerelle"
+      - label: "Pergolas"
+        field: category
+        pattern: "Pergola"
+      - label: "Verrières"
+        field: category
+        pattern: "Verrière"
+      - label: "Autres"
+        field: category
+        pattern: "Autre"
     editor:
       preview: false
     fields:
