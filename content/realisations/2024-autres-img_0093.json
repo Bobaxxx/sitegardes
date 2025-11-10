@@ -1,11 +1,11 @@
 {
-  "title": "Autre - IMG_0093",
-  "category": "Autre",
-  "description": "Création sur mesure en métallerie.",
   "materials": "Acier",
-  "location": "Lantriac, Haute-Loire",
-  "year": "2024",
-  "image": "images/realisations/autres/IMG_0093.jpeg",
   "published": true,
-  "order": 0
+  "order": 7,
+  "location": "Lantriac, Haute-Loire",
+  "title": "Autre - IMG_0093",
+  "image": "images/realisations/autres/IMG_0093.jpeg",
+  "description": "Création sur mesure en métallerie.",
+  "year": "2024",
+  "category": "Autre"
 }
