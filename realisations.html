@@ -401,8 +401,15 @@ Voir notre Instagram
         const grid = document.getElementById('projectsGrid');
         grid.innerHTML = '';
         
-        // Mélanger l'ordre si demandé (quand on affiche tous les projets)
-        const projectsToDisplay = shuffle ? [...projects].sort(() => Math.random() - 0.5) : projects;
+        // Trier par ordre d'affichage (champ "order")
+        // Si shuffle = true, on mélange quand même pour "Tous"
+        let projectsToDisplay;
+        if (shuffle) {
+            projectsToDisplay = [...projects].sort(() => Math.random() - 0.5);
+        } else {
+            // Tri par ordre croissant du champ "order"
+            projectsToDisplay = [...projects].sort((a, b) => a.order - b.order);
+        }
         
         projectsToDisplay.forEach(project => {
             const projectDiv = document.createElement('div');
@@ -613,10 +620,10 @@ Voir notre Instagram
                 
                 // Filter projects from allProjectsData
                 if (filterValue === 'all') {
-                    displayProjects(allProjectsData, true); // Shuffle pour "Tous"
+                    displayProjects(allProjectsData, false); // Tri par ordre pour "Tous"
                 } else {
                     const filtered = allProjectsData.filter(p => p.category === filterValue);
-                    displayProjects(filtered, false);
+                    displayProjects(filtered, false); // Tri par ordre pour la catégorie
                 }
             });
         });
