@@ -3,6 +3,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Réalisations - Pascal Gardes</title>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/logo final gardes.png"/>
+<link rel="apple-touch-icon" href="/logo final gardes.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -378,6 +381,9 @@ Voir notre Instagram
     // CHARGEMENT DYNAMIQUE DES PROJETS DEPUIS JSON
     // ==================================================
     let allProjectsData = [];
+    let shuffledProjects = [];
+    let displayedCount = 0;
+    const ITEMS_PER_PAGE = 9;
     
     // Précharger les images en cache
     function preloadImages(projects) {
@@ -410,40 +416,86 @@ Voir notre Instagram
         }
     }
     
+    function createProjectElement(project) {
+        const projectDiv = document.createElement('div');
+        projectDiv.className = 'group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll';
+        projectDiv.dataset.title = project.title;
+        projectDiv.dataset.category = project.category;
+        projectDiv.dataset.description = project.description;
+        projectDiv.dataset.materials = project.materials;
+        projectDiv.dataset.location = project.location;
+        projectDiv.dataset.year = project.year;
+        projectDiv.dataset.image = project.image;
+        
+        projectDiv.innerHTML = `
+            <img alt="${project.category}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${project.image}"/>
+            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
+            </div>
+        `;
+        
+        return projectDiv;
+    }
+    
+    function loadMoreProjects() {
+        const grid = document.getElementById('projectsGrid');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        
+        const nextBatch = shuffledProjects.slice(displayedCount, displayedCount + ITEMS_PER_PAGE);
+        
+        nextBatch.forEach(project => {
+            const projectDiv = createProjectElement(project);
+            grid.insertBefore(projectDiv, loadMoreBtn.parentElement);
+        });
+        
+        displayedCount += nextBatch.length;
+        
+        // Masquer le bouton si on a tout affiché
+        if (displayedCount >= shuffledProjects.length) {
+            loadMoreBtn.parentElement.remove();
+        }
+        
+        // Réactiver les animations et le lightbox pour les nouvelles images
+        initializeProjectListeners();
+        observeProjectAnimations();
+    }
+    
     function displayProjects(projects, shuffle = false) {
         const grid = document.getElementById('projectsGrid');
         grid.innerHTML = '';
+        displayedCount = 0;
         
         // Trier par ordre d'affichage (champ "order")
         // Si shuffle = true, on mélange quand même pour "Tous"
         let projectsToDisplay;
         if (shuffle) {
-            projectsToDisplay = [...projects].sort(() => Math.random() - 0.5);
+            shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
+            projectsToDisplay = shuffledProjects.slice(0, ITEMS_PER_PAGE);
+            displayedCount = projectsToDisplay.length;
         } else {
             // Tri par ordre croissant du champ "order"
             projectsToDisplay = [...projects].sort((a, b) => a.order - b.order);
+            shuffledProjects = [];
         }
         
         projectsToDisplay.forEach(project => {
-            const projectDiv = document.createElement('div');
-            projectDiv.className = 'group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll';
-            projectDiv.dataset.title = project.title;
-            projectDiv.dataset.category = project.category;
-            projectDiv.dataset.description = project.description;
-            projectDiv.dataset.materials = project.materials;
-            projectDiv.dataset.location = project.location;
-            projectDiv.dataset.year = project.year;
-            projectDiv.dataset.image = project.image;
-            
-            projectDiv.innerHTML = `
-                <img alt="${project.category}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${project.image}"/>
-                <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
-                    <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
-                </div>
-            `;
-            
+            const projectDiv = createProjectElement(project);
             grid.appendChild(projectDiv);
         });
+        
+        // Ajouter le bouton "Afficher plus" uniquement pour la section "Tous" (shuffle)
+        if (shuffle && displayedCount < shuffledProjects.length) {
+            const loadMoreContainer = document.createElement('div');
+            loadMoreContainer.className = 'col-span-full flex justify-center py-8';
+            loadMoreContainer.innerHTML = `
+                <button id="loadMoreBtn" class="bg-black text-white text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-neutral-800 transition-colors">
+                    Afficher plus
+                </button>
+            `;
+            grid.appendChild(loadMoreContainer);
+            
+            document.getElementById('loadMoreBtn').addEventListener('click', loadMoreProjects);
+        }
         
         // Réactiver les animations et le lightbox
         initializeProjectListeners();
