@@ -17,6 +17,10 @@ FROM_NAME = os.environ.get('FROM_NAME', 'Pascal Gardes')
 def index():
     return render_template('index.html')
 
+@app.route('/index.html')
+def index_redirect():
+    return redirect('/')
+
 @app.route('/services.html')
 def services():
     return render_template('services.html')
@@ -101,6 +105,11 @@ Message:
 @app.route('/images/<path:filename>')
 def images(filename):
     return send_from_directory('images', filename)
+
+# Servir le fichier JSON des réalisations
+@app.route('/content/all_realisations.json')
+def all_realisations():
+    return send_from_directory('content', 'all_realisations.json', mimetype='application/json')
 
 @app.route('/<path:filename>')
 def static_files(filename):

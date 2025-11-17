@@ -381,7 +381,7 @@ Voir notre Instagram
     
     async function loadProjects() {
         try {
-            const response = await fetch('content/all_realisations.json');
+            const response = await fetch('/content/all_realisations.json');
             const data = await response.json();
             allProjectsData = data.realisations;
             

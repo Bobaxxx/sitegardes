@@ -182,6 +182,14 @@
                 opacity: 0.7;
             }
         }
+        @keyframes fadeOut {
+            0% {
+                opacity: 0.7;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
         .carousel-3d-item {
             position: absolute;
             width: 300px;
@@ -225,6 +233,14 @@
         /* Cartes cachées */
         .carousel-3d-item.hidden {
             opacity: 0;
+            pointer-events: none;
+        }
+        .carousel-3d-item.exiting {
+            animation: fadeOut 0.4s ease-out forwards;
+        }
+        .carousel-3d-nav:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
             pointer-events: none;
         }
         .carousel-3d-nav {
@@ -609,8 +625,20 @@ Pascal Gardes
                 const wasHidden = item.classList.contains('hidden');
                 const wasPrev = item.classList.contains('prev');
                 const wasNext = item.classList.contains('next');
+                const wasActive = item.classList.contains('active');
                 
-                item.classList.remove('prev', 'active', 'next', 'hidden', 'entering');
+                // Si la carte était visible et va devenir cachée, animer la sortie
+                const willBeHidden = (index - currentIndex + carouselData.length) % carouselData.length > 1 && 
+                                     (index - currentIndex + carouselData.length) % carouselData.length < carouselData.length - 1;
+                
+                if ((wasPrev || wasNext || wasActive) && willBeHidden) {
+                    item.classList.add('exiting');
+                    setTimeout(() => {
+                        item.classList.remove('exiting');
+                    }, 400);
+                }
+                
+                item.classList.remove('prev', 'active', 'next', 'hidden', 'entering', 'exiting');
                 
                 const relativeIndex = (index - currentIndex + carouselData.length) % carouselData.length;
                 
@@ -640,37 +668,62 @@ Pascal Gardes
             });
         }
 
+        // Désactiver/activer les boutons
+        function setButtonsDisabled(disabled) {
+            if (prevBtn) prevBtn.disabled = disabled;
+            if (nextBtn) nextBtn.disabled = disabled;
+            const dots = carouselDots.querySelectorAll('.carousel-3d-dot');
+            dots.forEach(dot => {
+                if (disabled) {
+                    dot.style.pointerEvents = 'none';
+                    dot.style.opacity = '0.5';
+                } else {
+                    dot.style.pointerEvents = 'auto';
+                    dot.style.opacity = '1';
+                }
+            });
+        }
+
         // Aller à une slide spécifique
         function goToSlide(index) {
             if (isTransitioning) return;
             isTransitioning = true;
+            setButtonsDisabled(true);
             currentIndex = index;
             updateCarousel();
+            // Attendre que toutes les animations soient terminées (entrée + sortie + transition)
             setTimeout(() => {
                 isTransitioning = false;
-            }, 500);
+                setButtonsDisabled(false);
+            }, 650); // 600ms animation + 50ms marge
         }
 
         // Slide suivante
         function nextSlide() {
             if (isTransitioning) return;
+            isTransitioning = true;
+            setButtonsDisabled(true);
             currentIndex = (currentIndex + 1) % carouselData.length;
             updateCarousel();
-            isTransitioning = true;
+            // Attendre que toutes les animations soient terminées
             setTimeout(() => {
                 isTransitioning = false;
-            }, 500);
+                setButtonsDisabled(false);
+            }, 650);
         }
 
         // Slide précédente
         function prevSlide() {
             if (isTransitioning) return;
+            isTransitioning = true;
+            setButtonsDisabled(true);
             currentIndex = (currentIndex - 1 + carouselData.length) % carouselData.length;
             updateCarousel();
-            isTransitioning = true;
+            // Attendre que toutes les animations soient terminées
             setTimeout(() => {
                 isTransitioning = false;
-            }, 500);
+                setButtonsDisabled(false);
+            }, 650);
         }
 
         // Event listeners
@@ -683,7 +736,10 @@ Pascal Gardes
         let autoplayInterval;
         function startAutoplay() {
             autoplayInterval = setInterval(() => {
-                nextSlide();
+                // Ne pas avancer si une transition est en cours
+                if (!isTransitioning) {
+                    nextSlide();
+                }
             }, 5000);
         }
 
