@@ -199,6 +199,10 @@
             background: white;
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            user-select: none;
+        }
+        .carousel-3d-item.active {
+            cursor: default;
         }
         .carousel-3d-item:hover {
             border-color: black;
@@ -598,11 +602,30 @@ Pascal Gardes
                 // Créer la carte
                 const card = document.createElement('div');
                 card.className = 'carousel-3d-item';
+                card.dataset.index = index;
                 card.innerHTML = `
                     <span class="material-symbols-outlined text-6xl mb-4">${item.icon}</span>
                     <h3 class="text-xl font-bold uppercase tracking-wider mb-3">${item.title}</h3>
                     <p class="text-neutral-600 font-light">${item.description}</p>
                 `;
+                
+                // Ajouter l'event listener pour le clic sur la carte
+                card.addEventListener('click', (e) => {
+                    if (isTransitioning) return;
+                    const cardIndex = parseInt(card.dataset.index);
+                    const relativeIndex = (cardIndex - currentIndex + carouselData.length) % carouselData.length;
+                    
+                    // Si c'est la carte de gauche (prev), aller à la précédente
+                    if (relativeIndex === carouselData.length - 1) {
+                        prevSlide();
+                    }
+                    // Si c'est la carte de droite (next), aller à la suivante
+                    else if (relativeIndex === 1) {
+                        nextSlide();
+                    }
+                    // Si c'est la carte centrale (active), ne rien faire
+                });
+                
                 carouselTrack.appendChild(card);
                 
                 // Créer le dot

@@ -379,6 +379,14 @@ Voir notre Instagram
     // ==================================================
     let allProjectsData = [];
     
+    // Précharger les images en cache
+    function preloadImages(projects) {
+        projects.forEach(project => {
+            const img = new Image();
+            img.src = project.image;
+        });
+    }
+    
     async function loadProjects() {
         try {
             const response = await fetch('/content/all_realisations.json');
@@ -386,6 +394,10 @@ Voir notre Instagram
             allProjectsData = data.realisations;
             
             console.log(`✅ ${allProjectsData.length} projets chargés`);
+            
+            // Précharger toutes les images en arrière-plan pour les mettre en cache
+            preloadImages(allProjectsData);
+            
             displayProjects(allProjectsData);
             
         } catch (error) {
