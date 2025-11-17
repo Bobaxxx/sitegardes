@@ -1,8 +1,5 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 import os
-import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -11,11 +8,10 @@ app = Flask(__name__, template_folder='.', static_folder='.')
 app.secret_key = os.environ.get('SECRET_KEY', 'dev-secret-key-change-in-production')
 
 # Configuration email
-SMTP_SERVER = os.environ.get('SMTP_SERVER', 'smtp.gmail.com')
-SMTP_PORT = int(os.environ.get('SMTP_PORT', '587'))
-SMTP_USER = os.environ.get('SMTP_USER')
-SMTP_PASSWORD = os.environ.get('SMTP_PASSWORD')
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 CONTACT_EMAIL = os.environ.get('CONTACT_EMAIL', 'contact@example.com')
+FROM_EMAIL = os.environ.get('FROM_EMAIL', 'contact@example.com')
+FROM_NAME = os.environ.get('FROM_NAME', 'Pascal Gardes')
 
 @app.route('/')
 def index():
@@ -44,14 +40,33 @@ def contact():
             flash('Veuillez remplir tous les champs obligatoires.', 'error')
             return redirect(url_for('contact'))
         
-        # Envoyer l'email
+        # Envoyer l'email via SendGrid
         try:
-            msg = MIMEMultipart()
-            msg['From'] = SMTP_USER
-            msg['To'] = CONTACT_EMAIL
-            msg['Subject'] = f"Contact Pascal Gardes: {sujet}"
+            if not SENDGRID_API_KEY:
+                flash('Configuration email manquante.', 'error')
+                return redirect(url_for('contact'))
             
-            body = f"""
+            import sendgrid
+            from sendgrid.helpers.mail import Mail
+            
+            sendgrid_host = os.environ.get('SENDGRID_HOST')
+            if sendgrid_host:
+                sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY, host=sendgrid_host)
+            else:
+                sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY)
+            
+            html_content = f"""
+            <h2>Nouveau message de contact</h2>
+            <p><strong>Nom:</strong> {nom} {prenom}</p>
+            <p><strong>Email:</strong> {email}</p>
+            <p><strong>Téléphone:</strong> {telephone or 'Non renseigné'}</p>
+            <p><strong>Sujet:</strong> {sujet}</p>
+            <hr>
+            <p><strong>Message:</strong></p>
+            <p>{message.replace(chr(10), '<br>')}</p>
+            """
+            
+            text_content = f"""
 Nouveau message de contact
 
 Nom: {nom} {prenom}
@@ -62,13 +77,16 @@ Sujet: {sujet}
 Message:
 {message}
 """
-            msg.attach(MIMEText(body, 'plain'))
             
-            server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-            server.starttls()
-            server.login(SMTP_USER, SMTP_PASSWORD)
-            server.send_message(msg)
-            server.quit()
+            message = Mail(
+                from_email=(FROM_EMAIL, FROM_NAME),
+                to_emails=CONTACT_EMAIL,
+                subject=f"Contact Pascal Gardes: {sujet}",
+                html_content=html_content,
+                plain_text_content=text_content
+            )
+            
+            sg.send(message)
             
             flash('Votre message a été envoyé avec succès ! Nous vous répondrons dans les plus brefs délais.', 'success')
         except Exception as e:
