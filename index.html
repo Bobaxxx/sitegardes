@@ -139,45 +139,140 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-        /* Bande défilante continue */
-        .scroll-container {
+        /* Carrousel 3D avec 3 cartes */
+        .carousel-3d-container {
             position: relative;
-            overflow: hidden;
-            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 0;
         }
-        .scroll-track {
+        .carousel-3d-wrapper {
+            position: relative;
+            perspective: 1000px;
+            height: 500px;
             display: flex;
-            gap: 2rem;
-            width: fit-content;
-            will-change: transform;
+            align-items: center;
+            justify-content: center;
         }
-        .scroll-item {
-            flex-shrink: 0;
-            width: 350px;
+        .carousel-3d-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-3d-item {
+            position: absolute;
+            width: 300px;
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             border: 1px solid #e5e5e5;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
-        .scroll-item:hover {
+        .carousel-3d-item:hover {
             border-color: black;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        /* Carte gauche */
+        .carousel-3d-item.prev {
+            transform: translateX(-120%) scale(0.85) translateZ(-100px);
+            opacity: 0.7;
+            z-index: 1;
+        }
+        /* Carte centrale (mise en avant) */
+        .carousel-3d-item.active {
+            transform: translateX(0) scale(1.1) translateZ(0);
+            opacity: 1;
+            z-index: 3;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+            border-color: black;
+        }
+        /* Carte droite */
+        .carousel-3d-item.next {
+            transform: translateX(120%) scale(0.85) translateZ(-100px);
+            opacity: 0.7;
+            z-index: 1;
+        }
+        /* Cartes cachées */
+        .carousel-3d-item.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .carousel-3d-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 2px solid black;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            border-radius: 50%;
+        }
+        .carousel-3d-nav:hover {
+            background: black;
+            color: white;
+        }
+        .carousel-3d-nav.prev-btn {
+            left: -25px;
+        }
+        .carousel-3d-nav.next-btn {
+            right: -25px;
+        }
+        .carousel-3d-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 3rem;
+        }
+        .carousel-3d-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e5e5e5;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .carousel-3d-dot.active {
+            background: black;
+            width: 32px;
+            border-radius: 6px;
         }
         @media (max-width: 768px) {
-            .scroll-item {
-                width: 240px;
-                padding: 1.5rem;
+            .carousel-3d-container {
+                padding: 2rem 1rem;
             }
-            .scroll-item h3 {
-                font-size: 1rem;
-                margin-bottom: 0.5rem;
+            .carousel-3d-wrapper {
+                height: 450px;
             }
-            .scroll-item p {
-                font-size: 0.875rem;
+            .carousel-3d-item {
+                width: 250px;
+                padding: 2rem 1.5rem;
             }
-            .scroll-item .material-symbols-outlined {
-                font-size: 3rem;
-                margin-bottom: 0.75rem;
+            .carousel-3d-item.prev {
+                transform: translateX(-100%) scale(0.8) translateZ(-100px);
+            }
+            .carousel-3d-item.next {
+                transform: translateX(100%) scale(0.8) translateZ(-100px);
+            }
+            .carousel-3d-nav {
+                width: 40px;
+                height: 40px;
+            }
+            .carousel-3d-nav.prev-btn {
+                left: 10px;
+            }
+            .carousel-3d-nav.next-btn {
+                right: 10px;
             }
         }
     </style>
@@ -186,18 +281,18 @@
 <div class="relative min-h-screen flex flex-col">
 <header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300" id="header">
 <div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
-<a class="flex items-center gap-2 md:gap-3" href="index.html">
+<a class="flex items-center gap-2 md:gap-3" href="/">
 <img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 md:h-10 w-auto"/>
 <h2 class="text-white text-base md:text-xl font-bold">PASCAL GARDES</h2>
 </a>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-white text-sm font-bold border-b border-white tracking-wider" href="index.html">ACCUEIL</a>
-<a class="text-white text-sm tracking-wider" href="services.html">SERVICES</a>
-<a class="text-white text-sm tracking-wider" href="realisations.html">RÉALISATIONS</a>
-<a class="text-white text-sm tracking-wider" href="contact.html">CONTACT</a>
+<a class="text-white text-sm font-bold border-b border-white tracking-wider" href="/">ACCUEIL</a>
+<a class="text-white text-sm tracking-wider" href="/services.html">SERVICES</a>
+<a class="text-white text-sm tracking-wider" href="/realisations.html">RÉALISATIONS</a>
+<a class="text-white text-sm tracking-wider" href="/contact.html">CONTACT</a>
 </nav>
 <div class="hidden md:block">
-<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html#formulaire">Demander un devis</a>
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="/contact.html#formulaire">Demander un devis</a>
 </div>
 <button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
 <span class="material-symbols-outlined text-3xl">menu</span>
@@ -216,13 +311,13 @@
 </button>
 </div>
 <nav class="flex flex-col p-6 space-y-6 flex-grow justify-center">
-<a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2" href="index.html">Accueil</a>
-<a class="text-white text-lg uppercase tracking-wider" href="services.html">Services</a>
-<a class="text-white text-lg uppercase tracking-wider" href="realisations.html">Réalisations</a>
-<a class="text-white text-lg uppercase tracking-wider" href="contact.html">Contact</a>
+<a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2" href="/">Accueil</a>
+<a class="text-white text-lg uppercase tracking-wider" href="/services.html">Services</a>
+<a class="text-white text-lg uppercase tracking-wider" href="/realisations.html">Réalisations</a>
+<a class="text-white text-lg uppercase tracking-wider" href="/contact.html">Contact</a>
 </nav>
 <div class="p-6 flex-shrink-0">
-<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html#formulaire">Demander un devis</a>
+<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="/contact.html#formulaire">Demander un devis</a>
 </div>
 </div>
 </div>
@@ -237,8 +332,8 @@ Pascal Gardes
 </h1>
 <p class="text-xl md:text-2xl font-light text-neutral-300 mb-8 max-w-3xl mx-auto">L'art du métal au service de vos projets. Création sur mesure d'escaliers, portails, garde-corps et structures métalliques.</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-neutral-200 transition-colors" href="contact.html#formulaire">Demander un devis</a>
-<a class="inline-block bg-transparent border-2 border-white text-white text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-white hover:text-black transition-colors" href="realisations.html">Voir nos réalisations</a>
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-neutral-200 transition-colors" href="/contact.html#formulaire">Demander un devis</a>
+<a class="inline-block bg-transparent border-2 border-white text-white text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-white hover:text-black transition-colors" href="/realisations.html">Voir nos réalisations</a>
 </div>
 </div>
 </div>
@@ -248,44 +343,19 @@ Pascal Gardes
 <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider">Notre Savoir-Faire</h2>
 <p class="mt-4 text-lg text-neutral-600 font-light max-w-2xl mx-auto">Des années d'expérience et une passion pour le métal nous permettent de réaliser vos projets les plus ambitieux.</p>
 </div>
-<div class="scroll-container">
-<div class="scroll-track">
-<div class="scroll-item">
-<span class="material-symbols-outlined text-6xl mb-4">stairs</span>
-<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Escaliers</h3>
-<p class="text-neutral-600 font-light">Escaliers sur mesure en métal : droits, hélicoïdaux, quart tournant. Design moderne ou classique selon vos envies.</p>
+<div class="carousel-3d-container">
+<div class="carousel-3d-wrapper">
+<button class="carousel-3d-nav prev-btn" id="carouselPrev" aria-label="Précédent">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="carousel-3d-track" id="carouselTrack">
+<!-- Les cartes seront générées dynamiquement par JavaScript -->
 </div>
-<div class="scroll-item">
-<span class="material-symbols-outlined text-6xl mb-4">gate</span>
-<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Portails</h3>
-<p class="text-neutral-600 font-light">Portails battants ou coulissants, manuels ou motorisés. Création sur mesure adaptée à votre propriété.</p>
+<button class="carousel-3d-nav next-btn" id="carouselNext" aria-label="Suivant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
 </div>
-<div class="scroll-item">
-<span class="material-symbols-outlined text-6xl mb-4">balcony</span>
-<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Garde-corps</h3>
-<p class="text-neutral-600 font-light">Garde-corps pour balcons, terrasses et escaliers. Sécurité et esthétique pour vos espaces.</p>
-</div>
-<div class="scroll-item">
-<span class="material-symbols-outlined text-6xl mb-4">roofing</span>
-<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Passerelles</h3>
-<p class="text-neutral-600 font-light">Passerelles et terrasses en structure métallique sur mesure. Solutions techniques et esthétiques pour vos projets.</p>
-</div>
-<div class="scroll-item">
-<span class="material-symbols-outlined text-6xl mb-4">pergola</span>
-<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Pergolas</h3>
-<p class="text-neutral-600 font-light">Pergolas sur mesure en acier ou aluminium. Créez un espace extérieur élégant et fonctionnel.</p>
-</div>
-<div class="scroll-item">
-<span class="material-symbols-outlined text-6xl mb-4">window</span>
-<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Verrières</h3>
-<p class="text-neutral-600 font-light">Verrières d'intérieur sur mesure. Style atelier pour séparer vos espaces avec élégance et luminosité.</p>
-</div>
-<div class="scroll-item">
-<span class="material-symbols-outlined text-6xl mb-4">construction</span>
-<h3 class="text-xl font-bold uppercase tracking-wider mb-3">Autres créations</h3>
-<p class="text-neutral-600 font-light">Mobilier métallique, structures sur mesure et tous types de créations en métallerie selon vos besoins.</p>
-</div>
-</div>
+<div class="carousel-3d-dots" id="carouselDots"></div>
 </div>
 </div>
 </div>
@@ -335,7 +405,7 @@ Pascal Gardes
 <div class="container mx-auto px-6 text-center">
 <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-6">Prêt à démarrer votre projet ?</h2>
 <p class="text-lg text-neutral-600 font-light mb-8 max-w-2xl mx-auto">Contactez-nous dès aujourd'hui pour discuter de votre projet et obtenir un devis gratuit.</p>
-<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-neutral-800 transition-colors" href="contact.html#formulaire">Nous contacter</a>
+<a class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-neutral-800 transition-colors" href="/contact.html#formulaire">Nous contacter</a>
 </div>
 </div>
 </main>
@@ -349,10 +419,10 @@ Pascal Gardes
 <div>
 <h3 class="font-bold text-lg uppercase tracking-wider">Navigation</h3>
 <ul class="mt-2 space-y-1">
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="index.html">Accueil</a></li>
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="services.html">Services</a></li>
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="realisations.html">Réalisations</a></li>
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="contact.html">Contact</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="/">Accueil</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="/services.html">Services</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="/realisations.html">Réalisations</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="/contact.html">Contact</a></li>
 </ul>
 </div>
 <div>
@@ -366,6 +436,7 @@ Pascal Gardes
 <div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
 <p>© 2024 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="#">Mentions légales</a></p>
 <p class="mt-2">Site réalisé par <a href="https://jmindagency.fr" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity font-bold uppercase no-underline"><span class="text-blue-500">JMIND</span> <span class="text-neutral-400">AGENCY</span></a></p>
+<p class="mt-2"><a href="/admin/" class="text-neutral-600 hover:text-neutral-400 transition-colors text-xs">Administration</a></p>
 </div>
 </div>
 </footer>
@@ -429,36 +500,168 @@ Pascal Gardes
             observer.observe(el);
         });
 
-        // Défilement infini continu
-        const scrollTrack = document.querySelector('.scroll-track');
-        const scrollItems = document.querySelectorAll('.scroll-item');
-        
-        if (scrollTrack && scrollItems.length > 0) {
-            let scrollPosition = 0;
-            const scrollSpeed = 2.5; // Pixels par frame (augmente pour aller plus vite)
-            
-            function infiniteScroll() {
-                scrollPosition += scrollSpeed;
-                scrollTrack.style.transform = `translateX(-${scrollPosition}px)`;
-                
-                // Obtenir la largeur du premier item + gap
-                const firstItem = scrollItems[0];
-                const itemWidth = firstItem.offsetWidth + 32; // 32px = 2rem gap
-                
-                // Si on a défilé d'une largeur d'item complète
-                if (scrollPosition >= itemWidth) {
-                    // Prendre le premier élément et le mettre à la fin
-                    scrollTrack.appendChild(scrollTrack.firstElementChild);
-                    // Réajuster la position pour éviter le saut visuel
-                    scrollPosition -= itemWidth;
-                    scrollTrack.style.transform = `translateX(-${scrollPosition}px)`;
-                }
-                
-                requestAnimationFrame(infiniteScroll);
+        // Carrousel 3D avec défilement infini
+        const carouselData = [
+            {
+                icon: 'stairs',
+                title: 'Escaliers',
+                description: 'Escaliers sur mesure en métal : droits, hélicoïdaux, quart tournant. Design moderne ou classique selon vos envies.'
+            },
+            {
+                icon: 'gate',
+                title: 'Portails',
+                description: 'Portails battants ou coulissants, manuels ou motorisés. Création sur mesure adaptée à votre propriété.'
+            },
+            {
+                icon: 'balcony',
+                title: 'Garde-corps',
+                description: 'Garde-corps pour balcons, terrasses et escaliers. Sécurité et esthétique pour vos espaces.'
+            },
+            {
+                icon: 'roofing',
+                title: 'Passerelles',
+                description: 'Passerelles et terrasses en structure métallique sur mesure. Solutions techniques et esthétiques pour vos projets.'
+            },
+            {
+                icon: 'pergola',
+                title: 'Pergolas',
+                description: 'Pergolas sur mesure en acier ou aluminium. Créez un espace extérieur élégant et fonctionnel.'
+            },
+            {
+                icon: 'window',
+                title: 'Verrières',
+                description: 'Verrières d\'intérieur sur mesure. Style atelier pour séparer vos espaces avec élégance et luminosité.'
+            },
+            {
+                icon: 'construction',
+                title: 'Autres créations',
+                description: 'Mobilier métallique, structures sur mesure et tous types de créations en métallerie selon vos besoins.'
             }
+        ];
+
+        const carouselTrack = document.getElementById('carouselTrack');
+        const carouselDots = document.getElementById('carouselDots');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
+        
+        let currentIndex = 0;
+        let isTransitioning = false;
+
+        // Créer les cartes
+        function createCards() {
+            carouselTrack.innerHTML = '';
+            carouselDots.innerHTML = '';
             
-            // Démarrer l'animation
-            infiniteScroll();
+            carouselData.forEach((item, index) => {
+                // Créer la carte
+                const card = document.createElement('div');
+                card.className = 'carousel-3d-item';
+                card.innerHTML = `
+                    <span class="material-symbols-outlined text-6xl mb-4">${item.icon}</span>
+                    <h3 class="text-xl font-bold uppercase tracking-wider mb-3">${item.title}</h3>
+                    <p class="text-neutral-600 font-light">${item.description}</p>
+                `;
+                carouselTrack.appendChild(card);
+                
+                // Créer le dot
+                const dot = document.createElement('div');
+                dot.className = 'carousel-3d-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                carouselDots.appendChild(dot);
+            });
+            
+            updateCarousel();
+        }
+
+        // Mettre à jour l'affichage
+        function updateCarousel() {
+            const items = carouselTrack.querySelectorAll('.carousel-3d-item');
+            const dots = carouselDots.querySelectorAll('.carousel-3d-dot');
+            
+            items.forEach((item, index) => {
+                item.classList.remove('prev', 'active', 'next', 'hidden');
+                
+                const relativeIndex = (index - currentIndex + carouselData.length) % carouselData.length;
+                
+                if (relativeIndex === 0) {
+                    item.classList.add('active');
+                } else if (relativeIndex === 1) {
+                    item.classList.add('next');
+                } else if (relativeIndex === carouselData.length - 1) {
+                    item.classList.add('prev');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Aller à une slide spécifique
+        function goToSlide(index) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex = index;
+            updateCarousel();
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        }
+
+        // Slide suivante
+        function nextSlide() {
+            if (isTransitioning) return;
+            currentIndex = (currentIndex + 1) % carouselData.length;
+            updateCarousel();
+            isTransitioning = true;
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        }
+
+        // Slide précédente
+        function prevSlide() {
+            if (isTransitioning) return;
+            currentIndex = (currentIndex - 1 + carouselData.length) % carouselData.length;
+            updateCarousel();
+            isTransitioning = true;
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        }
+
+        // Event listeners
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+        }
+
+        // Auto-play (optionnel)
+        let autoplayInterval;
+        function startAutoplay() {
+            autoplayInterval = setInterval(() => {
+                nextSlide();
+            }, 5000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        // Démarrer le carrousel
+        if (carouselTrack) {
+            createCards();
+            startAutoplay();
+            
+            // Arrêter l'autoplay au survol
+            const container = document.querySelector('.carousel-3d-container');
+            if (container) {
+                container.addEventListener('mouseenter', stopAutoplay);
+                container.addEventListener('mouseleave', startAutoplay);
+            }
         }
     </script>
 

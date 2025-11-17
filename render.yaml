@@ -1,4 +1,7 @@
 services:
+  # Site web Flask
+  # Note: Le CMS (cmsadmin) doit être déployé séparément sur Render
+  # Voir DEPLOIEMENT_RENDER_AVEC_CMS.md pour les instructions complètes
   - type: web
     name: sitegardes
     env: python
