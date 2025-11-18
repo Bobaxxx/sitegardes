@@ -29,6 +29,14 @@ def services():
 def realisations():
     return render_template('realisations.html')
 
+@app.route('/mentions-legales.html')
+def mentions_legales():
+    return render_template('mentions-legales.html')
+
+@app.route('/confidentialite.html')
+def confidentialite():
+    return render_template('confidentialite.html')
+
 @app.route('/contact.html', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
@@ -38,10 +46,16 @@ def contact():
         telephone = request.form.get('telephone', '')
         sujet = request.form.get('sujet')
         message = request.form.get('message')
+        rgpd = request.form.get('rgpd')
         
         # Validation
         if not all([nom, prenom, email, sujet, message]):
             flash('Veuillez remplir tous les champs obligatoires.', 'error')
+            return redirect(url_for('contact'))
+        
+        # Vérification RGPD
+        if not rgpd:
+            flash('Vous devez accepter la politique de confidentialité pour envoyer votre message.', 'error')
             return redirect(url_for('contact'))
         
         # Envoyer l'email via SendGrid
@@ -110,6 +124,16 @@ def images(filename):
 @app.route('/content/all_realisations.json')
 def all_realisations():
     return send_from_directory('content', 'all_realisations.json', mimetype='application/json')
+
+# Servir robots.txt
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory('.', 'robots.txt', mimetype='text/plain')
+
+# Servir sitemap.xml
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory('.', 'sitemap.xml', mimetype='application/xml')
 
 @app.route('/<path:filename>')
 def static_files(filename):

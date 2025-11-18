@@ -2,7 +2,16 @@
 <html lang="fr"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Réalisations - Pascal Gardes</title>
+<meta name="description" content="Découvrez nos réalisations de serrurerie métallerie : escaliers, portails, garde-corps, pergolas, verrières. Plus de 100 projets réalisés à Lantriac et en Haute-Loire (43)."/>
+<meta name="keywords" content="réalisations, serrurerie, métallerie, escaliers métalliques, portails, garde-corps, pergolas, Lantriac, Haute-Loire, projets"/>
+<title>Réalisations - Pascal Gardes | Galerie de Projets Métallerie</title>
+<!-- Open Graph -->
+<meta property="og:title" content="Réalisations - Pascal Gardes | Galerie de Projets"/>
+<meta property="og:description" content="Découvrez plus de 100 réalisations de serrurerie métallerie : escaliers, portails, garde-corps, pergolas, verrières."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://gpserrurerie.fr/realisations.html"/>
+<meta property="og:locale" content="fr_FR"/>
+<link rel="canonical" href="https://gpserrurerie.fr/realisations.html"/>
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="/logo final gardes.png"/>
 <link rel="apple-touch-icon" href="/logo final gardes.png"/>
@@ -183,7 +192,7 @@
 </header>
 <main class="flex-grow">
 <div class="relative h-[60vh] min-h-[400px] bg-black flex items-center justify-center">
-<img alt="Interior with modern metal staircase" class="absolute inset-0 w-full h-full object-cover opacity-30" src="images/realisations/passerelles-terrasses/IMG_0042.jpeg"/>
+<img alt="Réalisations de serrurerie métallerie par Pascal Gardes - Passerelle et terrasse métallique" class="absolute inset-0 w-full h-full object-cover opacity-30" src="images/realisations/passerelles-terrasses/IMG_0042.jpeg"/>
 <div class="relative text-center text-white px-6">
 <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold uppercase tracking-wide md:tracking-widest">Nos Réalisations</h1>
 <p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Découvrez une sélection de nos projets, témoins de notre savoir-faire et de notre passion pour le métal.</p>
@@ -266,7 +275,7 @@ Voir notre Instagram
 </div>
 </div>
 <div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
-<p>© 2024 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="#">Mentions légales</a></p>
+<p>© 2025 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="mentions-legales.html">Mentions légales</a> | <a class="hover:text-white transition-colors" href="confidentialite.html">Confidentialité</a></p>
 <p class="mt-2">Site réalisé par <a href="https://jmindagency.fr" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity font-bold uppercase no-underline"><span class="text-blue-500">JMIND</span> <span class="text-neutral-400">AGENCY</span></a></p>
 </div>
 </div>
@@ -283,7 +292,7 @@ Voir notre Instagram
 <div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
 <!-- Image -->
 <div class="flex items-center justify-center lg:sticky lg:top-6 lg:self-start">
-<img alt="Project image" class="w-full max-h-[50vh] lg:max-h-[80vh] object-contain" id="lightboxImage"/>
+<img alt="" class="w-full max-h-[50vh] lg:max-h-[80vh] object-contain" id="lightboxImage"/>
 </div>
 <!-- Informations -->
 <div class="text-white flex flex-col p-4 md:p-6 lg:p-8 pb-20 lg:pb-8">
@@ -428,7 +437,7 @@ Voir notre Instagram
         projectDiv.dataset.image = project.image;
         
         projectDiv.innerHTML = `
-            <img alt="${project.category}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${project.image}"/>
+            <img alt="${project.title || project.category} - ${project.category} par Pascal Gardes, serrurerie métallerie Lantriac" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${project.image}"/>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
                 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
             </div>
@@ -524,7 +533,9 @@ Voir notre Instagram
                 document.getElementById('lightboxMaterials').textContent = materials;
                 document.getElementById('lightboxLocation').textContent = location;
                 document.getElementById('lightboxYear').textContent = year;
-                document.getElementById('lightboxImage').src = image;
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = image;
+                lightboxImage.alt = `${title} - ${category} par Pascal Gardes, serrurerie métallerie Lantriac`;
                 
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -582,7 +593,9 @@ Voir notre Instagram
                 document.getElementById('lightboxMaterials').textContent = materials;
                 document.getElementById('lightboxLocation').textContent = location;
                 document.getElementById('lightboxYear').textContent = year;
-                document.getElementById('lightboxImage').src = image;
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = image;
+                lightboxImage.alt = `${title} - ${category} par Pascal Gardes, serrurerie métallerie Lantriac`;
                 
                 // Show lightbox
                 lightbox.classList.add('active');

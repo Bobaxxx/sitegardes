@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="Politique de confidentialité de Pascal Gardes. Protection des données personnelles et conformité RGPD."/>
+<title>Politique de Confidentialité - Pascal Gardes</title>
+<link rel="icon" type="image/png" href="/logo final gardes.png"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+        html {
+            overflow-x: hidden;
+            scroll-padding-top: 100px;
+            scroll-behavior: smooth;
+        }
+        .header-scrolled {
+            background-color: #ffffff;
+            color: #000000;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .header-scrolled a,
+        .header-scrolled h2,
+        .header-scrolled .material-symbols-outlined,
+        .header-scrolled #mobileMenuBtn {
+            color: #000000;
+        }
+        .header-scrolled img {
+            filter: invert(1) brightness(0);
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        body.menu-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-display">
+<div class="relative min-h-screen flex flex-col">
+<header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300" id="header">
+<div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+<a class="flex items-center gap-2 md:gap-3" href="/">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 md:h-10 w-auto"/>
+<h2 class="text-white text-base md:text-xl font-bold">PASCAL GARDES</h2>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white text-sm tracking-wider" href="/">ACCUEIL</a>
+<a class="text-white text-sm tracking-wider" href="services.html">SERVICES</a>
+<a class="text-white text-sm tracking-wider" href="realisations.html">RÉALISATIONS</a>
+<a class="text-white text-sm tracking-wider" href="contact.html">CONTACT</a>
+</nav>
+<div class="hidden md:block">
+<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html#formulaire">Demander un devis</a>
+</div>
+<button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<div class="mobile-menu fixed inset-0 bg-black z-[60] md:hidden overflow-hidden" id="mobileMenu">
+<div class="flex flex-col h-full overflow-hidden">
+<div class="flex items-center justify-between p-6 border-b border-neutral-800 flex-shrink-0">
+<div class="flex items-center gap-2">
+<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 w-auto"/>
+<h2 class="text-white text-lg font-bold">PASCAL GARDES</h2>
+</div>
+<button class="text-white" id="closeMobileMenu">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-6 flex-grow justify-center">
+<a class="text-white text-lg uppercase tracking-wider" href="/">Accueil</a>
+<a class="text-white text-lg uppercase tracking-wider" href="services.html">Services</a>
+<a class="text-white text-lg uppercase tracking-wider" href="realisations.html">Réalisations</a>
+<a class="text-white text-lg uppercase tracking-wider" href="contact.html">Contact</a>
+</nav>
+<div class="p-6 flex-shrink-0">
+<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html#formulaire">Demander un devis</a>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="relative h-[40vh] min-h-[300px] bg-black flex items-center justify-center">
+<div class="relative text-center text-white px-6">
+<h1 class="text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-wide md:tracking-widest">Politique de Confidentialité</h1>
+</div>
+</div>
+<div class="bg-white py-20">
+<div class="container mx-auto px-6 max-w-4xl">
+<div class="prose prose-lg max-w-none space-y-8">
+<section>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+<strong>Dernière mise à jour :</strong> 15 janvier 2025
+</p>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Pascal Gardes (ci-après "nous", "notre" ou "l'entreprise") s'engage à protéger et respecter votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données personnelles conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés.
+</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">1. Responsable du traitement</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Le responsable du traitement des données personnelles est :<br/>
+<strong>Pascal Gardes</strong><br/>
+Z.A. de la Loubeyre, 43260 LANTRIAC<br/>
+Email : <a href="mailto:gpserrurerie@outlook.fr" class="text-black underline">gpserrurerie@outlook.fr</a><br/>
+Téléphone : 04.71.05.19.75
+</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">2. Données collectées</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Nous collectons les données personnelles suivantes via notre formulaire de contact :</p>
+<ul class="list-disc list-inside text-neutral-700 font-light leading-relaxed mb-4 space-y-2 ml-4">
+<li>Nom et prénom</li>
+<li>Adresse email</li>
+<li>Numéro de téléphone (optionnel)</li>
+<li>Message et sujet de la demande</li>
+</ul>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Ces données sont collectées uniquement lorsque vous remplissez volontairement le formulaire de contact sur notre site web.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">3. Finalités du traitement</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Vos données personnelles sont utilisées pour les finalités suivantes :</p>
+<ul class="list-disc list-inside text-neutral-700 font-light leading-relaxed mb-4 space-y-2 ml-4">
+<li>Répondre à vos demandes de contact et de devis</li>
+<li>Vous contacter concernant votre projet</li>
+<li>Améliorer nos services</li>
+</ul>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">4. Base légale du traitement</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Le traitement de vos données personnelles est basé sur :</p>
+<ul class="list-disc list-inside text-neutral-700 font-light leading-relaxed mb-4 space-y-2 ml-4">
+<li>Votre consentement explicite lors de l'envoi du formulaire de contact</li>
+<li>L'intérêt légitime de répondre à vos demandes</li>
+</ul>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">5. Conservation des données</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Vos données personnelles sont conservées pendant une durée maximale de 3 ans à compter de votre dernier contact avec nous, sauf obligation légale de conservation plus longue.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">6. Partage des données</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Vos données personnelles ne sont pas vendues, louées ou partagées avec des tiers à des fins commerciales. Elles peuvent être transmises à nos prestataires techniques (hébergeur, service d'envoi d'emails) dans le strict cadre de l'exécution de nos services.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">7. Vos droits</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Conformément au RGPD, vous disposez des droits suivants :</p>
+<ul class="list-disc list-inside text-neutral-700 font-light leading-relaxed mb-4 space-y-2 ml-4">
+<li><strong>Droit d'accès :</strong> Vous pouvez obtenir une copie de vos données personnelles</li>
+<li><strong>Droit de rectification :</strong> Vous pouvez corriger vos données inexactes</li>
+<li><strong>Droit à l'effacement :</strong> Vous pouvez demander la suppression de vos données</li>
+<li><strong>Droit à la limitation :</strong> Vous pouvez demander la limitation du traitement</li>
+<li><strong>Droit d'opposition :</strong> Vous pouvez vous opposer au traitement de vos données</li>
+<li><strong>Droit à la portabilité :</strong> Vous pouvez récupérer vos données dans un format structuré</li>
+<li><strong>Droit de retirer votre consentement :</strong> À tout moment, sans affecter la licéité du traitement basé sur le consentement effectué avant le retrait</li>
+</ul>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Pour exercer ces droits, contactez-nous à : <a href="mailto:gpserrurerie@outlook.fr" class="text-black underline">gpserrurerie@outlook.fr</a></p>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Vous avez également le droit d'introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) si vous estimez que le traitement de vos données personnelles constitue une violation du RGPD.</p>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+CNIL - 3 Place de Fontenoy - TSA 80715 - 75334 PARIS CEDEX 07<br/>
+Téléphone : 01 53 73 22 22<br/>
+Site web : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" class="text-black underline">www.cnil.fr</a></p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">8. Sécurité des données</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre tout accès non autorisé, perte, destruction ou altération.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">9. Cookies</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Notre site web n'utilise pas de cookies de tracking. Seuls des cookies techniques strictement nécessaires au fonctionnement du site peuvent être utilisés.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">10. Modifications</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. La date de dernière mise à jour est indiquée en haut de cette page. Nous vous encourageons à consulter régulièrement cette page.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold uppercase tracking-wider mb-4">11. Contact</h2>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+Pour toute question concernant cette politique de confidentialité ou le traitement de vos données personnelles, vous pouvez nous contacter :</p>
+<p class="text-neutral-700 font-light leading-relaxed mb-4">
+<strong>Pascal Gardes</strong><br/>
+Z.A. de la Loubeyre, 43260 LANTRIAC<br/>
+Email : <a href="mailto:gpserrurerie@outlook.fr" class="text-black underline">gpserrurerie@outlook.fr</a><br/>
+Téléphone : 04.71.05.19.75
+</p>
+</section>
+</div>
+<div class="mt-12 pt-8 border-t border-neutral-200">
+<a href="/" class="inline-block bg-black text-white text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-800 transition-colors">Retour à l'accueil</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-black text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Pascal Gardes</h3>
+<p class="mt-2 text-sm text-neutral-400 font-light">Savoir-faire et passion du métal au service de vos projets.</p>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Navigation</h3>
+<ul class="mt-2 space-y-1">
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="/">Accueil</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="services.html">Services</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="realisations.html">Réalisations</a></li>
+<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-lg uppercase tracking-wider">Suivez-nous</h3>
+<div class="flex justify-center md:justify-start gap-4 mt-2">
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2.25c-2.454 0-2.756.01-3.71.054a5.003 5.003 0 00-1.748.333 3.018 3.018 0 00-1.15.748 3.018 3.018 0 00-.748 1.15 5.003 5.003 0 00-.333 1.748C2.26 7.494 2.25 7.796 2.25 12s.01 4.506.054 5.46a5.003 5.003 0 00.333 1.748 3.018 3.018 0 00.748 1.15 3.018 3.018 0 001.15.748 5.003 5.003 0 001.748.333C7.494 21.74 7.796 21.75 12 21.75s4.506-.01 5.46-.054a5.003 5.003 0 001.748-.333 3.018 3.018 0 001.15-.748 3.018 3.018 0 00.748-1.15 5.003 5.003 0 00.333-1.748c.044-.954.054-1.256.054-5.46s-.01-4.506-.054-5.46a5.003 5.003 0 00-.333-1.748 3.018 3.018 0 00-.748-1.15 3.018 3.018 0 00-1.15-.748 5.003 5.003 0 00-1.748-.333C16.506 2.26 16.204 2.25 12 2.25zm0 1.5c2.424 0 2.712.01 3.654.052a3.503 3.503 0 011.22.232 1.518 1.518 0 01.58.58 3.503 3.503 0 01.232 1.22c.042.942.052 1.23.052 3.654s-.01 2.712-.052 3.654a3.503 3.503 0 01-.232 1.22 1.518 1.518 0 01-.58.58 3.503 3.503 0 01-1.22.232c-.942.042-1.23.052-3.654.052s-2.712-.01-3.654-.052a3.503 3.503 0 01-1.22-.232 1.518 1.518 0 01-.58-.58 3.503 3.503 0 01-.232-1.22c-.042-.942-.052-1.23-.052-3.654s.01-2.712.052-3.654a3.503 3.503 0 01.232-1.22 1.518 1.518 0 01.58-.58 3.503 3.503 0 011.22-.232C9.288 3.76 9.576 3.75 12 3.75zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm5.625-7.875a.938.938 0 100-1.875.938.938 0 000 1.875z" fill-rule="evenodd"></path></svg></a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.facebook.com/gpserrurerie/?locale=fr_FR" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
+</div>
+</div>
+</div>
+<div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
+<p>© 2025 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="mentions-legales.html">Mentions légales</a> | <a class="hover:text-white transition-colors" href="confidentialite.html">Confidentialité</a></p>
+<p class="mt-2">Site réalisé par <a href="https://jmindagency.fr" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity font-bold uppercase no-underline"><span class="text-blue-500">JMIND</span> <span class="text-neutral-400">AGENCY</span></a></p>
+</div>
+</div>
+</footer>
+</div>
+<script>
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        let scrollPosition = 0;
+        function openMenu() {
+            scrollPosition = window.pageYOffset;
+            mobileMenu.classList.add('active');
+            document.body.classList.add('menu-open');
+            document.body.style.top = `-${scrollPosition}px`;
+        }
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+        mobileMenuBtn.addEventListener('click', openMenu);
+        closeMobileMenu.addEventListener('click', closeMenu);
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+    </script>
+</body></html>
+
