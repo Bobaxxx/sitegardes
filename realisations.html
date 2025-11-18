@@ -404,7 +404,8 @@ Voir notre Instagram
             // Précharger toutes les images en arrière-plan pour les mettre en cache
             preloadImages(allProjectsData);
             
-            displayProjects(allProjectsData);
+            // Afficher les projets avec pagination pour "Tous"
+            displayProjects(allProjectsData, true);
             
         } catch (error) {
             console.error('❌ Erreur chargement projets:', error);
@@ -460,20 +461,20 @@ Voir notre Instagram
         observeProjectAnimations();
     }
     
-    function displayProjects(projects, shuffle = false) {
+    function displayProjects(projects, paginate = false) {
         const grid = document.getElementById('projectsGrid');
         grid.innerHTML = '';
         displayedCount = 0;
         
         // Trier par ordre d'affichage (champ "order")
-        // Si shuffle = true, on mélange quand même pour "Tous"
         let projectsToDisplay;
-        if (shuffle) {
-            shuffledProjects = [...projects].sort(() => Math.random() - 0.5);
+        if (paginate) {
+            // Pour "Tous", on trie par ordre et on pagine
+            shuffledProjects = [...projects].sort((a, b) => a.order - b.order);
             projectsToDisplay = shuffledProjects.slice(0, ITEMS_PER_PAGE);
             displayedCount = projectsToDisplay.length;
         } else {
-            // Tri par ordre croissant du champ "order"
+            // Pour les catégories, on affiche tous les projets triés par ordre
             projectsToDisplay = [...projects].sort((a, b) => a.order - b.order);
             shuffledProjects = [];
         }
@@ -483,8 +484,8 @@ Voir notre Instagram
             grid.appendChild(projectDiv);
         });
         
-        // Ajouter le bouton "Afficher plus" uniquement pour la section "Tous" (shuffle)
-        if (shuffle && displayedCount < shuffledProjects.length) {
+        // Ajouter le bouton "Afficher plus" uniquement pour "Tous" (paginate = true)
+        if (paginate && displayedCount < shuffledProjects.length) {
             const loadMoreContainer = document.createElement('div');
             loadMoreContainer.className = 'col-span-full flex justify-center py-8';
             loadMoreContainer.innerHTML = `
@@ -685,10 +686,10 @@ Voir notre Instagram
                 
                 // Filter projects from allProjectsData
                 if (filterValue === 'all') {
-                    displayProjects(allProjectsData, false); // Tri par ordre pour "Tous"
+                    displayProjects(allProjectsData, true); // Pagination pour "Tous"
                 } else {
                     const filtered = allProjectsData.filter(p => p.category === filterValue);
-                    displayProjects(filtered, false); // Tri par ordre pour la catégorie
+                    displayProjects(filtered, false); // Pas de pagination pour les catégories
                 }
             });
         });
