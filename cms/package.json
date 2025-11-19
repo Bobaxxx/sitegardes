@@ -1,0 +1,36 @@
+{
+  "name": "sitegardes-cms",
+  "private": true,
+  "version": "1.0.0",
+  "description": "CMS Strapi pour Pascal Gardes",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/strapi": "^4.15.0",
+    "@strapi/plugin-users-permissions": "^4.15.0",
+    "@strapi/plugin-i18n": "^4.15.0",
+    "@strapi/plugin-upload": "^4.15.0",
+    "better-sqlite3": "^9.2.2"
+  },
+  "devDependencies": {},
+  "author": {
+    "name": "Pascal Gardes"
+  },
+  "strapi": {
+    "uuid": "sitegardes-cms-uuid"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
+
+
+
+
+

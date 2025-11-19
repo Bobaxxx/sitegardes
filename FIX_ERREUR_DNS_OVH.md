@@ -59,3 +59,4 @@ Maintenant que l'A est supprimé, vous pouvez ajouter le CNAME :
 
 **🎯 Une fois fait, attendez 15-30 minutes puis cliquez "Verify" dans Render !**
 
+
