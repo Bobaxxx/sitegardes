@@ -144,7 +144,12 @@ def static_files(filename):
 # Route spécifique pour le favicon
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory('.', 'logo final gardes.png', mimetype='image/png')
+    return send_from_directory('.', 'rogné v2 logo gardes .png', mimetype='image/png')
+
+# Route pour servir le logo directement
+@app.route('/rogné v2 logo gardes .png')
+def logo():
+    return send_from_directory('.', 'rogné v2 logo gardes .png', mimetype='image/png')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
