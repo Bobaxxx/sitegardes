@@ -114,12 +114,12 @@
       "year": "2024",
       "image": "https://raw.githubusercontent.com/Bobaxxx/sitegardes/master/images/realisations/verrieres/A78EB9B9-E01C-496D-A815-DB4DBC64A684.jpeg",
       "order": 0,
-      "title": "Verrière",
+      "title": "Verrière ",
       "category": "Verrière",
       "location": "Loudes, Haute-Loire",
       "materials": "Acier",
       "published": true,
-      "description": "Verrière sur mesure avec finitions soignées."
+      "description": "Verrière coulissante (invisible à l’ouverture)  "
     },
     {
       "year": "2024",
@@ -1079,6 +1079,6 @@
       "description": "Création sur mesure en métallerie."
     }
   ],
-  "updated_at": "2025-11-21T16:53:49.293Z",
+  "updated_at": "2025-11-21T16:55:25.029Z",
   "count": 98
 }
