@@ -1,26 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta name="description" content="Découvrez nos réalisations de serrurerie métallerie : escaliers, portails, garde-corps, pergolas, verrières. Plus de 100 projets réalisés à Lantriac et en Haute-Loire (43)."/>
-<meta name="keywords" content="réalisations, serrurerie, métallerie, escaliers métalliques, portails, garde-corps, pergolas, Lantriac, Haute-Loire, projets"/>
-<title>Réalisations - Pascal Gardes | Galerie de Projets Métallerie</title>
-<!-- Open Graph -->
-<meta property="og:title" content="Réalisations - Pascal Gardes | Galerie de Projets"/>
-<meta property="og:description" content="Découvrez plus de 100 réalisations de serrurerie métallerie : escaliers, portails, garde-corps, pergolas, verrières."/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://gpserrurerie.fr/realisations.html"/>
-<meta property="og:locale" content="fr_FR"/>
-<link rel="canonical" href="https://gpserrurerie.fr/realisations.html"/>
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="/logo final gardes.png"/>
-<link rel="apple-touch-icon" href="/logo final gardes.png"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description"
+        content="Découvrez nos réalisations de serrurerie métallerie : escaliers, portails, garde-corps, pergolas, verrières. Plus de 100 projets réalisés à Lantriac et en Haute-Loire (43)." />
+    <meta name="keywords"
+        content="réalisations, serrurerie, métallerie, escaliers métalliques, portails, garde-corps, pergolas, Lantriac, Haute-Loire, projets" />
+    <title>Réalisations - Pascal Gardes | Galerie de Projets Métallerie</title>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Réalisations - Pascal Gardes | Galerie de Projets" />
+    <meta property="og:description"
+        content="Découvrez plus de 100 réalisations de serrurerie métallerie : escaliers, portails, garde-corps, pergolas, verrières." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://gpserrurerie.fr/realisations.html" />
+    <meta property="og:locale" content="fr_FR" />
+    <link rel="canonical" href="https://gpserrurerie.fr/realisations.html" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo final gardes.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo final gardes.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo final gardes.png" />
+    <link rel="shortcut icon" type="image/png" href="/logo final gardes.png" />
+    <meta name="theme-color" content="#000000" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -31,49 +40,61 @@
             },
         }
     </script>
-<style>
+    <style>
         body {
             font-family: 'Space Grotesk', sans-serif;
             background-color: #ffffff;
             overflow-x: hidden;
         }
+
         html {
             overflow-x: hidden;
         }
+
         * {
             max-width: 100%;
         }
-        html, body {
+
+        html,
+        body {
             max-width: 100vw;
         }
+
         html {
             scroll-padding-top: 100px;
             scroll-behavior: smooth;
         }
+
         .header-scrolled {
             background-color: #ffffff;
             color: #000000;
             border-bottom: 1px solid #e5e5e5;
         }
+
         .header-scrolled a,
         .header-scrolled h2,
         .header-scrolled .material-symbols-outlined,
         .header-scrolled #mobileMenuBtn {
             color: #000000;
         }
+
         .header-scrolled img {
             filter: invert(1) brightness(0);
         }
+
         #lightbox.active {
             display: flex !important;
         }
+
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
         }
+
         .mobile-menu.active {
             transform: translateX(0);
         }
+
         body.menu-open {
             overflow: hidden;
             position: fixed;
@@ -81,35 +102,43 @@
             height: 100%;
             touch-action: none;
         }
+
         .mobile-menu {
             touch-action: auto;
         }
+
         /* Assurer que le bouton menu est visible */
         #mobileMenuBtn {
             z-index: 51;
         }
+
         /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .animate-on-scroll {
             opacity: 0;
         }
+
         .animate-on-scroll.visible {
             animation: fadeInUp 0.8s ease-out forwards;
         }
+
         /* Animation hover nav */
         nav a {
             position: relative;
             transition: all 0.3s ease;
         }
+
         nav a::after {
             content: '';
             position: absolute;
@@ -120,24 +149,30 @@
             background: white;
             transition: width 0.3s ease;
         }
+
         nav a:hover::after {
             width: 100%;
         }
+
         .header-scrolled nav a::after {
             background: black;
         }
+
         /* Animation hover sur les images */
         .project-item {
             transition: transform 0.3s ease;
         }
+
         .project-item:hover {
             transform: translateY(-5px);
         }
+
         /* Animation boutons CTA */
         a[href*="contact"],
         button[type="submit"] {
             transition: all 0.3s ease;
         }
+
         a[href*="contact"]:hover,
         button[type="submit"]:hover {
             transform: translateY(-2px);
@@ -145,187 +180,261 @@
         }
     </style>
 </head>
+
 <body class="bg-white text-black font-display">
-<div class="relative min-h-screen flex flex-col">
-<header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300" id="header">
-<div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
-<a class="flex items-center gap-2 md:gap-3" href="/">
-<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 md:h-10 w-auto"/>
-<h2 class="text-white text-base md:text-xl font-bold">PASCAL GARDES</h2>
-</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-white text-sm tracking-wider" href="/">ACCUEIL</a>
-<a class="text-white text-sm tracking-wider" href="services.html">SERVICES</a>
-<a class="text-white text-sm font-bold border-b border-white tracking-wider" href="realisations.html">RÉALISATIONS</a>
-<a class="text-white text-sm tracking-wider" href="contact.html">CONTACT</a>
-</nav>
-<div class="hidden md:block">
-<a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors" href="contact.html#formulaire">Demander un devis</a>
-</div>
-<button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors" id="mobileMenuBtn" aria-label="Menu">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
-<!-- Menu mobile -->
-<div class="mobile-menu fixed inset-0 bg-black z-[60] md:hidden overflow-hidden" id="mobileMenu">
-<div class="flex flex-col h-full overflow-hidden">
-<div class="flex items-center justify-between p-6 border-b border-neutral-800 flex-shrink-0">
-<div class="flex items-center gap-2">
-<img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 w-auto"/>
-<h2 class="text-white text-lg font-bold">PASCAL GARDES</h2>
-</div>
-<button class="text-white" id="closeMobileMenu">
-<span class="material-symbols-outlined text-3xl">close</span>
-</button>
-</div>
-<nav class="flex flex-col p-6 space-y-6 flex-grow justify-center">
-<a class="text-white text-lg uppercase tracking-wider" href="/">Accueil</a>
-<a class="text-white text-lg uppercase tracking-wider" href="services.html">Services</a>
-<a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2" href="realisations.html">Réalisations</a>
-<a class="text-white text-lg uppercase tracking-wider" href="contact.html">Contact</a>
-</nav>
-<div class="p-6 flex-shrink-0">
-<a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6" href="contact.html#formulaire">Demander un devis</a>
-</div>
-</div>
-</div>
-</header>
-<main class="flex-grow">
-<div class="relative h-[60vh] min-h-[400px] bg-black flex items-center justify-center">
-<img alt="Réalisations de serrurerie métallerie par Pascal Gardes - Passerelle et terrasse métallique" class="absolute inset-0 w-full h-full object-cover opacity-30" src="images/realisations/passerelles-terrasses/IMG_0042.jpeg"/>
-<div class="relative text-center text-white px-6">
-<h1 class="text-3xl sm:text-4xl md:text-7xl font-bold uppercase tracking-wide md:tracking-widest">Nos Réalisations</h1>
-<p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Découvrez une sélection de nos projets, témoins de notre savoir-faire et de notre passion pour le métal.</p>
-</div>
-</div>
-<div class="bg-white py-10 sticky top-[72px] z-40 border-b border-neutral-200">
-<div class="container mx-auto px-6">
-<div class="flex flex-wrap items-center justify-center gap-2 md:gap-4">
-<button class="filter-btn bg-black text-white text-sm font-medium uppercase tracking-wider py-2 px-5 transition-colors" data-filter="all">Tous</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Escalier">Escaliers</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Portail">Portails</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Garde-corps">Garde-corps</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Passerelle">Passerelles/Terrasses</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Pergola">Pergolas</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Verrière">Verrières</button>
-<button class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors" data-filter="Autre">Autres prestations</button>
-</div>
-</div>
-</div>
-<!-- Description de la catégorie -->
-<div class="bg-neutral-50 py-8 hidden" id="categoryDescription">
-<div class="container mx-auto px-6">
-<div class="max-w-4xl mx-auto text-center">
-<h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-4" id="categoryTitle"></h2>
-<div class="text-neutral-600 font-light leading-relaxed space-y-3" id="categoryText"></div>
-</div>
-</div>
-</div>
-<div class="bg-white">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" id="projectsGrid">
-<!-- Les projets seront chargés dynamiquement depuis content/all_realisations.json -->
-<div class="col-span-full flex justify-center items-center py-20">
-<div class="text-center">
-<div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
-<p class="mt-4 text-neutral-600">Chargement des réalisations...</p>
-</div>
-</div>
-</div>
-</div></div>
-</div>
-</main>
-<section class="bg-gradient-to-br from-neutral-900 via-neutral-800 to-black text-white py-20">
-<div class="container mx-auto px-6">
-<div class="text-center max-w-4xl mx-auto animate-on-scroll">
-<div class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-2xl mb-6">
-<svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-</div>
-<h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-4">Suivez-nous sur Instagram</h2>
-<p class="text-lg text-neutral-300 font-light mb-8 leading-relaxed">Découvrez encore plus de nos réalisations, de photos d'atelier et de projets en cours sur notre compte Instagram <strong>@gpserrurerie</strong></p>
-<a class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white text-sm font-bold uppercase tracking-widest py-4 px-8 rounded-lg hover:scale-105 transition-transform duration-300" href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer">
-<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-Voir notre Instagram
-</a>
-<p class="mt-6 text-sm text-neutral-400 font-light">Plus de 100 photos de nos créations métalliques</p>
-</div>
-</div>
-</section>
-<footer class="bg-black text-white py-12">
-<div class="container mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-<div>
-<h3 class="font-bold text-lg uppercase tracking-wider">Pascal Gardes</h3>
-<p class="mt-2 text-sm text-neutral-400 font-light">Savoir-faire et passion du métal au service de vos projets.</p>
-</div>
-<div>
-<h3 class="font-bold text-lg uppercase tracking-wider">Navigation</h3>
-<ul class="mt-2 space-y-1">
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="/">Accueil</a></li>
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="services.html">Services</a></li>
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="realisations.html">Réalisations</a></li>
-<li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light" href="contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<h3 class="font-bold text-lg uppercase tracking-wider">Suivez-nous</h3>
-<div class="flex justify-center md:justify-start gap-4 mt-2">
-<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2.25c-2.454 0-2.756.01-3.71.054a5.003 5.003 0 00-1.748.333 3.018 3.018 0 00-1.15.748 3.018 3.018 0 00-.748 1.15 5.003 5.003 0 00-.333 1.748C2.26 7.494 2.25 7.796 2.25 12s.01 4.506.054 5.46a5.003 5.003 0 00.333 1.748 3.018 3.018 0 00.748 1.15 3.018 3.018 0 001.15.748 5.003 5.003 0 001.748.333C7.494 21.74 7.796 21.75 12 21.75s4.506-.01 5.46-.054a5.003 5.003 0 001.748-.333 3.018 3.018 0 001.15-.748 3.018 3.018 0 00.748-1.15 5.003 5.003 0 00.333-1.748c.044-.954.054-1.256.054-5.46s-.01-4.506-.054-5.46a5.003 5.003 0 00-.333-1.748 3.018 3.018 0 00-.748-1.15 3.018 3.018 0 00-1.15-.748 5.003 5.003 0 00-1.748-.333C16.506 2.26 16.204 2.25 12 2.25zm0 1.5c2.424 0 2.712.01 3.654.052a3.503 3.503 0 011.22.232 1.518 1.518 0 01.58.58 3.503 3.503 0 01.232 1.22c.042.942.052 1.23.052 3.654s-.01 2.712-.052 3.654a3.503 3.503 0 01-.232 1.22 1.518 1.518 0 01-.58.58 3.503 3.503 0 01-1.22.232c-.942.042-1.23.052-3.654.052s-2.712-.01-3.654-.052a3.503 3.503 0 01-1.22-.232 1.518 1.518 0 01-.58-.58 3.503 3.503 0 01-.232-1.22c-.042-.942-.052-1.23-.052-3.654s.01-2.712.052-3.654a3.503 3.503 0 01.232-1.22 1.518 1.518 0 01.58-.58 3.503 3.503 0 011.22-.232C9.288 3.76 9.576 3.75 12 3.75zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm5.625-7.875a.938.938 0 100-1.875.938.938 0 000 1.875z" fill-rule="evenodd"></path></svg></a>
-<a class="text-neutral-400 hover:text-white transition-colors" href="https://www.facebook.com/gpserrurerie/?locale=fr_FR" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
-<p>© 2025 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors" href="mentions-legales.html">Mentions légales</a> | <a class="hover:text-white transition-colors" href="confidentialite.html">Confidentialité</a></p>
-<p class="mt-2">Site réalisé par <a href="https://jmindagency.fr" target="_blank" rel="noopener noreferrer" class="hover:opacity-80 transition-opacity font-bold uppercase no-underline"><span class="text-blue-500">JMIND</span> <span class="text-neutral-400">AGENCY</span></a></p>
-</div>
-</div>
-</footer>
-</div>
+    <div class="relative min-h-screen flex flex-col">
+        <header class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300" id="header">
+            <div class="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
+                <a class="flex items-center gap-2 md:gap-3" href="/">
+                    <img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 md:h-10 w-auto" />
+                    <h2 class="text-white text-base md:text-xl font-bold">PASCAL GARDES</h2>
+                </a>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-white text-sm tracking-wider" href="/">ACCUEIL</a>
+                    <a class="text-white text-sm tracking-wider" href="services.html">SERVICES</a>
+                    <a class="text-white text-sm font-bold border-b border-white tracking-wider"
+                        href="realisations.html">RÉALISATIONS</a>
+                    <a class="text-white text-sm tracking-wider" href="contact.html">CONTACT</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a class="inline-block bg-white text-black text-sm font-bold uppercase tracking-widest py-3 px-6 hover:bg-neutral-200 transition-colors"
+                        href="contact.html#formulaire">Demander un devis</a>
+                </div>
+                <button class="md:hidden text-white p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition-colors"
+                    id="mobileMenuBtn" aria-label="Menu">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </button>
+            </div>
+            <!-- Menu mobile -->
+            <div class="mobile-menu fixed inset-0 bg-black z-[60] md:hidden overflow-hidden" id="mobileMenu">
+                <div class="flex flex-col h-full overflow-hidden">
+                    <div class="flex items-center justify-between p-6 border-b border-neutral-800 flex-shrink-0">
+                        <div class="flex items-center gap-2">
+                            <img src="logo final gardes.png" alt="Logo Pascal Gardes" class="h-8 w-auto" />
+                            <h2 class="text-white text-lg font-bold">PASCAL GARDES</h2>
+                        </div>
+                        <button class="text-white" id="closeMobileMenu">
+                            <span class="material-symbols-outlined text-3xl">close</span>
+                        </button>
+                    </div>
+                    <nav class="flex flex-col p-6 space-y-6 flex-grow justify-center">
+                        <a class="text-white text-lg uppercase tracking-wider" href="/">Accueil</a>
+                        <a class="text-white text-lg uppercase tracking-wider" href="services.html">Services</a>
+                        <a class="text-white text-lg font-bold uppercase tracking-wider border-b border-white pb-2"
+                            href="realisations.html">Réalisations</a>
+                        <a class="text-white text-lg uppercase tracking-wider" href="contact.html">Contact</a>
+                    </nav>
+                    <div class="p-6 flex-shrink-0">
+                        <a class="block w-full bg-white text-black text-center text-sm font-bold uppercase tracking-widest py-4 px-6"
+                            href="contact.html#formulaire">Demander un devis</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-grow">
+            <div class="relative h-[60vh] min-h-[400px] bg-black flex items-center justify-center">
+                <img alt="Réalisations de serrurerie métallerie par Pascal Gardes - Passerelle et terrasse métallique"
+                    class="absolute inset-0 w-full h-full object-cover opacity-30"
+                    src="images/realisations/passerelles-terrasses/IMG_0042.jpeg" />
+                <div class="relative text-center text-white px-6">
+                    <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold uppercase tracking-wide md:tracking-widest">
+                        Nos Réalisations</h1>
+                    <p class="mt-4 max-w-2xl mx-auto text-base font-light text-neutral-300">Découvrez une sélection de
+                        nos projets, témoins de notre savoir-faire et de notre passion pour le métal.</p>
+                </div>
+            </div>
+            <div class="bg-white py-10 sticky top-[72px] z-40 border-b border-neutral-200">
+                <div class="container mx-auto px-6">
+                    <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4">
+                        <button
+                            class="filter-btn bg-black text-white text-sm font-medium uppercase tracking-wider py-2 px-5 transition-colors"
+                            data-filter="all">Tous</button>
+                        <button
+                            class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors"
+                            data-filter="Escalier">Escaliers</button>
+                        <button
+                            class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors"
+                            data-filter="Portail">Portails</button>
+                        <button
+                            class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors"
+                            data-filter="Garde-corps">Garde-corps</button>
+                        <button
+                            class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors"
+                            data-filter="Passerelle">Passerelles/Terrasses</button>
+                        <button
+                            class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors"
+                            data-filter="Pergola">Pergolas</button>
+                        <button
+                            class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors"
+                            data-filter="Verrière">Verrières</button>
+                        <button
+                            class="filter-btn bg-transparent text-black border border-neutral-300 text-sm font-medium uppercase tracking-wider py-2 px-5 hover:bg-neutral-100 transition-colors"
+                            data-filter="Autre">Autres prestations</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Description de la catégorie -->
+            <div class="bg-neutral-50 py-8 hidden" id="categoryDescription">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <h2 class="text-2xl md:text-3xl font-bold uppercase tracking-wider mb-4" id="categoryTitle">
+                        </h2>
+                        <div class="text-neutral-600 font-light leading-relaxed space-y-3" id="categoryText"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" id="projectsGrid">
+                    <!-- Les projets seront chargés dynamiquement depuis content/all_realisations.json -->
+                    <div class="col-span-full flex justify-center items-center py-20">
+                        <div class="text-center">
+                            <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
+                            <p class="mt-4 text-neutral-600">Chargement des réalisations...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+    </main>
+    <section class="bg-gradient-to-br from-neutral-900 via-neutral-800 to-black text-white py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto animate-on-scroll">
+                <div
+                    class="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-2xl mb-6">
+                    <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold uppercase tracking-wider mb-4">Suivez-nous sur Instagram</h2>
+                <p class="text-lg text-neutral-300 font-light mb-8 leading-relaxed">Découvrez encore plus de nos
+                    réalisations, de photos d'atelier et de projets en cours sur notre compte Instagram
+                    <strong>@gpserrurerie</strong></p>
+                <a class="inline-flex items-center gap-3 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 text-white text-sm font-bold uppercase tracking-widest py-4 px-8 rounded-lg hover:scale-105 transition-transform duration-300"
+                    href="https://www.instagram.com/gpserrurerie/" target="_blank" rel="noopener noreferrer">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                    </svg>
+                    Voir notre Instagram
+                </a>
+                <p class="mt-6 text-sm text-neutral-400 font-light">Plus de 100 photos de nos créations métalliques</p>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="font-bold text-lg uppercase tracking-wider">Pascal Gardes</h3>
+                    <p class="mt-2 text-sm text-neutral-400 font-light">Savoir-faire et passion du métal au service de
+                        vos projets.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg uppercase tracking-wider">Navigation</h3>
+                    <ul class="mt-2 space-y-1">
+                        <li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light"
+                                href="/">Accueil</a></li>
+                        <li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light"
+                                href="services.html">Services</a></li>
+                        <li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light"
+                                href="realisations.html">Réalisations</a></li>
+                        <li><a class="text-sm text-neutral-400 hover:text-white transition-colors font-light"
+                                href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg uppercase tracking-wider">Suivez-nous</h3>
+                    <div class="flex justify-center md:justify-start gap-4 mt-2">
+                        <a class="text-neutral-400 hover:text-white transition-colors"
+                            href="https://www.instagram.com/gpserrurerie/" target="_blank"
+                            rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path clip-rule="evenodd"
+                                    d="M12 2.25c-2.454 0-2.756.01-3.71.054a5.003 5.003 0 00-1.748.333 3.018 3.018 0 00-1.15.748 3.018 3.018 0 00-.748 1.15 5.003 5.003 0 00-.333 1.748C2.26 7.494 2.25 7.796 2.25 12s.01 4.506.054 5.46a5.003 5.003 0 00.333 1.748 3.018 3.018 0 00.748 1.15 3.018 3.018 0 001.15.748 5.003 5.003 0 001.748.333C7.494 21.74 7.796 21.75 12 21.75s4.506-.01 5.46-.054a5.003 5.003 0 001.748-.333 3.018 3.018 0 001.15-.748 3.018 3.018 0 00.748-1.15 5.003 5.003 0 00.333-1.748c.044-.954.054-1.256.054-5.46s-.01-4.506-.054-5.46a5.003 5.003 0 00-.333-1.748 3.018 3.018 0 00-.748-1.15 3.018 3.018 0 00-1.15-.748 5.003 5.003 0 00-1.748-.333C16.506 2.26 16.204 2.25 12 2.25zm0 1.5c2.424 0 2.712.01 3.654.052a3.503 3.503 0 011.22.232 1.518 1.518 0 01.58.58 3.503 3.503 0 01.232 1.22c.042.942.052 1.23.052 3.654s-.01 2.712-.052 3.654a3.503 3.503 0 01-.232 1.22 1.518 1.518 0 01-.58.58 3.503 3.503 0 01-1.22.232c-.942.042-1.23.052-3.654.052s-2.712-.01-3.654-.052a3.503 3.503 0 01-1.22-.232 1.518 1.518 0 01-.58-.58 3.503 3.503 0 01-.232-1.22c-.042-.942-.052-1.23-.052-3.654s.01-2.712.052-3.654a3.503 3.503 0 01.232-1.22 1.518 1.518 0 01.58-.58 3.503 3.503 0 011.22-.232C9.288 3.76 9.576 3.75 12 3.75zM12 8.25a3.75 3.75 0 100 7.5 3.75 3.75 0 000-7.5zM12 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm5.625-7.875a.938.938 0 100-1.875.938.938 0 000 1.875z"
+                                    fill-rule="evenodd"></path>
+                            </svg></a>
+                        <a class="text-neutral-400 hover:text-white transition-colors"
+                            href="https://www.facebook.com/gpserrurerie/?locale=fr_FR" target="_blank"
+                            rel="noopener noreferrer"><svg aria-hidden="true" class="w-6 h-6" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+                                </path>
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-neutral-800 text-center text-sm text-neutral-500 font-light">
+                <p>© 2026 Pascal Gardes. Tous droits réservés. | <a class="hover:text-white transition-colors"
+                        href="mentions-legales.html">Mentions légales</a> | <a
+                        class="hover:text-white transition-colors" href="confidentialite.html">Confidentialité</a></p>
+                <p class="mt-2">Site réalisé par <a href="https://jmindagency.fr" target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:opacity-80 transition-opacity font-bold uppercase no-underline"><span
+                            class="text-blue-500">JMIND</span> <span class="text-neutral-400">AGENCY</span></a></p>
+            </div>
+        </div>
+    </footer>
+    </div>
 
-<!-- Lightbox avec description -->
-<div class="fixed inset-0 bg-black bg-opacity-95 z-50 items-start lg:items-center justify-start lg:justify-center hidden overflow-y-auto" id="lightbox">
-<button class="fixed top-4 right-4 md:top-6 md:right-6 text-white hover:text-neutral-300 z-[70] bg-black bg-opacity-70 rounded-full p-2" id="closeLightbox">
-<span class="material-symbols-outlined text-3xl md:text-5xl">close</span>
-</button>
-<div class="w-full min-h-full lg:min-h-0 py-16 md:py-20 lg:py-6">
-<div class="container mx-auto px-4 md:px-6">
-<div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
-<!-- Image -->
-<div class="flex items-center justify-center lg:sticky lg:top-6 lg:self-start">
-<img alt="" class="w-full max-h-[50vh] lg:max-h-[80vh] object-contain" id="lightboxImage"/>
-</div>
-<!-- Informations -->
-<div class="text-white flex flex-col p-4 md:p-6 lg:p-8 pb-20 lg:pb-8">
-<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide lg:tracking-wider mb-3 md:mb-4" id="lightboxTitle">Titre du projet</h2>
-<p class="text-sm md:text-base lg:text-lg text-neutral-300 font-light mb-4 md:mb-6 leading-relaxed" id="lightboxDescription">Description du projet</p>
-<div class="space-y-3 md:space-y-4 border-t border-neutral-700 pt-4 md:pt-6">
-<div>
-<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Catégorie</h3>
-<p class="text-sm md:text-base lg:text-lg font-medium" id="lightboxCategory">Catégorie</p>
-</div>
-<div>
-<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Matériaux</h3>
-<p class="text-sm md:text-base lg:text-lg font-light" id="lightboxMaterials">Matériaux</p>
-</div>
-<div>
-<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Localisation</h3>
-<p class="text-sm md:text-base lg:text-lg font-light" id="lightboxLocation">Localisation</p>
-</div>
-<div>
-<h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Année</h3>
-<p class="text-sm md:text-base lg:text-lg font-light" id="lightboxYear">2024</p>
-</div>
-</div>
-<div class="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-neutral-700">
-<a class="block text-center bg-white text-black text-xs md:text-sm font-bold uppercase tracking-widest py-3 px-6 md:px-8 hover:bg-neutral-200 transition-colors" href="contact.html#formulaire">Demander un devis</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <!-- Lightbox avec description -->
+    <div class="fixed inset-0 bg-black bg-opacity-95 z-50 items-start lg:items-center justify-start lg:justify-center hidden overflow-y-auto"
+        id="lightbox">
+        <button
+            class="fixed top-4 right-4 md:top-6 md:right-6 text-white hover:text-neutral-300 z-[70] bg-black bg-opacity-70 rounded-full p-2"
+            id="closeLightbox">
+            <span class="material-symbols-outlined text-3xl md:text-5xl">close</span>
+        </button>
+        <div class="w-full min-h-full lg:min-h-0 py-16 md:py-20 lg:py-6">
+            <div class="container mx-auto px-4 md:px-6">
+                <div class="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
+                    <!-- Image -->
+                    <div class="flex items-center justify-center lg:sticky lg:top-6 lg:self-start">
+                        <img alt="" class="w-full max-h-[50vh] lg:max-h-[80vh] object-contain" id="lightboxImage" />
+                    </div>
+                    <!-- Informations -->
+                    <div class="text-white flex flex-col p-4 md:p-6 lg:p-8 pb-20 lg:pb-8">
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold uppercase tracking-wide lg:tracking-wider mb-3 md:mb-4"
+                            id="lightboxTitle">Titre du projet</h2>
+                        <p class="text-sm md:text-base lg:text-lg text-neutral-300 font-light mb-4 md:mb-6 leading-relaxed"
+                            id="lightboxDescription">Description du projet</p>
+                        <div class="space-y-3 md:space-y-4 border-t border-neutral-700 pt-4 md:pt-6">
+                            <div>
+                                <h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Catégorie
+                                </h3>
+                                <p class="text-sm md:text-base lg:text-lg font-medium" id="lightboxCategory">Catégorie
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Matériaux
+                                </h3>
+                                <p class="text-sm md:text-base lg:text-lg font-light" id="lightboxMaterials">Matériaux
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">
+                                    Localisation</h3>
+                                <p class="text-sm md:text-base lg:text-lg font-light" id="lightboxLocation">Localisation
+                                </p>
+                            </div>
+                            <div>
+                                <h3 class="text-xs md:text-sm uppercase tracking-wider text-neutral-400 mb-1">Année</h3>
+                                <p class="text-sm md:text-base lg:text-lg font-light" id="lightboxYear">2024</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-neutral-700">
+                            <a class="block text-center bg-white text-black text-xs md:text-sm font-bold uppercase tracking-widest py-3 px-6 md:px-8 hover:bg-neutral-200 transition-colors"
+                                href="contact.html#formulaire">Demander un devis</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script>
+    <script>
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
@@ -385,198 +494,198 @@ Voir notre Instagram
         });
 
 
-    // ==================================================
-    // CHARGEMENT DYNAMIQUE DES PROJETS DEPUIS JSON
-    // ==================================================
-    let allProjectsData = [];
-    let shuffledProjects = [];
-    let displayedCount = 0;
-    const ITEMS_PER_PAGE = 9;
-    
-    // Précharger les images en cache
-    function preloadImages(projects) {
-        projects.forEach(project => {
-            const img = new Image();
-            img.src = project.image;
-        });
-    }
-    
-    async function loadProjects() {
-        try {
-            const response = await fetch('/content/all_realisations.json');
-            const data = await response.json();
-            allProjectsData = data.realisations;
-            
-            console.log(`✅ ${allProjectsData.length} projets chargés`);
-            
-            // Précharger toutes les images en arrière-plan pour les mettre en cache
-            preloadImages(allProjectsData);
-            
-            // Afficher les projets avec pagination pour "Tous"
-            displayProjects(allProjectsData, true);
-            
-        } catch (error) {
-            console.error('❌ Erreur chargement projets:', error);
-            document.getElementById('projectsGrid').innerHTML = `
+        // ==================================================
+        // CHARGEMENT DYNAMIQUE DES PROJETS DEPUIS JSON
+        // ==================================================
+        let allProjectsData = [];
+        let shuffledProjects = [];
+        let displayedCount = 0;
+        const ITEMS_PER_PAGE = 9;
+
+        // Précharger les images en cache
+        function preloadImages(projects) {
+            projects.forEach(project => {
+                const img = new Image();
+                img.src = project.image;
+            });
+        }
+
+        async function loadProjects() {
+            try {
+                const response = await fetch('/content/all_realisations.json');
+                const data = await response.json();
+                allProjectsData = data.realisations;
+
+                console.log(`✅ ${allProjectsData.length} projets chargés`);
+
+                // Précharger toutes les images en arrière-plan pour les mettre en cache
+                preloadImages(allProjectsData);
+
+                // Afficher les projets avec pagination pour "Tous"
+                displayProjects(allProjectsData, true);
+
+            } catch (error) {
+                console.error('❌ Erreur chargement projets:', error);
+                document.getElementById('projectsGrid').innerHTML = `
                 <div class="col-span-full text-center py-20">
                     <p class="text-red-600">Erreur de chargement des projets. Veuillez réessayer.</p>
                 </div>
             `;
+            }
         }
-    }
-    
-    function createProjectElement(project) {
-        const projectDiv = document.createElement('div');
-        projectDiv.className = 'group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll';
-        projectDiv.dataset.title = project.title;
-        projectDiv.dataset.category = project.category;
-        projectDiv.dataset.description = project.description;
-        projectDiv.dataset.materials = project.materials;
-        projectDiv.dataset.location = project.location;
-        projectDiv.dataset.year = project.year;
-        projectDiv.dataset.image = project.image;
-        
-        projectDiv.innerHTML = `
+
+        function createProjectElement(project) {
+            const projectDiv = document.createElement('div');
+            projectDiv.className = 'group relative aspect-square block overflow-hidden cursor-pointer project-item animate-on-scroll';
+            projectDiv.dataset.title = project.title;
+            projectDiv.dataset.category = project.category;
+            projectDiv.dataset.description = project.description;
+            projectDiv.dataset.materials = project.materials;
+            projectDiv.dataset.location = project.location;
+            projectDiv.dataset.year = project.year;
+            projectDiv.dataset.image = project.image;
+
+            projectDiv.innerHTML = `
             <img alt="${project.title || project.category} - ${project.category} par Pascal Gardes, serrurerie métallerie Lantriac" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${project.image}"/>
             <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-opacity duration-300 flex items-center justify-center">
                 <span class="material-symbols-outlined text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">zoom_in</span>
             </div>
         `;
-        
-        return projectDiv;
-    }
-    
-    function loadMoreProjects() {
-        const grid = document.getElementById('projectsGrid');
-        const loadMoreBtn = document.getElementById('loadMoreBtn');
-        
-        const nextBatch = shuffledProjects.slice(displayedCount, displayedCount + ITEMS_PER_PAGE);
-        
-        nextBatch.forEach(project => {
-            const projectDiv = createProjectElement(project);
-            grid.insertBefore(projectDiv, loadMoreBtn.parentElement);
-        });
-        
-        displayedCount += nextBatch.length;
-        
-        // Masquer le bouton si on a tout affiché
-        if (displayedCount >= shuffledProjects.length) {
-            loadMoreBtn.parentElement.remove();
+
+            return projectDiv;
         }
-        
-        // Réactiver les animations et le lightbox pour les nouvelles images
-        initializeProjectListeners();
-        observeProjectAnimations();
-    }
-    
-    function displayProjects(projects, paginate = false) {
-        const grid = document.getElementById('projectsGrid');
-        grid.innerHTML = '';
-        displayedCount = 0;
-        
-        // Trier par ordre d'affichage (champ "order")
-        let projectsToDisplay;
-        if (paginate) {
-            // Pour "Tous", on trie par ordre et on pagine
-            shuffledProjects = [...projects].sort((a, b) => a.order - b.order);
-            projectsToDisplay = shuffledProjects.slice(0, ITEMS_PER_PAGE);
-            displayedCount = projectsToDisplay.length;
-        } else {
-            // Pour les catégories, on affiche tous les projets triés par ordre
-            projectsToDisplay = [...projects].sort((a, b) => a.order - b.order);
-            shuffledProjects = [];
+
+        function loadMoreProjects() {
+            const grid = document.getElementById('projectsGrid');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+            const nextBatch = shuffledProjects.slice(displayedCount, displayedCount + ITEMS_PER_PAGE);
+
+            nextBatch.forEach(project => {
+                const projectDiv = createProjectElement(project);
+                grid.insertBefore(projectDiv, loadMoreBtn.parentElement);
+            });
+
+            displayedCount += nextBatch.length;
+
+            // Masquer le bouton si on a tout affiché
+            if (displayedCount >= shuffledProjects.length) {
+                loadMoreBtn.parentElement.remove();
+            }
+
+            // Réactiver les animations et le lightbox pour les nouvelles images
+            initializeProjectListeners();
+            observeProjectAnimations();
         }
-        
-        projectsToDisplay.forEach(project => {
-            const projectDiv = createProjectElement(project);
-            grid.appendChild(projectDiv);
-        });
-        
-        // Ajouter le bouton "Afficher plus" uniquement pour "Tous" (paginate = true)
-        if (paginate && displayedCount < shuffledProjects.length) {
-            const loadMoreContainer = document.createElement('div');
-            loadMoreContainer.className = 'col-span-full flex justify-center py-8';
-            loadMoreContainer.innerHTML = `
+
+        function displayProjects(projects, paginate = false) {
+            const grid = document.getElementById('projectsGrid');
+            grid.innerHTML = '';
+            displayedCount = 0;
+
+            // Trier par ordre d'affichage (champ "order")
+            let projectsToDisplay;
+            if (paginate) {
+                // Pour "Tous", on trie par ordre et on pagine
+                shuffledProjects = [...projects].sort((a, b) => a.order - b.order);
+                projectsToDisplay = shuffledProjects.slice(0, ITEMS_PER_PAGE);
+                displayedCount = projectsToDisplay.length;
+            } else {
+                // Pour les catégories, on affiche tous les projets triés par ordre
+                projectsToDisplay = [...projects].sort((a, b) => a.order - b.order);
+                shuffledProjects = [];
+            }
+
+            projectsToDisplay.forEach(project => {
+                const projectDiv = createProjectElement(project);
+                grid.appendChild(projectDiv);
+            });
+
+            // Ajouter le bouton "Afficher plus" uniquement pour "Tous" (paginate = true)
+            if (paginate && displayedCount < shuffledProjects.length) {
+                const loadMoreContainer = document.createElement('div');
+                loadMoreContainer.className = 'col-span-full flex justify-center py-8';
+                loadMoreContainer.innerHTML = `
                 <button id="loadMoreBtn" class="bg-black text-white text-sm font-bold uppercase tracking-widest py-4 px-8 hover:bg-neutral-800 transition-colors">
                     Afficher plus
                 </button>
             `;
-            grid.appendChild(loadMoreContainer);
-            
-            document.getElementById('loadMoreBtn').addEventListener('click', loadMoreProjects);
+                grid.appendChild(loadMoreContainer);
+
+                document.getElementById('loadMoreBtn').addEventListener('click', loadMoreProjects);
+            }
+
+            // Réactiver les animations et le lightbox
+            initializeProjectListeners();
+            observeProjectAnimations();
         }
-        
-        // Réactiver les animations et le lightbox
-        initializeProjectListeners();
-        observeProjectAnimations();
-    }
-    
-    function initializeProjectListeners() {
-        const lightbox = document.getElementById('lightbox');
-        const projectItems = document.querySelectorAll('.project-item');
-        
-        projectItems.forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                const title = item.dataset.title;
-                const description = item.dataset.description;
-                const category = item.dataset.category;
-                const materials = item.dataset.materials;
-                const location = item.dataset.location;
-                const year = item.dataset.year;
-                const image = item.dataset.image;
-                
-                document.getElementById('lightboxTitle').textContent = title;
-                document.getElementById('lightboxDescription').textContent = description;
-                document.getElementById('lightboxCategory').textContent = category;
-                document.getElementById('lightboxMaterials').textContent = materials;
-                document.getElementById('lightboxLocation').textContent = location;
-                document.getElementById('lightboxYear').textContent = year;
-                const lightboxImage = document.getElementById('lightboxImage');
-                lightboxImage.src = image;
-                lightboxImage.alt = `${title} - ${category} par Pascal Gardes, serrurerie métallerie Lantriac`;
-                
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
+
+        function initializeProjectListeners() {
+            const lightbox = document.getElementById('lightbox');
+            const projectItems = document.querySelectorAll('.project-item');
+
+            projectItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const title = item.dataset.title;
+                    const description = item.dataset.description;
+                    const category = item.dataset.category;
+                    const materials = item.dataset.materials;
+                    const location = item.dataset.location;
+                    const year = item.dataset.year;
+                    const image = item.dataset.image;
+
+                    document.getElementById('lightboxTitle').textContent = title;
+                    document.getElementById('lightboxDescription').textContent = description;
+                    document.getElementById('lightboxCategory').textContent = category;
+                    document.getElementById('lightboxMaterials').textContent = materials;
+                    document.getElementById('lightboxLocation').textContent = location;
+                    document.getElementById('lightboxYear').textContent = year;
+                    const lightboxImage = document.getElementById('lightboxImage');
+                    lightboxImage.src = image;
+                    lightboxImage.alt = `${title} - ${category} par Pascal Gardes, serrurerie métallerie Lantriac`;
+
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
             });
-        });
-    }
-    
-    function observeProjectAnimations() {
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                }
+        }
+
+        function observeProjectAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.project-item').forEach((el) => {
+                scrollObserver.observe(el);
             });
-        }, observerOptions);
-        
-        document.querySelectorAll('.project-item').forEach((el) => {
-            scrollObserver.observe(el);
-        });
-    }
-    
-    // Charger les projets au chargement de la page
-    window.addEventListener('DOMContentLoaded', loadProjects);
-    
-    // ==================================================
+        }
+
+        // Charger les projets au chargement de la page
+        window.addEventListener('DOMContentLoaded', loadProjects);
+
+        // ==================================================
         // Lightbox functionality
         const lightbox = document.getElementById('lightbox');
         const closeLightbox = document.getElementById('closeLightbox');
         const projectItems = document.querySelectorAll('.project-item');
-        
+
         projectItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 e.preventDefault();
-                
+
                 // Get data from clicked item
                 const title = item.dataset.title;
                 const description = item.dataset.description;
@@ -585,7 +694,7 @@ Voir notre Instagram
                 const location = item.dataset.location;
                 const year = item.dataset.year;
                 const image = item.dataset.image;
-                
+
                 // Update lightbox content
                 document.getElementById('lightboxTitle').textContent = title;
                 document.getElementById('lightboxDescription').textContent = description;
@@ -596,18 +705,18 @@ Voir notre Instagram
                 const lightboxImage = document.getElementById('lightboxImage');
                 lightboxImage.src = image;
                 lightboxImage.alt = `${title} - ${category} par Pascal Gardes, serrurerie métallerie Lantriac`;
-                
+
                 // Show lightbox
                 lightbox.classList.add('active');
                 document.body.style.overflow = 'hidden';
             });
         });
-        
+
         closeLightbox.addEventListener('click', () => {
             lightbox.classList.remove('active');
             document.body.style.overflow = '';
         });
-        
+
         // Close on background click
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
@@ -615,7 +724,7 @@ Voir notre Instagram
                 document.body.style.overflow = '';
             }
         });
-        
+
         // Close on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.classList.contains('active')) {
@@ -630,7 +739,7 @@ Voir notre Instagram
         const categoryDescription = document.getElementById('categoryDescription');
         const categoryTitle = document.getElementById('categoryTitle');
         const categoryText = document.getElementById('categoryText');
-        
+
         // Descriptions pour chaque catégorie
         const descriptions = {
             'Escalier': {
@@ -673,7 +782,7 @@ Voir notre Instagram
                        <p>Chaque création est personnalisable selon vos envies et le style de votre espace.</p>`
             }
         };
-        
+
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 // Update active button style
@@ -683,10 +792,10 @@ Voir notre Instagram
                 });
                 button.classList.remove('bg-transparent', 'text-black', 'border', 'border-neutral-300');
                 button.classList.add('bg-black', 'text-white');
-                
+
                 // Get filter value
                 const filterValue = button.dataset.filter;
-                
+
                 // Afficher la description de la catégorie
                 if (filterValue !== 'all' && descriptions[filterValue]) {
                     categoryTitle.textContent = descriptions[filterValue].title;
@@ -695,7 +804,7 @@ Voir notre Instagram
                 } else {
                     categoryDescription.classList.add('hidden');
                 }
-                
+
                 // Filter projects from allProjectsData
                 if (filterValue === 'all') {
                     displayProjects(allProjectsData, true); // Pagination pour "Tous"
@@ -707,4 +816,6 @@ Voir notre Instagram
         });
     </script>
 
-</body></html>
+</body>
+
+</html>

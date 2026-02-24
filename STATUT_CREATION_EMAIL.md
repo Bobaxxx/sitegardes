@@ -115,3 +115,5 @@ Une fois le statut "Actif" :
 
 **💡 Astuce :** Pendant que vous attendez, vous pouvez préparer la configuration de votre client email avec les paramètres ci-dessus.
 
+
+
